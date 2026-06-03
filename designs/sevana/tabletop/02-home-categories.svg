@@ -1,0 +1,275 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sigTerra" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#C5572D"/>
+      <stop offset="1" stop-color="#9F3F1C"/>
+    </linearGradient>
+    <linearGradient id="sigForest" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#3D5A3D"/>
+      <stop offset="1" stop-color="#2A402A"/>
+    </linearGradient>
+    <linearGradient id="phBeef" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#E8C9A8"/>
+      <stop offset="1" stop-color="#C99670"/>
+    </linearGradient>
+    <linearGradient id="phCoffee" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#D4B292"/>
+      <stop offset="1" stop-color="#8C6645"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1280" fill="#FBF8F2"/>
+
+  <!-- ===== Status bar ===== -->
+  <g font-family="Geist Mono, monospace" font-size="11" fill="#3A322C" letter-spacing="0.5">
+    <text x="24" y="28">19:42</text>
+    <text x="776" y="28" text-anchor="end">WI-FI · 96%</text>
+  </g>
+
+  <!-- ===== Top brand row ===== -->
+  <g transform="translate(24, 56)">
+    <!-- Mark -->
+    <circle cx="15" cy="15" r="15" fill="#C5572D"/>
+    <text x="15" y="21" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="600" font-size="15" fill="#FBF8F2">H</text>
+    <text x="42" y="14" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Hyperglow<tspan font-style="italic" fill="#C5572D"> Café</tspan></text>
+    <text x="42" y="30" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#A29687">SLOW MENU · SERVED TO YOU</text>
+  </g>
+  <!-- Table chip -->
+  <g transform="translate(560, 50)">
+    <rect width="118" height="36" rx="18" fill="#1F1A17"/>
+    <circle cx="20" cy="18" r="5" fill="#4F9E5F"/>
+    <circle cx="20" cy="18" r="10" fill="#4F9E5F" opacity="0.22"/>
+    <text x="36" y="22" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1" fill="#FBF8F2">TABLE · 07</text>
+  </g>
+  <!-- Cart icon -->
+  <g transform="translate(696, 50)">
+    <rect width="56" height="36" rx="18" fill="#1F1A17"/>
+    <g transform="translate(20, 18)" stroke="#FBF8F2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-7 -5 H7 L5 5 H-5 Z"/>
+      <circle cx="-4" cy="8" r="1.5"/>
+      <circle cx="4" cy="8" r="1.5"/>
+    </g>
+    <circle cx="46" cy="10" r="9" fill="#C5572D"/>
+    <text x="46" y="14" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" font-weight="600" fill="#FBF8F2">3</text>
+  </g>
+
+  <!-- ===== Greeting ===== -->
+  <g transform="translate(24, 132)">
+    <text font-family="Fraunces, Georgia, serif" font-size="40" font-weight="400" letter-spacing="-1" fill="#1F1A17">An <tspan font-style="italic" fill="#C5572D">evening</tspan> menu.</text>
+    <text y="32" font-family="Geist, system-ui, sans-serif" font-size="14" fill="#6B5F55">Curated for tonight. Updated every fifteen minutes.</text>
+  </g>
+
+  <!-- ===== Search ===== -->
+  <g transform="translate(24, 208)">
+    <rect width="752" height="48" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+    <g transform="translate(20, 24)" stroke="#6B5F55" stroke-width="1.6" fill="none">
+      <circle r="6"/>
+      <line x1="4.5" y1="4.5" x2="10" y2="10" stroke-linecap="round"/>
+    </g>
+    <text x="44" y="30" font-family="Geist, sans-serif" font-size="13" fill="#6B5F55">Search dishes, ingredients, dietary tags…</text>
+    <g transform="translate(680, 12)">
+      <rect width="60" height="24" rx="6" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="30" y="16" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#6B5F55">⌘ K</text>
+    </g>
+  </g>
+
+  <!-- ===== Category strip ===== -->
+  <g transform="translate(24, 280)">
+    <!-- All (active) -->
+    <g>
+      <rect width="78" height="44" rx="14" fill="#1F1A17"/>
+      <rect x="9" y="10" width="24" height="24" rx="7" fill="#C5572D"/>
+      <text x="21" y="27" text-anchor="middle" font-size="14">⭐</text>
+      <text x="42" y="28" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#FBF8F2">All</text>
+    </g>
+    <g transform="translate(90, 0)">
+      <rect width="120" height="44" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <rect x="9" y="10" width="24" height="24" rx="7" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="21" y="27" text-anchor="middle" font-size="13">🔥</text>
+      <text x="42" y="28" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Popular</text>
+    </g>
+    <g transform="translate(222, 0)">
+      <rect width="120" height="44" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <rect x="9" y="10" width="24" height="24" rx="7" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="21" y="27" text-anchor="middle" font-size="13">🍔</text>
+      <text x="42" y="28" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Burgers</text>
+    </g>
+    <g transform="translate(354, 0)">
+      <rect width="100" height="44" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <rect x="9" y="10" width="24" height="24" rx="7" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="21" y="27" text-anchor="middle" font-size="13">🍕</text>
+      <text x="42" y="28" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Pizza</text>
+    </g>
+    <g transform="translate(466, 0)">
+      <rect width="100" height="44" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <rect x="9" y="10" width="24" height="24" rx="7" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="21" y="27" text-anchor="middle" font-size="13">☕</text>
+      <text x="42" y="28" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Coffee</text>
+    </g>
+    <g transform="translate(578, 0)">
+      <rect width="120" height="44" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <rect x="9" y="10" width="24" height="24" rx="7" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="21" y="27" text-anchor="middle" font-size="13">🍨</text>
+      <text x="42" y="28" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Ice Cream</text>
+    </g>
+    <g transform="translate(710, 0)">
+      <rect width="42" height="44" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="21" y="29" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="#6B5F55">+2</text>
+    </g>
+  </g>
+
+  <!-- ===== Section: Tonight's Signature ===== -->
+  <g transform="translate(24, 358)">
+    <text font-family="Fraunces, Georgia, serif" font-size="20" font-weight="500" letter-spacing="-0.4" fill="#1F1A17">Tonight's <tspan font-style="italic" fill="#C5572D">signatures</tspan></text>
+    <text x="752" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" y="2" fill="#6B5F55">CHEF'S PICKS · 3</text>
+  </g>
+
+  <!-- Signature card 1 — Terra gradient -->
+  <g transform="translate(24, 388)">
+    <rect width="366" height="220" rx="18" fill="url(#sigTerra)"/>
+    <text x="306" y="80" font-size="120" opacity="0.32" transform="rotate(-12 306 80)">🍔</text>
+    <text x="20" y="36" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#FBF8F2" opacity="0.7">⭐ SIGNATURE · NO. 01</text>
+    <text x="20" y="80" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.4" fill="#FBF8F2">Glow Smash<tspan font-style="italic"> Burger</tspan></text>
+    <text x="20" y="106" font-family="Geist, sans-serif" font-size="12" fill="#FBF8F2" opacity="0.85">Beef · Cheddar · House pickles</text>
+    <text x="20" y="124" font-family="Geist, sans-serif" font-size="12" fill="#FBF8F2" opacity="0.7">Smashed double patty · 425 kcal</text>
+    <text x="20" y="194" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#FBF8F2">$12.50</text>
+    <g transform="translate(322, 174)">
+      <circle r="22" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)"/>
+      <text y="6" text-anchor="middle" font-size="22" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+
+  <!-- Signature card 2 — Forest gradient -->
+  <g transform="translate(410, 388)">
+    <rect width="366" height="220" rx="18" fill="url(#sigForest)"/>
+    <text x="306" y="80" font-size="120" opacity="0.28" transform="rotate(-10 306 80)">☕</text>
+    <text x="20" y="36" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#FBF8F2" opacity="0.7">🌿 SIGNATURE · NO. 02</text>
+    <text x="20" y="80" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.4" fill="#FBF8F2">Iced Honey<tspan font-style="italic"> Latte</tspan></text>
+    <text x="20" y="106" font-family="Geist, sans-serif" font-size="12" fill="#FBF8F2" opacity="0.85">Cold brew · Local honey · Oat</text>
+    <text x="20" y="124" font-family="Geist, sans-serif" font-size="12" fill="#FBF8F2" opacity="0.7">24h slow-steeped · 95 kcal</text>
+    <text x="20" y="194" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#FBF8F2">$5.80</text>
+    <g transform="translate(322, 174)">
+      <circle r="22" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)"/>
+      <text y="6" text-anchor="middle" font-size="22" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+
+  <!-- ===== Section: Most Loved ===== -->
+  <g transform="translate(24, 644)">
+    <text font-family="Fraunces, Georgia, serif" font-size="20" font-weight="500" letter-spacing="-0.4" fill="#1F1A17">Most <tspan font-style="italic" fill="#C5572D">loved</tspan> this week</text>
+    <text x="752" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" y="2" fill="#6B5F55">SORT · POPULARITY ↓</text>
+  </g>
+
+  <!-- 2-col items grid (4 items: 2x2) -->
+  <!-- Item 1: Tex-Mex Chicken -->
+  <g transform="translate(24, 674)">
+    <rect width="366" height="252" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="12" y="12" width="342" height="140" rx="11" fill="url(#phBeef)"/>
+    <g transform="translate(183, 82)">
+      <ellipse cx="0" cy="20" rx="56" ry="6" fill="#9F3F1C"/>
+      <path d="M-56 4 a 56 28 0 0 1 112 0 Z" fill="#D69537"/>
+      <rect x="-56" y="0" width="112" height="6" fill="#3D5A3D"/>
+      <rect x="-56" y="6" width="112" height="6" fill="#FBF8F2"/>
+      <rect x="-56" y="12" width="112" height="6" fill="#C44A3A"/>
+    </g>
+    <g transform="translate(20, 20)">
+      <rect width="78" height="20" rx="5" fill="#1F1A17" opacity="0.78"/>
+      <text x="39" y="14" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1" fill="#FBF8F2">🌶 SPICY</text>
+    </g>
+    <text x="20" y="184" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17">Tex-Mex Chicken<tspan font-style="italic" fill="#C5572D"> Burger</tspan></text>
+    <text x="20" y="208" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">Grilled chicken, lime mayo, jalapeño,</text>
+    <text x="20" y="222" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">smoked paprika · 510 kcal</text>
+    <text x="20" y="244" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">$11.00</text>
+    <g transform="translate(326, 224)">
+      <circle r="16" fill="#1F1A17"/>
+      <text y="5" text-anchor="middle" font-size="17" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+
+  <!-- Item 2: Beyond Plant -->
+  <g transform="translate(410, 674)">
+    <rect width="366" height="252" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="12" y="12" width="342" height="140" rx="11" fill="#D7E1D2"/>
+    <g transform="translate(183, 82)">
+      <ellipse cx="0" cy="20" rx="56" ry="6" fill="#9F3F1C"/>
+      <path d="M-56 4 a 56 28 0 0 1 112 0 Z" fill="#D69537"/>
+      <rect x="-56" y="0" width="112" height="6" fill="#3D5A3D"/>
+      <rect x="-56" y="6" width="112" height="6" fill="#FBF8F2"/>
+      <rect x="-56" y="12" width="112" height="6" fill="#4F9E5F"/>
+    </g>
+    <g transform="translate(20, 20)">
+      <rect width="86" height="20" rx="5" fill="#1F1A17" opacity="0.78"/>
+      <text x="43" y="14" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1" fill="#FBF8F2">🌱 PLANT</text>
+    </g>
+    <text x="20" y="184" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17">Beyond Plant<tspan font-style="italic" fill="#C5572D"> Burger</tspan></text>
+    <text x="20" y="208" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">Plant patty, vegan cheddar, avocado,</text>
+    <text x="20" y="222" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">100% plant-based · 380 kcal</text>
+    <text x="20" y="244" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">$13.00</text>
+    <g transform="translate(326, 224)">
+      <circle r="16" fill="#1F1A17"/>
+      <text y="5" text-anchor="middle" font-size="17" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+
+  <!-- Item 3: Margherita -->
+  <g transform="translate(24, 942)">
+    <rect width="366" height="180" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="12" y="12" width="342" height="96" rx="11" fill="#F4D5A8"/>
+    <g transform="translate(183, 60)">
+      <circle cx="0" cy="0" r="38" fill="#9F3F1C"/>
+      <circle cx="0" cy="0" r="32" fill="#D69537"/>
+      <circle cx="-10" cy="-4" r="6" fill="#C44A3A"/>
+      <circle cx="10" cy="-6" r="5" fill="#FBF8F2"/>
+      <circle cx="2" cy="10" r="5" fill="#4F9E5F"/>
+    </g>
+    <text x="20" y="138" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17">Margherita<tspan font-style="italic" fill="#C5572D"> 12"</tspan></text>
+    <text x="20" y="156" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">San Marzano, buffalo mozzarella</text>
+    <text x="20" y="174" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">$14.50</text>
+    <g transform="translate(326, 154)">
+      <circle r="16" fill="#1F1A17"/>
+      <text y="5" text-anchor="middle" font-size="17" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+
+  <!-- Item 4: Cold Brew -->
+  <g transform="translate(410, 942)">
+    <rect width="366" height="180" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="12" y="12" width="342" height="96" rx="11" fill="url(#phCoffee)"/>
+    <g transform="translate(183, 60)">
+      <path d="M-22 -16 H 26 L 22 24 Q 22 28 18 28 H -18 Q -22 28 -22 24 Z" fill="#FBF8F2" stroke="#3A322C" stroke-width="2"/>
+      <ellipse cx="2" cy="-16" rx="24" ry="4" fill="#9F3F1C"/>
+      <path d="M26 -8 Q38 -8 38 4 Q38 14 28 14" fill="none" stroke="#3A322C" stroke-width="2"/>
+    </g>
+    <text x="20" y="138" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17">Glow Cold<tspan font-style="italic" fill="#C5572D"> Brew</tspan></text>
+    <text x="20" y="156" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">24h slow-steeped · Single origin</text>
+    <text x="20" y="174" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">$6.20</text>
+    <g transform="translate(326, 154)">
+      <circle r="16" fill="#1F1A17"/>
+      <text y="5" text-anchor="middle" font-size="17" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+
+  <!-- ===== Sticky bottom cart (ink, terra CTA) ===== -->
+  <rect x="0" y="1150" width="800" height="130" fill="#1F1A17"/>
+  <g transform="translate(24, 1180)">
+    <!-- Bag with badge -->
+    <rect width="56" height="56" rx="14" fill="rgba(255,255,255,0.08)"/>
+    <g transform="translate(28, 28)" stroke="#FBF8F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-10 -6 H10 L8 8 H-8 Z"/>
+      <circle cx="-6" cy="11" r="2"/>
+      <circle cx="6" cy="11" r="2"/>
+    </g>
+    <circle cx="48" cy="6" r="11" fill="#C5572D" stroke="#1F1A17" stroke-width="2"/>
+    <text x="48" y="10" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" font-weight="700" fill="#FBF8F2">3</text>
+  </g>
+  <text x="96" y="1198" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">YOUR CART · 3 ITEMS</text>
+  <text x="96" y="1228" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#FBF8F2">$46.00<tspan font-family="Geist, sans-serif" font-size="13" font-weight="400" fill="#A29687"> · before tip</tspan></text>
+  <g transform="translate(550, 1180)">
+    <rect width="226" height="56" rx="14" fill="#C5572D"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#FBF8F2">Review <tspan font-style="italic" fill="#F0D8C9">cart</tspan></text>
+    <g transform="translate(194, 28)" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-8" y1="0" x2="8" y2="0"/>
+      <polyline points="3,-6 8,0 3,6"/>
+    </g>
+  </g>
+</svg>

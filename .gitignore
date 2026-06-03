@@ -1,0 +1,92 @@
+# ─── Dependencies ─────────────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+**/node_modules/
+
+# ─── Build outputs ────────────────────────────────────────────────────────
+.next/
+out/
+dist/
+build/
+.turbo/
+**/.next/
+**/dist/
+**/build/
+
+# ─── Native / mobile build artifacts ──────────────────────────────────────
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+**/ios/build/
+**/ios/Pods/
+*.apk
+*.aab
+*.ipa
+*.keystore
+!debug.keystore
+
+# ─── Environment & secrets ────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example
+
+# ─── Database & uploads ───────────────────────────────────────────────────
+admin/postgres-data/
+admin/apps/web/public/uploads/
+*.sql.bak
+*.dump
+
+# ─── Logs ─────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Editor / IDE ─────────────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS junk ──────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Test & coverage ──────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+
+# ─── TypeScript / bundler caches ──────────────────────────────────────────
+*.tsbuildinfo
+.eslintcache
+.parcel-cache/
+.cache/
+
+# ─── Misc ─────────────────────────────────────────────────────────────────
+.history/
+*.tgz
+.yarn-integrity
+.npm/
+
+# ─── Project-specific ─────────────────────────────────────────────────────
+# Claude Code's per-machine notes (memory files live in ~/.claude/, not here)
+.claude/
+# If you generate the SRS / handover from another tool, keep these in git.
+# (HANDOVER.md, admin/docs/SRS.md, admin/docs/SRS-STATUS.md are tracked.)

@@ -1,0 +1,75 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <!-- ===== Background ===== -->
+  <rect width="800" height="1280" fill="#FAFAF7"/>
+  <!-- Soft hero wash -->
+  <path d="M0 0 H800 V560 Q400 660 0 560 Z" fill="#FEE6DC"/>
+  <circle cx="710" cy="120" r="90" fill="#F26B3A" opacity="0.08"/>
+  <circle cx="80" cy="420" r="60" fill="#2D8A66" opacity="0.08"/>
+
+  <!-- ===== Status bar ===== -->
+  <g>
+    <text x="32" y="40" font-size="14" font-weight="600" fill="#4D4B44">19:42</text>
+    <text x="768" y="40" text-anchor="end" font-size="12" fill="#4D4B44">Wi-Fi · HG-Guest   ⌁ 96%</text>
+  </g>
+
+  <!-- ===== Brand mark (cup illustration) ===== -->
+  <g transform="translate(400, 250)">
+    <!-- Outer disc -->
+    <circle r="76" fill="#FFFFFF" stroke="#F2EBE5" stroke-width="2"/>
+    <circle r="56" fill="#F26B3A"/>
+    <!-- Cup body -->
+    <path d="M -22 -10 L 22 -10 L 17 22 Q 17 30 9 30 L -9 30 Q -17 30 -17 22 Z" fill="#FFFFFF"/>
+    <ellipse cx="0" cy="-10" rx="22" ry="4" fill="#D4502A"/>
+    <!-- Handle -->
+    <path d="M 17 -2 Q 32 -2 32 10 Q 32 20 22 20" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <!-- Steam -->
+    <path d="M -10 -26 Q -14 -32 -8 -38 Q -2 -44 -6 -52" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 10 -26 Q 14 -32 8 -38 Q 2 -44 6 -52" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 0 -28 Q -4 -36 2 -42 Q 8 -50 0 -58" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  </g>
+
+  <!-- ===== Wordmark ===== -->
+  <text x="400" y="390" text-anchor="middle" font-size="22" font-weight="700" fill="#1A1A17" letter-spacing="0.5">Hyperglow Café</text>
+  <text x="400" y="420" text-anchor="middle" font-size="13" fill="#8A887E">Order from your table</text>
+
+  <!-- ===== Greeting block ===== -->
+  <g transform="translate(400, 660)">
+    <text text-anchor="middle" font-size="13" font-weight="600" letter-spacing="3" fill="#8A887E">GOOD EVENING</text>
+    <text y="64" text-anchor="middle" font-size="46" font-weight="700" fill="#1A1A17">Welcome.</text>
+    <text y="116" text-anchor="middle" font-size="18" fill="#4D4B44">Browse our menu and order in seconds.</text>
+  </g>
+
+  <!-- ===== Table chip ===== -->
+  <g transform="translate(400, 830)">
+    <rect x="-120" y="-28" width="240" height="56" rx="28" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="-86" cy="0" r="6" fill="#2D8A66"/>
+    <text x="-68" y="6" font-size="16" font-weight="600" fill="#1A1A17">You're at Table 7</text>
+  </g>
+
+  <!-- ===== Primary CTA ===== -->
+  <g transform="translate(400, 950)">
+    <rect x="-280" y="6" width="560" height="80" rx="22" fill="#F26B3A" opacity="0.18"/>
+    <rect x="-280" y="0" width="560" height="80" rx="22" fill="#F26B3A"/>
+    <text x="-12" y="50" text-anchor="end" font-size="22" font-weight="600" fill="#FFFFFF">Tap to start your order</text>
+    <g transform="translate(60, 40)" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-12" y1="0" x2="12" y2="0"/>
+      <polyline points="4,-8 12,0 4,8"/>
+    </g>
+  </g>
+
+  <!-- ===== Secondary CTA ===== -->
+  <g transform="translate(400, 1070)">
+    <rect x="-280" y="0" width="560" height="68" rx="20" fill="#FFFFFF" stroke="#E5E3DA" stroke-width="1.5"/>
+    <g transform="translate(-90, 34)" stroke="#4D4B44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M -10 -4 a 10 10 0 1 1 20 0 v 4 l 4 6 H -14 l 4 -6 z"/>
+      <path d="M -4 8 a 4 4 0 0 0 8 0"/>
+    </g>
+    <text x="-60" y="42" font-size="16" font-weight="600" fill="#1A1A17">Call a server</text>
+  </g>
+
+  <!-- ===== Footer ===== -->
+  <g transform="translate(400, 1210)">
+    <text text-anchor="middle" font-size="12" fill="#8A887E">EN  ·  ES  ·  BN  ·  FR  ·  AR</text>
+    <text y="22" text-anchor="middle" font-size="11" fill="#C9C7BD">Hyperglow Café · Powered by Digital Waiter</text>
+  </g>
+</svg>

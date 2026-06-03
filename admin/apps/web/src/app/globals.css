@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-ink;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-lg p-5;
+  }
+  .kpi {
+    @apply card flex flex-col gap-1;
+  }
+  .kpi-label {
+    @apply text-xs uppercase tracking-wide text-muted;
+  }
+  .kpi-value {
+    @apply text-3xl font-serif text-ink;
+  }
+  .kpi-delta-up {
+    @apply text-xs text-olive;
+  }
+  .kpi-delta-down {
+    @apply text-xs text-red;
+  }
+  /* ⚠ TERRACOTTA — HyperGlow-monetised KPIs only */
+  .kpi-monetised {
+    @apply bg-terraSoft border-terra/30;
+  }
+  .kpi-monetised .kpi-value {
+    @apply text-terraFg;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+}

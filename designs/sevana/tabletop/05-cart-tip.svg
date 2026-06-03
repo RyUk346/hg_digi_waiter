@@ -1,0 +1,181 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1280" fill="#F5EFE6"/>
+
+  <!-- ===== Cart header ===== -->
+  <rect x="0" y="0" width="800" height="148" fill="#FBF8F2"/>
+  <line x1="0" y1="148" x2="800" y2="148" stroke="#E5DCCC"/>
+  <g font-family="Geist Mono, monospace" font-size="11" fill="#3A322C" letter-spacing="0.5">
+    <text x="24" y="28">19:49</text>
+    <text x="776" y="28" text-anchor="end">WI-FI · 96%</text>
+  </g>
+  <g transform="translate(24, 50)">
+    <g transform="translate(0, 10)" stroke="#1F1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="0" y1="0" x2="14" y2="0"/>
+      <polyline points="4,-5 -1,0 4,5"/>
+    </g>
+    <text x="22" y="14" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#1F1A17">Continue browsing</text>
+    <text x="752" text-anchor="end" y="14" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2" fill="#6B5F55">CLEAR ALL</text>
+  </g>
+  <text x="24" y="106" font-family="Fraunces, Georgia, serif" font-size="34" font-weight="400" letter-spacing="-1" fill="#1F1A17">Your <tspan font-style="italic" fill="#C5572D">cart</tspan></text>
+  <text x="24" y="132" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2" fill="#6B5F55">3 ITEMS · TABLE 07 · 19:49</text>
+
+  <!-- ===== Cart items ===== -->
+  <!-- Item 1 -->
+  <g transform="translate(24, 170)">
+    <rect width="752" height="128" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="16" y="16" width="96" height="96" rx="11" fill="#F5EFE6"/>
+    <g transform="translate(64, 64)">
+      <ellipse cx="0" cy="14" rx="32" ry="5" fill="#9F3F1C"/>
+      <path d="M-32 2 a 32 18 0 0 1 64 0 Z" fill="#D69537"/>
+      <rect x="-32" y="0" width="64" height="3" fill="#3D5A3D"/>
+      <rect x="-32" y="3" width="64" height="3" fill="#FBF8F2"/>
+    </g>
+    <text x="128" y="40" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Glow Smash<tspan font-style="italic" fill="#C5572D"> Burger</tspan></text>
+    <text x="128" y="60" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">REGULAR · 🌶 MEDIUM</text>
+    <text x="128" y="78" font-family="Geist, sans-serif" font-size="12" fill="#6B5F55">+ Extra cheese · + Crispy bacon · No pickle</text>
+    <!-- Qty -->
+    <g transform="translate(128, 92)">
+      <rect width="100" height="32" rx="9" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="16" y="22" font-family="Geist, sans-serif" font-size="15" font-weight="500" fill="#3A322C">−</text>
+      <text x="50" y="22" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">2</text>
+      <text x="84" y="22" font-family="Geist, sans-serif" font-size="15" font-weight="500" fill="#1F1A17">+</text>
+    </g>
+    <!-- Price -->
+    <text x="736" y="40" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#1F1A17">$32.00</text>
+    <text x="736" y="58" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="#A29687">2 × $16.00</text>
+    <!-- Remove -->
+    <g transform="translate(736, 84)">
+      <text text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F3F1C">REMOVE ✕</text>
+    </g>
+  </g>
+
+  <!-- Item 2 -->
+  <g transform="translate(24, 314)">
+    <rect width="752" height="128" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="16" y="16" width="96" height="96" rx="11" fill="#F5EFE6"/>
+    <g transform="translate(64, 64)">
+      <path d="M-18 -10 H22 L18 18 Q18 22 14 22 H-14 Q-18 22 -18 18 Z" fill="#FBF8F2" stroke="#3A322C" stroke-width="1.5"/>
+      <ellipse cx="2" cy="-10" rx="20" ry="3" fill="#9F3F1C"/>
+      <path d="M22 -4 Q30 -4 30 4 Q30 10 24 10" fill="none" stroke="#3A322C" stroke-width="1.5"/>
+    </g>
+    <text x="128" y="40" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Iced Honey<tspan font-style="italic" fill="#C5572D"> Latte</tspan></text>
+    <text x="128" y="60" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">LARGE · OAT · EXTRA HONEY</text>
+    <text x="128" y="78" font-family="Geist, sans-serif" font-style="italic" font-size="12" fill="#6B5F55">"Less ice please" — your note</text>
+    <g transform="translate(128, 92)">
+      <rect width="100" height="32" rx="9" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="16" y="22" font-family="Geist, sans-serif" font-size="15" font-weight="500" fill="#3A322C">−</text>
+      <text x="50" y="22" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">1</text>
+      <text x="84" y="22" font-family="Geist, sans-serif" font-size="15" font-weight="500" fill="#1F1A17">+</text>
+    </g>
+    <text x="736" y="40" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#1F1A17">$6.80</text>
+    <text x="736" y="58" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="#A29687">BAR STATION</text>
+    <text x="736" y="106" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F3F1C">REMOVE ✕</text>
+  </g>
+
+  <!-- Item 3 -->
+  <g transform="translate(24, 458)">
+    <rect width="752" height="128" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <rect x="16" y="16" width="96" height="96" rx="11" fill="#F5EFE6"/>
+    <g transform="translate(64, 64)">
+      <path d="M-18 6 L 0 30 L 18 6 Z" fill="#F4D5A8" stroke="#B58836" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="20" fill="#FBF8F2"/>
+      <circle cx="-6" cy="-2" r="4" fill="#F0D8C9" opacity="0.8"/>
+    </g>
+    <text x="128" y="40" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Vanilla Bean<tspan font-style="italic" fill="#C5572D"> Scoop</tspan></text>
+    <text x="128" y="60" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">2 SCOOPS · WAFFLE CONE</text>
+    <text x="128" y="78" font-family="Geist, sans-serif" font-size="12" fill="#6B5F55">+ Hot fudge · ICE CREAM VENDOR station</text>
+    <g transform="translate(128, 92)">
+      <rect width="100" height="32" rx="9" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="16" y="22" font-family="Geist, sans-serif" font-size="15" font-weight="500" fill="#3A322C">−</text>
+      <text x="50" y="22" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">1</text>
+      <text x="84" y="22" font-family="Geist, sans-serif" font-size="15" font-weight="500" fill="#1F1A17">+</text>
+    </g>
+    <text x="736" y="40" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#1F1A17">$7.20</text>
+    <text x="736" y="58" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="#A29687">ICE CREAM</text>
+    <text x="736" y="106" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F3F1C">REMOVE ✕</text>
+  </g>
+
+  <!-- Add more -->
+  <g transform="translate(24, 602)">
+    <rect width="752" height="54" rx="14" fill="#FBF8F2" stroke="#E5DCCC" stroke-dasharray="4,4"/>
+    <text x="376" y="34" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#C5572D">+ Add another <tspan font-style="italic">item</tspan></text>
+  </g>
+
+  <!-- Promo code -->
+  <g transform="translate(24, 676)">
+    <rect width="540" height="52" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <g transform="translate(20, 26)" stroke="#6B5F55" stroke-width="1.6" fill="none">
+      <path d="M-5 -5 H3 L7 -1 L3 3 H-5 Z M0 -1 m-2 0 a 2 2 0 1 0 4 0 a 2 2 0 1 0 -4 0"/>
+    </g>
+    <text x="44" y="32" font-family="Geist, sans-serif" font-size="13" fill="#6B5F55">Add promo or comp code</text>
+    <g transform="translate(580, 0)">
+      <rect width="196" height="52" rx="14" fill="#1F1A17"/>
+      <text x="98" y="32" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#FBF8F2">Apply</text>
+    </g>
+  </g>
+
+  <!-- ===== Tip box ===== -->
+  <g transform="translate(24, 748)">
+    <rect width="752" height="116" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="20" y="28" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#6B5F55">TIP YOUR SERVER</text>
+    <text x="732" text-anchor="end" y="28" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#3A322C">100% TO STAFF</text>
+    <!-- 5 buttons -->
+    <g transform="translate(20, 44)">
+      <rect width="138" height="58" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="69" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="500" fill="#3A322C">10%</text>
+      <text x="69" y="46" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">$4.60</text>
+    </g>
+    <g transform="translate(170, 44)">
+      <rect width="138" height="58" rx="11" fill="#C5572D"/>
+      <text x="69" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="500" fill="#FBF8F2">15%</text>
+      <text x="69" y="46" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">$6.90</text>
+    </g>
+    <g transform="translate(320, 44)">
+      <rect width="138" height="58" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="69" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="500" fill="#3A322C">20%</text>
+      <text x="69" y="46" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">$9.20</text>
+    </g>
+    <g transform="translate(470, 44)">
+      <rect width="138" height="58" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="69" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="500" fill="#3A322C">Custom</text>
+      <text x="69" y="46" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">ENTER $</text>
+    </g>
+    <g transform="translate(620, 44)">
+      <rect width="116" height="58" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="58" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-style="italic" font-size="14" fill="#6B5F55">No tip</text>
+      <text x="58" y="46" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#A29687">—</text>
+    </g>
+  </g>
+
+  <!-- ===== Sticky pay bar (dark with totals + CTA) ===== -->
+  <rect x="0" y="1054" width="800" height="226" fill="#1F1A17"/>
+  <!-- Totals -->
+  <g transform="translate(24, 1084)" font-family="Geist Mono, monospace" font-size="13" fill="#A29687" letter-spacing="0.3">
+    <g>
+      <text>SUBTOTAL (3 ITEMS)</text>
+      <text x="752" text-anchor="end">$46.00</text>
+    </g>
+    <g transform="translate(0, 22)">
+      <text>TAX · 8%</text>
+      <text x="752" text-anchor="end">$3.68</text>
+    </g>
+    <g transform="translate(0, 44)">
+      <text>TIP · 15%</text>
+      <text x="752" text-anchor="end">$6.90</text>
+    </g>
+    <line x1="0" y1="60" x2="752" y2="60" stroke="#3D362F" stroke-dasharray="2,4"/>
+    <g transform="translate(0, 88)">
+      <text font-size="13" fill="#D9CFBE" letter-spacing="0.5">TOTAL · 4 LINE-ITEMS</text>
+      <text x="752" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="500" fill="#FBF8F2">$56.58</text>
+    </g>
+  </g>
+  <!-- CTA -->
+  <g transform="translate(24, 1200)">
+    <rect width="752" height="60" rx="14" fill="#C5572D"/>
+    <text x="24" y="38" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#FBF8F2">Continue to <tspan font-style="italic" fill="#F0D8C9">payment</tspan></text>
+    <g transform="translate(716, 30)" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-8" y1="0" x2="8" y2="0"/>
+      <polyline points="3,-6 8,0 3,6"/>
+    </g>
+  </g>
+</svg>

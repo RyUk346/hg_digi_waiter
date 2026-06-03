@@ -1,0 +1,143 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1280" fill="#FBF8F2"/>
+
+  <!-- ===== Dark header ===== -->
+  <rect x="0" y="0" width="800" height="376" fill="#1F1A17"/>
+  <g font-family="Geist Mono, monospace" font-size="11" fill="#A29687" letter-spacing="0.5">
+    <text x="24" y="28">19:51</text>
+    <text x="776" y="28" text-anchor="end">SECURED BY STRIPE · PCI L1</text>
+  </g>
+  <g transform="translate(24, 56)">
+    <g transform="translate(0, 10)" stroke="#A29687" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="0" y1="0" x2="14" y2="0"/>
+      <polyline points="4,-5 -1,0 4,5"/>
+    </g>
+    <text x="22" y="14" font-family="Geist Mono, monospace" font-size="12" letter-spacing="2" fill="#A29687">BACK · CART</text>
+  </g>
+  <text x="24" y="120" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#A29687">STEP 02 OF 02 · PAYMENT</text>
+  <text x="24" y="170" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="400" letter-spacing="-1" fill="#FBF8F2">How will you <tspan font-style="italic" fill="#F0D8C9">pay?</tspan></text>
+  <text x="24" y="200" font-family="Geist, sans-serif" font-size="14" fill="#A29687">Tap your card or phone — fastest. Stripe processes everything securely.</text>
+
+  <!-- Total card -->
+  <g transform="translate(24, 240)">
+    <rect width="752" height="106" rx="14" fill="#2B2520" stroke="#3D362F"/>
+    <g transform="translate(24, 28)">
+      <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="3" fill="#A29687">ORDER TOTAL · TABLE 07</text>
+      <text y="40" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="500" letter-spacing="-1" fill="#FBF8F2">$56.58</text>
+      <text y="62" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#A29687">4 ITEMS · SUBTOTAL $46.00 · TAX $3.68 · TIP $6.90</text>
+    </g>
+    <g transform="translate(626, 32)">
+      <rect width="104" height="44" rx="12" fill="rgba(255,255,255,0.08)"/>
+      <text x="52" y="28" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2" fill="#FBF8F2">VIEW</text>
+    </g>
+  </g>
+
+  <!-- ===== Payment method tabs (light area) ===== -->
+  <text x="24" y="420" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Choose <tspan font-style="italic" fill="#C5572D">method</tspan></text>
+
+  <g transform="translate(24, 440)">
+    <!-- NFC Tap selected -->
+    <g>
+      <rect width="248" height="116" rx="16" fill="#1F1A17"/>
+      <g transform="translate(28, 36)" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M0 16 a 16 16 0 0 1 0 -32"/>
+        <path d="M-6 12 a 12 12 0 0 1 0 -24"/>
+        <path d="M-12 8 a 8 8 0 0 1 0 -16"/>
+        <circle cx="-18" cy="0" r="2.5" fill="#FBF8F2"/>
+      </g>
+      <text x="64" y="42" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#A29687">NO. 01 · FASTEST</text>
+      <text x="64" y="68" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#FBF8F2">NFC <tspan font-style="italic" fill="#F0D8C9">tap</tspan></text>
+      <text x="64" y="86" font-family="Geist, sans-serif" font-size="11" fill="#A29687">Card or phone · ~2s</text>
+      <g transform="translate(206, 92)">
+        <rect width="28" height="18" rx="5" fill="#C5572D"/>
+        <text x="14" y="13" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" font-weight="700" fill="#FBF8F2">FAST</text>
+      </g>
+    </g>
+    <!-- Card -->
+    <g transform="translate(260, 0)">
+      <rect width="248" height="116" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <g transform="translate(28, 36)" stroke="#3A322C" stroke-width="1.8" fill="none">
+        <rect x="-14" y="-10" width="28" height="20" rx="4"/>
+        <line x1="-14" y1="-2" x2="14" y2="-2"/>
+        <line x1="-10" y1="5" x2="-4" y2="5"/>
+      </g>
+      <text x="64" y="42" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#6B5F55">NO. 02</text>
+      <text x="64" y="68" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Card<tspan font-style="italic" fill="#C5572D"> swipe</tspan></text>
+      <text x="64" y="86" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">Visa · MC · Amex · Apple Pay</text>
+    </g>
+    <!-- Pay at table -->
+    <g transform="translate(520, 0)">
+      <rect width="232" height="116" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <g transform="translate(28, 36)" stroke="#3A322C" stroke-width="1.8" fill="none">
+        <circle cx="0" cy="0" r="12"/>
+        <text x="0" y="4" text-anchor="middle" font-size="14" font-family="Fraunces, Georgia, serif" font-weight="700" fill="#3A322C" stroke="none">$</text>
+      </g>
+      <text x="64" y="42" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#6B5F55">NO. 03</text>
+      <text x="64" y="68" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Pay at<tspan font-style="italic" fill="#C5572D"> table</tspan></text>
+      <text x="64" y="86" font-family="Geist, sans-serif" font-size="11" fill="#6B5F55">Cash · Server brings reader</text>
+    </g>
+  </g>
+
+  <!-- ===== NFC tap zone ===== -->
+  <g transform="translate(24, 580)">
+    <rect width="752" height="436" rx="24" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <!-- Status pill -->
+    <g transform="translate(376, 40)" text-anchor="middle">
+      <rect x="-118" y="0" width="236" height="32" rx="16" fill="#F0D8C9"/>
+      <circle cx="-100" cy="16" r="4" fill="#C5572D"/>
+      <circle cx="-100" cy="16" r="9" fill="#C5572D" opacity="0.3"/>
+      <text x="-84" y="20" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#9F3F1C">WAITING FOR TAP…</text>
+    </g>
+    <!-- Pulse rings -->
+    <g transform="translate(376, 220)">
+      <circle r="190" fill="#F0D8C9" opacity="0.4"/>
+      <circle r="150" fill="#F0D8C9" opacity="0.6"/>
+      <circle r="110" fill="#F0D8C9"/>
+      <g stroke="#C5572D" stroke-width="4" stroke-linecap="round" fill="none">
+        <path d="M0 56 a 56 56 0 0 1 0 -112"/>
+        <path d="M-20 40 a 40 40 0 0 1 0 -80"/>
+        <path d="M-36 24 a 24 24 0 0 1 0 -48"/>
+        <circle cx="-50" cy="0" r="6" fill="#C5572D"/>
+      </g>
+    </g>
+    <text x="376" y="382" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="28" font-weight="500" letter-spacing="-0.6" fill="#1F1A17">Tap your card or<tspan font-style="italic" fill="#C5572D"> phone</tspan></text>
+    <text x="376" y="408" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" fill="#6B5F55">Hold contactless flat to this device · Apple Pay · Google Pay accepted</text>
+  </g>
+
+  <!-- Security strip -->
+  <g transform="translate(24, 1040)">
+    <rect width="752" height="60" rx="14" fill="#F5EFE6"/>
+    <g transform="translate(24, 30)" stroke="#3A322C" stroke-width="1.6" stroke-linecap="round" fill="none">
+      <path d="M0 -10 L-10 -4 v 6 c 0 6 5 10 10 12 c 5 -2 10 -6 10 -12 v -6 z"/>
+      <polyline points="-4,0 -1,3 5,-4"/>
+    </g>
+    <text x="56" y="28" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">End-to-end <tspan font-style="italic" fill="#C5572D">encrypted</tspan> · PCI DSS Level 1</text>
+    <text x="56" y="48" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">CARD DETAILS ARE NEVER STORED · POWERED BY STRIPE TERMINAL</text>
+  </g>
+
+  <!-- ===== Sticky bottom bar ===== -->
+  <rect x="0" y="1124" width="800" height="156" fill="#FBF8F2"/>
+  <line x1="0" y1="1124" x2="800" y2="1124" stroke="#E5DCCC"/>
+  <!-- Cancel -->
+  <g transform="translate(24, 1158)">
+    <rect width="220" height="78" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="110" y="34" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#6B5F55">ESC</text>
+    <text x="110" y="58" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#3A322C">Cancel</text>
+  </g>
+  <!-- Total -->
+  <g transform="translate(264, 1166)">
+    <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#6B5F55">TOTAL PAYABLE</text>
+    <text y="40" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="500" letter-spacing="-0.8" fill="#1F1A17">$56.58</text>
+  </g>
+  <!-- TAP CTA -->
+  <g transform="translate(548, 1158)">
+    <rect width="228" height="78" rx="14" fill="#1F1A17"/>
+    <g transform="translate(38, 39)" stroke="#FBF8F2" stroke-width="2.5" stroke-linecap="round" fill="none">
+      <path d="M0 14 a 14 14 0 0 1 0 -28"/>
+      <path d="M-6 10 a 10 10 0 0 1 0 -20"/>
+      <circle cx="-12" cy="0" r="2.5" fill="#FBF8F2"/>
+    </g>
+    <text x="76" y="36" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#A29687">PAY NOW</text>
+    <text x="76" y="58" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="500" fill="#FBF8F2"><tspan font-style="italic" fill="#F0D8C9">Tap</tspan> to pay</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: hyperglow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hyperglow
+      POSTGRES_PASSWORD: hyperglow_dev
+      POSTGRES_DB: hyperglow
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hyperglow -d hyperglow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

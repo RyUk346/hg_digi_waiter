@@ -1,0 +1,359 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="1920" height="1080" fill="#F2F1EC"/>
+
+  <!-- ===== Top bar ===== -->
+  <rect x="0" y="0" width="1920" height="80" fill="#1A1A17"/>
+  <g transform="translate(32, 40)">
+    <circle r="18" fill="#F26B3A"/>
+    <path d="M -6 -2 H 6 L 4 6 Q 4 8 2 8 H -2 Q -4 8 -4 6 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="64" y="35" font-size="16" font-weight="700" fill="#FFFFFF">Hyperglow</text>
+  <text x="64" y="54" font-size="11" font-weight="600" letter-spacing="2" fill="#8A887E">KITCHEN DISPLAY</text>
+
+  <g transform="translate(960, 30)">
+    <text text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="26" font-weight="700" fill="#FFFFFF" letter-spacing="3">20:01:42</text>
+    <text y="20" text-anchor="middle" font-size="11" font-weight="600" letter-spacing="2" fill="#8A887E">FRIDAY · MAY 15, 2026</text>
+  </g>
+
+  <g transform="translate(1180, 22)">
+    <text font-size="11" letter-spacing="2" fill="#8A887E">QUEUE</text>
+    <text x="56" font-size="22" font-weight="700" fill="#FFFFFF">7</text>
+    <text x="140" font-size="11" letter-spacing="2" fill="#8A887E">PREPARING</text>
+    <text x="240" font-size="22" font-weight="700" fill="#E8A33B">4</text>
+    <text x="320" font-size="11" letter-spacing="2" fill="#8A887E">READY</text>
+    <text x="380" font-size="22" font-weight="700" fill="#2D8A66">3</text>
+    <text x="440" font-size="11" letter-spacing="2" fill="#8A887E">AVG TIME</text>
+    <text x="530" font-size="22" font-weight="700" fill="#FFFFFF">11:32</text>
+    <text x="530" y="20" font-size="10" fill="#8A887E">target ≤ 13:00</text>
+  </g>
+
+  <g transform="translate(1768, 22)">
+    <rect width="124" height="40" rx="12" fill="#2A2A24"/>
+    <circle cx="20" cy="20" r="12" fill="#F26B3A"/>
+    <text x="20" y="24" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">KH</text>
+    <text x="40" y="18" font-size="11" font-weight="700" fill="#FFFFFF">Chef Khalid</text>
+    <text x="40" y="32" font-size="10" fill="#8A887E">Head chef</text>
+  </g>
+
+  <!-- ===== Sidebar (station filter) ===== -->
+  <rect x="0" y="80" width="240" height="1000" fill="#FFFFFF"/>
+  <rect x="239" y="80" width="1" height="1000" fill="#E5E3DA"/>
+  <text x="24" y="124" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">STATIONS</text>
+
+  <g transform="translate(16, 144)">
+    <rect width="208" height="56" rx="14" fill="#1A1A17"/>
+    <g transform="translate(20, 28)" stroke="#FFFFFF" stroke-width="2" fill="none">
+      <rect x="-6" y="-6" width="12" height="12" rx="2"/>
+    </g>
+    <text x="40" y="32" font-size="14" font-weight="700" fill="#FFFFFF">All stations</text>
+    <text x="40" y="48" font-size="11" fill="#8A887E">14 orders</text>
+  </g>
+  <g transform="translate(16, 212)">
+    <rect width="208" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="20" cy="28" r="8" fill="#FEE6DC"/>
+    <text x="20" y="32" text-anchor="middle" font-size="11">🍔</text>
+    <text x="40" y="32" font-size="14" font-weight="600" fill="#1A1A17">Main Kitchen</text>
+    <text x="40" y="48" font-size="11" fill="#8A887E">8 items · 3 prep</text>
+  </g>
+  <g transform="translate(16, 280)">
+    <rect width="208" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="20" cy="28" r="8" fill="#E8F3EE"/>
+    <text x="20" y="32" text-anchor="middle" font-size="11">☕</text>
+    <text x="40" y="32" font-size="14" font-weight="600" fill="#1A1A17">Bar Station</text>
+    <text x="40" y="48" font-size="11" fill="#8A887E">4 items</text>
+  </g>
+  <g transform="translate(16, 348)">
+    <rect width="208" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="20" cy="28" r="8" fill="#E1ECF6"/>
+    <text x="20" y="32" text-anchor="middle" font-size="11">🍨</text>
+    <text x="40" y="32" font-size="14" font-weight="600" fill="#1A1A17">Ice Cream</text>
+    <text x="40" y="48" font-size="11" fill="#8A887E">2 items</text>
+  </g>
+  <g transform="translate(16, 416)">
+    <rect width="208" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="20" cy="28" r="8" fill="#FFF3DC"/>
+    <text x="20" y="32" text-anchor="middle" font-size="11">🥐</text>
+    <text x="40" y="32" font-size="14" font-weight="600" fill="#1A1A17">Pastry</text>
+    <text x="40" y="48" font-size="11" fill="#8A887E">0 items</text>
+  </g>
+
+  <!-- Sort selector -->
+  <text x="24" y="520" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">SORT</text>
+  <g transform="translate(16, 540)">
+    <rect width="208" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <text x="16" y="28" font-size="13" font-weight="600" fill="#1A1A17">Oldest first</text>
+    <polyline points="178,18 188,28 198,18" fill="none" stroke="#4D4B44" stroke-width="1.5"/>
+  </g>
+
+  <!-- View mode -->
+  <text x="24" y="616" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">VIEW</text>
+  <g transform="translate(16, 636)">
+    <rect width="100" height="44" rx="12" fill="#1A1A17"/>
+    <text x="50" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Cards</text>
+  </g>
+  <g transform="translate(124, 636)">
+    <rect width="100" height="44" rx="12" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <text x="50" y="28" text-anchor="middle" font-size="12" font-weight="600" fill="#4D4B44">List</text>
+  </g>
+
+  <!-- Sound toggle -->
+  <g transform="translate(16, 704)">
+    <rect width="208" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <g transform="translate(28, 22)" stroke="#1A1A17" stroke-width="1.6" fill="none">
+      <path d="M-6 -4 H-2 L4 -8 V8 L-2 4 H-6 Z" fill="#1A1A17"/>
+      <path d="M8 -4 a6 6 0 0 1 0 8" stroke-linecap="round"/>
+    </g>
+    <text x="56" y="28" font-size="12" font-weight="600" fill="#1A1A17">Sound · New order</text>
+    <g transform="translate(168, 14)">
+      <rect width="32" height="16" rx="8" fill="#2D8A66"/>
+      <circle cx="24" cy="8" r="6" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- ===== Main grid header ===== -->
+  <text x="272" y="124" font-size="20" font-weight="700" fill="#1A1A17">Active orders</text>
+  <text x="272" y="146" font-size="13" fill="#8A887E">Showing all stations · 6 of 14 visible</text>
+  <g transform="translate(1780, 100)">
+    <rect width="108" height="40" rx="12" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <text x="54" y="26" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A17">Refresh</text>
+  </g>
+
+  <!-- ===== ORDER CARDS - Row 1 ===== -->
+  <!-- CARD 1: Token A047 - Preparing -->
+  <g transform="translate(272, 168)">
+    <rect width="512" height="436" rx="20" fill="#FFFFFF" stroke="#E8A33B" stroke-width="3"/>
+    <rect width="512" height="80" rx="20" fill="#FFF3DC"/>
+    <rect y="60" width="512" height="20" fill="#FFF3DC"/>
+    <text x="20" y="32" font-size="11" font-weight="700" letter-spacing="2" fill="#B8780E">TOKEN</text>
+    <text x="20" y="64" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#1A1A17">#A047</text>
+    <text x="220" y="32" font-size="11" font-weight="700" letter-spacing="2" fill="#B8780E">TABLE</text>
+    <text x="220" y="64" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#1A1A17">07</text>
+    <g transform="translate(380, 16)">
+      <rect width="116" height="48" rx="12" fill="#FFFFFF"/>
+      <text x="58" y="20" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">ELAPSED</text>
+      <text x="58" y="40" text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#E8A33B">04:23</text>
+    </g>
+    <g transform="translate(20, 100)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">2× Glow Smash Burger</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Regular · 🌶 Medium · +cheese +bacon · no pickle</text>
+    </g>
+    <line x1="20" y1="158" x2="492" y2="158" stroke="#F2F1EC"/>
+    <g transform="translate(20, 178)">
+      <rect width="24" height="24" rx="6" fill="#2D8A66"/>
+      <polyline points="6,12 11,17 18,8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">1× Iced Honey Latte</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Large · Oat · Extra honey · Less ice</text>
+      <g transform="translate(420, 6)">
+        <rect width="60" height="22" rx="6" fill="#E6F2EE"/>
+        <text x="30" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#2D8A66">BAR ✓</text>
+      </g>
+    </g>
+    <line x1="20" y1="236" x2="492" y2="236" stroke="#F2F1EC"/>
+    <g transform="translate(20, 256)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">1× Vanilla Bean Scoop</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">2 scoops · Waffle cone · + Hot fudge</text>
+      <g transform="translate(420, 6)">
+        <rect width="60" height="22" rx="6" fill="#E1ECF6"/>
+        <text x="30" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#3B82C4">ICE CR</text>
+      </g>
+    </g>
+    <g transform="translate(20, 364)">
+      <rect width="234" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="600" fill="#4D4B44">Re-accept</text>
+    </g>
+    <g transform="translate(258, 364)">
+      <rect width="234" height="56" rx="14" fill="#2D8A66"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Mark Ready  ✓</text>
+    </g>
+  </g>
+
+  <!-- CARD 2: Token A046 - OVERDUE -->
+  <g transform="translate(808, 168)">
+    <rect width="512" height="436" rx="20" fill="#FFFFFF" stroke="#D43A3A" stroke-width="3"/>
+    <rect width="512" height="80" rx="20" fill="#FBE5DF"/>
+    <rect y="60" width="512" height="20" fill="#FBE5DF"/>
+    <text x="20" y="32" font-size="11" font-weight="700" letter-spacing="2" fill="#D43A3A">TOKEN</text>
+    <text x="20" y="64" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#1A1A17">#A046</text>
+    <text x="220" y="32" font-size="11" font-weight="700" letter-spacing="2" fill="#D43A3A">TABLE</text>
+    <text x="220" y="64" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#1A1A17">12</text>
+    <g transform="translate(380, 16)">
+      <rect width="116" height="48" rx="12" fill="#D43A3A"/>
+      <text x="58" y="20" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="2" fill="#FFFFFF">OVERDUE</text>
+      <text x="58" y="40" text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#FFFFFF">14:08</text>
+    </g>
+    <g transform="translate(20, 100)">
+      <rect width="24" height="24" rx="6" fill="#2D8A66"/>
+      <polyline points="6,12 11,17 18,8" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17" text-decoration="line-through" opacity="0.6">1× Margherita Pizza 12"</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Extra basil · No olives</text>
+    </g>
+    <line x1="20" y1="158" x2="492" y2="158" stroke="#F2F1EC"/>
+    <g transform="translate(20, 178)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">2× Garlic Bread</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">With cheese · Side of marinara</text>
+    </g>
+    <line x1="20" y1="236" x2="492" y2="236" stroke="#F2F1EC"/>
+    <g transform="translate(20, 256)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">2× Tiramisu (slice)</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Allergy: dairy noted</text>
+    </g>
+    <g transform="translate(20, 304)">
+      <rect width="472" height="40" rx="12" fill="#FBE5DF"/>
+      <text x="16" y="26" font-size="12" font-weight="700" fill="#D43A3A">⚠ Customer waiting for 14 min · Recommend priority</text>
+    </g>
+    <g transform="translate(20, 364)">
+      <rect width="234" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="600" fill="#4D4B44">Call manager</text>
+    </g>
+    <g transform="translate(258, 364)">
+      <rect width="234" height="56" rx="14" fill="#D43A3A"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Priority — Ready ✓</text>
+    </g>
+  </g>
+
+  <!-- CARD 3: Token A048 - NEW -->
+  <g transform="translate(1344, 168)">
+    <rect width="512" height="436" rx="20" fill="#FFFFFF" stroke="#3B82C4" stroke-width="3"/>
+    <rect width="512" height="80" rx="20" fill="#E1ECF6"/>
+    <rect y="60" width="512" height="20" fill="#E1ECF6"/>
+    <text x="20" y="32" font-size="11" font-weight="700" letter-spacing="2" fill="#3B82C4">TOKEN · NEW</text>
+    <text x="20" y="64" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#1A1A17">#A048</text>
+    <text x="220" y="32" font-size="11" font-weight="700" letter-spacing="2" fill="#3B82C4">TABLE</text>
+    <text x="220" y="64" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="28" font-weight="700" fill="#1A1A17">03</text>
+    <g transform="translate(380, 16)">
+      <rect width="116" height="48" rx="12" fill="#FFFFFF"/>
+      <text x="58" y="20" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">ELAPSED</text>
+      <text x="58" y="40" text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#3B82C4">00:42</text>
+    </g>
+    <g transform="translate(20, 100)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">3× Tex-Mex Chicken Burger</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Spicy · No jalapeño on #2 · Extra lime mayo</text>
+    </g>
+    <line x1="20" y1="158" x2="492" y2="158" stroke="#F2F1EC"/>
+    <g transform="translate(20, 178)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">3× French Fries (R)</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Salted · Side of ketchup</text>
+    </g>
+    <line x1="20" y1="236" x2="492" y2="236" stroke="#F2F1EC"/>
+    <g transform="translate(20, 256)">
+      <rect width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="40" y="18" font-size="15" font-weight="700" fill="#1A1A17">3× Mojito (non-alcoholic)</text>
+      <text x="40" y="40" font-size="12" fill="#4D4B44">Less mint · Extra lime</text>
+      <g transform="translate(420, 6)">
+        <rect width="60" height="22" rx="6" fill="#E8F3EE"/>
+        <text x="30" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#2D8A66">BAR</text>
+      </g>
+    </g>
+    <g transform="translate(20, 364)">
+      <rect width="234" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="600" fill="#4D4B44">View detail</text>
+    </g>
+    <g transform="translate(258, 364)">
+      <rect width="234" height="56" rx="14" fill="#E8A33B"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Start Preparing  ▶</text>
+    </g>
+  </g>
+
+  <!-- ===== Row 2 cards ===== -->
+  <g transform="translate(272, 628)">
+    <rect width="512" height="420" rx="20" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="512" height="64" rx="20" fill="#FAFAF7"/>
+    <rect y="44" width="512" height="20" fill="#FAFAF7"/>
+    <text x="20" y="28" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">TOKEN</text>
+    <text x="20" y="52" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#1A1A17">#A049</text>
+    <text x="180" y="28" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">TABLE</text>
+    <text x="180" y="52" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#1A1A17">19</text>
+    <g transform="translate(390, 12)">
+      <rect width="106" height="40" rx="10" fill="#E1ECF6"/>
+      <text x="53" y="16" text-anchor="middle" font-size="9" font-weight="700" fill="#3B82C4">ELAPSED</text>
+      <text x="53" y="32" text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#3B82C4">02:11</text>
+    </g>
+    <g transform="translate(20, 86)">
+      <text font-size="14" font-weight="600" fill="#1A1A17">1× Carbonara Pasta</text>
+      <text x="492" text-anchor="end" font-size="12" font-weight="600" fill="#8A887E">x1</text>
+    </g>
+    <line x1="20" y1="108" x2="492" y2="108" stroke="#F2F1EC"/>
+    <g transform="translate(20, 128)">
+      <text font-size="14" font-weight="600" fill="#1A1A17">1× Caesar Salad (no chicken)</text>
+      <text x="492" text-anchor="end" font-size="12" font-weight="600" fill="#8A887E">x1</text>
+    </g>
+    <line x1="20" y1="150" x2="492" y2="150" stroke="#F2F1EC"/>
+    <g transform="translate(20, 170)">
+      <text font-size="14" font-weight="600" fill="#1A1A17">2× Sparkling water</text>
+      <text x="492" text-anchor="end" font-size="12" font-weight="600" fill="#8A887E">x2</text>
+    </g>
+    <g transform="translate(20, 348)">
+      <rect width="234" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="600" fill="#4D4B44">View detail</text>
+    </g>
+    <g transform="translate(258, 348)">
+      <rect width="234" height="56" rx="14" fill="#E8A33B"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Start Preparing ▶</text>
+    </g>
+  </g>
+
+  <g transform="translate(808, 628)">
+    <rect width="512" height="420" rx="20" fill="#FFFFFF" stroke="#2D8A66" stroke-width="3"/>
+    <rect width="512" height="64" rx="20" fill="#E6F2EE"/>
+    <rect y="44" width="512" height="20" fill="#E6F2EE"/>
+    <text x="20" y="28" font-size="10" font-weight="700" letter-spacing="2" fill="#2D8A66">TOKEN · READY</text>
+    <text x="20" y="52" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#1A1A17">#A045</text>
+    <text x="220" y="28" font-size="10" font-weight="700" letter-spacing="2" fill="#2D8A66">TABLE</text>
+    <text x="220" y="52" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#1A1A17">02</text>
+    <g transform="translate(390, 12)">
+      <rect width="106" height="40" rx="10" fill="#2D8A66"/>
+      <text x="53" y="16" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">SERVE NOW</text>
+      <text x="53" y="32" text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#FFFFFF">09:50</text>
+    </g>
+    <g transform="translate(20, 100)">
+      <text font-size="15" font-weight="600" fill="#1A1A17">All items plated · awaiting runner</text>
+      <text y="24" font-size="12" fill="#8A887E">1× Beef Stroganoff · 1× Garlic Bread · 1× Soda</text>
+    </g>
+    <g transform="translate(20, 348)">
+      <rect width="234" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="600" fill="#4D4B44">Recall to prep</text>
+    </g>
+    <g transform="translate(258, 348)">
+      <rect width="234" height="56" rx="14" fill="#1A1A17"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Picked up by server</text>
+    </g>
+  </g>
+
+  <g transform="translate(1344, 628)">
+    <rect width="512" height="420" rx="20" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="512" height="64" rx="20" fill="#FAFAF7"/>
+    <rect y="44" width="512" height="20" fill="#FAFAF7"/>
+    <text x="20" y="28" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">TOKEN</text>
+    <text x="20" y="52" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#1A1A17">#A050</text>
+    <text x="180" y="28" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">TABLE</text>
+    <text x="180" y="52" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#1A1A17">14</text>
+    <g transform="translate(390, 12)">
+      <rect width="106" height="40" rx="10" fill="#FFFFFF" stroke="#C9C7BD"/>
+      <text x="53" y="16" text-anchor="middle" font-size="9" font-weight="700" fill="#8A887E">JUST IN</text>
+      <text x="53" y="32" text-anchor="middle" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#1A1A17">00:08</text>
+    </g>
+    <g transform="translate(20, 86)">
+      <text font-size="14" font-weight="600" fill="#1A1A17">1× Cappuccino (decaf)</text>
+      <text x="492" text-anchor="end" font-size="12" font-weight="600" fill="#8A887E">x1</text>
+    </g>
+    <line x1="20" y1="108" x2="492" y2="108" stroke="#F2F1EC"/>
+    <g transform="translate(20, 128)">
+      <text font-size="14" font-weight="600" fill="#1A1A17">2× Chocolate Croissant</text>
+      <text x="492" text-anchor="end" font-size="12" font-weight="600" fill="#8A887E">x2</text>
+    </g>
+    <g transform="translate(20, 348)">
+      <rect width="234" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="600" fill="#4D4B44">View detail</text>
+    </g>
+    <g transform="translate(258, 348)">
+      <rect width="234" height="56" rx="14" fill="#3B82C4"/>
+      <text x="117" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Accept order</text>
+    </g>
+  </g>
+</svg>

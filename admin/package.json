@@ -1,0 +1,28 @@
+{
+  "name": "hyperglow-admin-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HyperGlow admin portal monorepo. Houses the Next.js admin web app and shared packages. Future device-api will live alongside apps/web.",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @hyperglow/web --filter @hyperglow/realtime dev",
+    "dev:web": "pnpm --filter @hyperglow/web dev",
+    "dev:realtime": "pnpm --filter @hyperglow/realtime dev",
+    "build": "pnpm --filter @hyperglow/web build",
+    "start": "pnpm --filter @hyperglow/web start",
+    "lint": "pnpm -r lint",
+    "db:generate": "pnpm --filter @hyperglow/db generate",
+    "db:migrate": "pnpm --filter @hyperglow/db migrate",
+    "db:push": "pnpm --filter @hyperglow/db push",
+    "db:studio": "pnpm --filter @hyperglow/db studio",
+    "db:seed": "pnpm --filter @hyperglow/db seed",
+    "db:triggers": "pnpm --filter @hyperglow/db exec tsx src/triggers.ts",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f postgres"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.12.0"
+}

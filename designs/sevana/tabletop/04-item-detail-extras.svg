@@ -1,0 +1,186 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#E8C9A8"/>
+      <stop offset="1" stop-color="#B6814F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1280" fill="#FBF8F2"/>
+
+  <!-- ===== Hero ===== -->
+  <rect width="800" height="440" fill="url(#heroGrad)"/>
+  <!-- Big emoji-like burger illustration -->
+  <g transform="translate(400, 240)" opacity="0.95">
+    <ellipse cx="0" cy="92" rx="180" ry="16" fill="#000000" opacity="0.18"/>
+    <ellipse cx="0" cy="76" rx="160" ry="26" fill="#9F3F1C"/>
+    <path d="M-160 14 a 160 80 0 0 1 320 0 Z" fill="#D69537"/>
+    <ellipse cx="-90" cy="-44" rx="14" ry="8" fill="#FBF8F2" opacity="0.6"/>
+    <ellipse cx="-30" cy="-62" rx="10" ry="6" fill="#FBF8F2" opacity="0.45"/>
+    <ellipse cx="68" cy="-46" rx="10" ry="6" fill="#FBF8F2" opacity="0.45"/>
+    <rect x="-160" y="4" width="320" height="9" fill="#3D5A3D"/>
+    <rect x="-160" y="13" width="320" height="10" fill="#FBF8F2"/>
+    <rect x="-160" y="23" width="320" height="7" fill="#6B5F55"/>
+    <rect x="-160" y="30" width="320" height="14" fill="#9F3F1C"/>
+    <rect x="-160" y="44" width="320" height="9" fill="#D69537"/>
+  </g>
+
+  <!-- Top actions -->
+  <g font-family="Geist Mono, monospace" font-size="11" fill="#1F1A17" letter-spacing="0.5">
+    <text x="24" y="28">19:46</text>
+    <text x="776" y="28" text-anchor="end">WI-FI · 96%</text>
+  </g>
+  <!-- Back -->
+  <g transform="translate(24, 56)">
+    <rect width="124" height="40" rx="20" fill="rgba(31,26,23,0.7)"/>
+    <g transform="translate(20, 20)" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-7" y1="0" x2="7" y2="0"/>
+      <polyline points="-2,-5 -7,0 -2,5"/>
+    </g>
+    <text x="38" y="25" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#FBF8F2">BURGERS</text>
+  </g>
+  <!-- Action icons -->
+  <g transform="translate(680, 56)">
+    <circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.92)"/>
+    <path d="M 20 32 C 11 25 9 19 14 16 C 17 14 20 15 20 18 C 20 15 23 14 26 16 C 31 19 29 25 20 32 Z" fill="none" stroke="#1F1A17" stroke-width="1.8" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(728, 56)">
+    <circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.92)"/>
+    <g transform="translate(20, 20)" stroke="#1F1A17" stroke-width="1.6" stroke-linecap="round" fill="none">
+      <circle cx="-6" cy="0" r="2.5"/>
+      <circle cx="6" cy="-6" r="2.5"/>
+      <circle cx="6" cy="6" r="2.5"/>
+      <line x1="-4" y1="-1.5" x2="4" y2="-5"/>
+      <line x1="-4" y1="1.5" x2="4" y2="5"/>
+    </g>
+  </g>
+
+  <!-- Hero tags -->
+  <g transform="translate(24, 396)">
+    <rect width="86" height="26" rx="13" fill="rgba(255,255,255,0.92)"/>
+    <text x="43" y="18" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1F1A17">⭐ SIGNATURE</text>
+    <g transform="translate(96, 0)">
+      <rect width="62" height="26" rx="13" fill="rgba(255,255,255,0.92)"/>
+      <text x="31" y="18" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1F1A17">★ 4.8</text>
+    </g>
+    <g transform="translate(168, 0)">
+      <rect width="86" height="26" rx="13" fill="rgba(255,255,255,0.92)"/>
+      <text x="43" y="18" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1F1A17">425 KCAL</text>
+    </g>
+  </g>
+
+  <!-- ===== Body ===== -->
+  <text x="24" y="488" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#C5572D">BURGERS · NO. 01 · BEEF</text>
+  <text x="24" y="538" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="500" letter-spacing="-1" fill="#1F1A17">Glow Smash<tspan font-style="italic" fill="#C5572D"> Burger</tspan></text>
+  <text x="24" y="578" font-family="Fraunces, Georgia, serif" font-size="26" font-weight="500" fill="#1F1A17">$12.50</text>
+  <text x="776" y="578" text-anchor="end" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2" fill="#6B5F55">PREP · 9 MIN</text>
+
+  <text x="24" y="616" font-family="Geist, sans-serif" font-size="14" fill="#6B5F55" letter-spacing="0.1">Two smashed beef patties, melted aged cheddar, our signature</text>
+  <text x="24" y="636" font-family="Geist, sans-serif" font-size="14" fill="#6B5F55">Glow sauce, crisp lettuce, tomato, and house pickles on a</text>
+  <text x="24" y="656" font-family="Geist, sans-serif" font-size="14" fill="#6B5F55">toasted brioche bun. Served with a side of golden fries.</text>
+
+  <line x1="24" y1="688" x2="776" y2="688" stroke="#E5DCCC"/>
+
+  <!-- ===== Size variants ===== -->
+  <g transform="translate(24, 716)">
+    <text font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Choose <tspan font-style="italic" fill="#C5572D">size</tspan></text>
+    <text y="20" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">REQUIRED · PICK ONE</text>
+    <g transform="translate(0, 40)">
+      <rect width="368" height="64" rx="12" fill="#F0D8C9" stroke="#C5572D"/>
+      <rect x="16" y="20" width="24" height="24" rx="6" fill="#C5572D"/>
+      <text x="22" y="38" font-family="Geist Mono, monospace" font-size="14" font-weight="700" fill="#FBF8F2">✓</text>
+      <text x="56" y="30" font-family="Geist, sans-serif" font-size="13.5" font-weight="500" fill="#1F1A17">Regular</text>
+      <text x="56" y="48" font-family="Geist Mono, monospace" font-size="10.5" fill="#6B5F55">SINGLE PATTY · 425 KCAL</text>
+      <text x="348" y="40" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">included</text>
+    </g>
+    <g transform="translate(384, 40)">
+      <rect width="368" height="64" rx="12" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <rect x="16" y="20" width="24" height="24" rx="6" fill="#F5EFE6" stroke="#D9CFBE" stroke-width="1.5"/>
+      <text x="56" y="30" font-family="Geist, sans-serif" font-size="13.5" font-weight="500" fill="#1F1A17">Large</text>
+      <text x="56" y="48" font-family="Geist Mono, monospace" font-size="10.5" fill="#6B5F55">DOUBLE PATTY · 680 KCAL</text>
+      <text x="348" y="40" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $3.50</text>
+    </g>
+  </g>
+
+  <!-- ===== Add extras ===== -->
+  <g transform="translate(24, 826)">
+    <text font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Add <tspan font-style="italic" fill="#C5572D">extras</tspan></text>
+    <text y="20" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">OPTIONAL · MULTI-SELECT</text>
+    <!-- Extra cheese (selected) -->
+    <g transform="translate(0, 40)">
+      <rect width="368" height="54" rx="12" fill="#F0D8C9" stroke="#C5572D"/>
+      <rect x="14" y="15" width="24" height="24" rx="6" fill="#C5572D"/>
+      <text x="20" y="33" font-family="Geist Mono, monospace" font-size="14" font-weight="700" fill="#FBF8F2">✓</text>
+      <text x="54" y="32" font-family="Geist, sans-serif" font-size="13.5" font-weight="500" fill="#1F1A17">Extra cheese</text>
+      <text x="350" y="35" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $1.50</text>
+    </g>
+    <!-- Bacon (selected) -->
+    <g transform="translate(384, 40)">
+      <rect width="368" height="54" rx="12" fill="#F0D8C9" stroke="#C5572D"/>
+      <rect x="14" y="15" width="24" height="24" rx="6" fill="#C5572D"/>
+      <text x="20" y="33" font-family="Geist Mono, monospace" font-size="14" font-weight="700" fill="#FBF8F2">✓</text>
+      <text x="54" y="32" font-family="Geist, sans-serif" font-size="13.5" font-weight="500" fill="#1F1A17">Crispy bacon</text>
+      <text x="350" y="35" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $2.00</text>
+    </g>
+    <!-- Fried egg (not selected) -->
+    <g transform="translate(0, 104)">
+      <rect width="368" height="54" rx="12" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <rect x="14" y="15" width="24" height="24" rx="6" fill="#F5EFE6" stroke="#D9CFBE" stroke-width="1.5"/>
+      <text x="54" y="32" font-family="Geist, sans-serif" font-size="13.5" font-weight="500" fill="#1F1A17">Fried egg</text>
+      <text x="350" y="35" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $1.00</text>
+    </g>
+    <!-- Avocado -->
+    <g transform="translate(384, 104)">
+      <rect width="368" height="54" rx="12" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <rect x="14" y="15" width="24" height="24" rx="6" fill="#F5EFE6" stroke="#D9CFBE" stroke-width="1.5"/>
+      <text x="54" y="32" font-family="Geist, sans-serif" font-size="13.5" font-weight="500" fill="#1F1A17">Avocado slices</text>
+      <text x="350" y="35" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $1.50</text>
+    </g>
+  </g>
+
+  <!-- ===== Remove items ===== -->
+  <g transform="translate(24, 996)">
+    <text font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">Remove <tspan font-style="italic" fill="#C5572D">ingredients</tspan></text>
+    <text y="20" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">TAP TO STRIKE</text>
+    <g transform="translate(0, 36)">
+      <rect width="180" height="40" rx="12" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="90" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Onion</text>
+    </g>
+    <g transform="translate(192, 36)">
+      <rect width="180" height="40" rx="12" fill="#F0D8C9" stroke="#C5572D" stroke-dasharray="3,3"/>
+      <text x="90" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-style="italic" font-size="13" font-weight="500" fill="#9F3F1C" text-decoration="line-through">Pickle</text>
+    </g>
+    <g transform="translate(384, 36)">
+      <rect width="180" height="40" rx="12" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="90" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Mayo</text>
+    </g>
+    <g transform="translate(576, 36)">
+      <rect width="176" height="40" rx="12" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <text x="88" y="26" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Lettuce</text>
+    </g>
+  </g>
+
+  <!-- ===== Sticky add-to-cart ===== -->
+  <rect x="0" y="1140" width="800" height="140" fill="#FBF8F2"/>
+  <line x1="0" y1="1140" x2="800" y2="1140" stroke="#E5DCCC"/>
+  <!-- Qty -->
+  <g transform="translate(24, 1180)">
+    <rect width="148" height="56" rx="14" fill="#F5EFE6" stroke="#E5DCCC"/>
+    <g transform="translate(20, 28)">
+      <rect width="32" height="32" rx="8" fill="transparent" x="-16" y="-16"/>
+      <text x="0" y="6" text-anchor="middle" font-family="Geist, sans-serif" font-size="20" font-weight="500" fill="#3A322C">−</text>
+    </g>
+    <text x="74" y="38" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="500" fill="#1F1A17">2</text>
+    <g transform="translate(128, 12)">
+      <rect width="32" height="32" rx="8" fill="#1F1A17" x="-16" y="0"/>
+      <text x="0" y="22" text-anchor="middle" font-family="Geist, sans-serif" font-size="20" font-weight="500" fill="#FBF8F2">+</text>
+    </g>
+  </g>
+  <!-- Add to cart -->
+  <g transform="translate(192, 1180)">
+    <rect width="584" height="56" rx="14" fill="#1F1A17"/>
+    <text x="24" y="24" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">ADD TO CART · 2 ITEMS</text>
+    <text x="24" y="46" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#FBF8F2">Add 2 to <tspan font-style="italic" fill="#F0D8C9">cart</tspan></text>
+    <text x="560" y="38" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#FBF8F2">$32.00</text>
+  </g>
+</svg>

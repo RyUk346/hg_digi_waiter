@@ -1,0 +1,1 @@
+ALTER TABLE "build_steps" ADD COLUMN "subtitle" text;

@@ -1,0 +1,127 @@
+<svg width="600" height="960" viewBox="0 0 600 960" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="600" height="960" fill="#FAFAF7"/>
+
+  <!-- Top app bar -->
+  <rect x="0" y="0" width="600" height="104" fill="#FFFFFF"/>
+  <rect x="0" y="103" width="600" height="1" fill="#E5E3DA"/>
+  <text x="24" y="32" font-size="10" font-weight="600" fill="#8A887E">19:42</text>
+  <text x="576" y="32" text-anchor="end" font-size="10" fill="#8A887E">Wi-Fi · HG-Guest</text>
+  <text x="24" y="68" font-size="18" font-weight="700" fill="#1A1A17">Hyperglow Café</text>
+  <text x="24" y="88" font-size="11" fill="#8A887E">Browse menu</text>
+  <g transform="translate(440, 56)">
+    <rect width="68" height="32" rx="16" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="12" cy="16" r="4" fill="#2D8A66"/>
+    <text x="22" y="20" font-size="11" font-weight="600" fill="#1A1A17">Table 7</text>
+  </g>
+  <g transform="translate(520, 52)">
+    <rect width="44" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <g transform="translate(22, 22)" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-8 -5 H8 L6 5 H-6 Z"/>
+      <circle cx="-5" cy="8" r="1.5"/>
+      <circle cx="5" cy="8" r="1.5"/>
+    </g>
+    <circle cx="34" cy="10" r="8" fill="#F26B3A"/>
+    <text x="34" y="13" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">3</text>
+  </g>
+
+  <!-- Search -->
+  <g transform="translate(24, 124)">
+    <rect width="552" height="48" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <g transform="translate(20, 24)" stroke="#8A887E" stroke-width="1.6" fill="none">
+      <circle cx="0" cy="0" r="6"/>
+      <line x1="4" y1="4" x2="9" y2="9" stroke-linecap="round"/>
+    </g>
+    <text x="44" y="30" font-size="13" fill="#8A887E">Search dishes…</text>
+  </g>
+
+  <!-- Today highlight (1 card visible at this width) -->
+  <text x="24" y="216" font-size="15" font-weight="700" fill="#1A1A17">Today's Highlights</text>
+  <text x="576" y="216" text-anchor="end" font-size="12" font-weight="600" fill="#F26B3A">See all</text>
+  <g transform="translate(24, 232)">
+    <rect width="552" height="160" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="180" height="160" rx="18" fill="#FEE6DC"/>
+    <g transform="translate(90, 84)">
+      <ellipse cx="0" cy="20" rx="48" ry="6" fill="#D4502A"/>
+      <path d="M-48 4 a48 24 0 0 1 96 0 Z" fill="#E8A33B"/>
+      <rect x="-48" y="0" width="96" height="5" fill="#2D8A66"/>
+      <rect x="-48" y="5" width="96" height="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(14, 14)">
+      <rect width="80" height="22" rx="11" fill="#FFFFFF"/>
+      <text x="40" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#F26B3A">⭐ SIGNATURE</text>
+    </g>
+    <text x="198" y="48" font-size="16" font-weight="700" fill="#1A1A17">Glow Smash Burger</text>
+    <text x="198" y="68" font-size="12" fill="#8A887E">Beef · Cheddar · Glow Sauce</text>
+    <text x="198" y="92" font-size="11" fill="#8A887E">Smashed double patty</text>
+    <text x="198" y="122" font-size="18" font-weight="700" fill="#1A1A17">$12.50</text>
+    <g transform="translate(480, 108)">
+      <rect width="56" height="36" rx="12" fill="#F26B3A"/>
+      <text x="28" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+ Add</text>
+    </g>
+  </g>
+
+  <!-- Categories: 2-col grid -->
+  <text x="24" y="430" font-size="15" font-weight="700" fill="#1A1A17">Browse by category</text>
+  <g transform="translate(24, 450)">
+    <rect width="268" height="104" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="44" cy="52" r="26" fill="#FEE6DC"/>
+    <text x="44" y="60" text-anchor="middle" font-size="20">⭐</text>
+    <text x="84" y="48" font-size="14" font-weight="700" fill="#1A1A17">Signature</text>
+    <text x="84" y="68" font-size="11" fill="#8A887E">12 items</text>
+  </g>
+  <g transform="translate(308, 450)">
+    <rect width="268" height="104" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="44" cy="52" r="26" fill="#FFF3DC"/>
+    <text x="44" y="60" text-anchor="middle" font-size="20">🔥</text>
+    <text x="84" y="48" font-size="14" font-weight="700" fill="#1A1A17">Most Popular</text>
+    <text x="84" y="68" font-size="11" fill="#8A887E">18 items</text>
+  </g>
+  <g transform="translate(24, 568)">
+    <rect width="268" height="104" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="44" cy="52" r="26" fill="#FBE5DF"/>
+    <text x="44" y="60" text-anchor="middle" font-size="20">🍔</text>
+    <text x="84" y="48" font-size="14" font-weight="700" fill="#1A1A17">Burgers</text>
+    <text x="84" y="68" font-size="11" fill="#8A887E">9 items</text>
+  </g>
+  <g transform="translate(308, 568)">
+    <rect width="268" height="104" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="44" cy="52" r="26" fill="#FFEAD1"/>
+    <text x="44" y="60" text-anchor="middle" font-size="20">🍕</text>
+    <text x="84" y="48" font-size="14" font-weight="700" fill="#1A1A17">Pizza</text>
+    <text x="84" y="68" font-size="11" fill="#8A887E">11 items</text>
+  </g>
+  <g transform="translate(24, 686)">
+    <rect width="268" height="104" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="44" cy="52" r="26" fill="#EFE0D2"/>
+    <text x="44" y="60" text-anchor="middle" font-size="20">☕</text>
+    <text x="84" y="48" font-size="14" font-weight="700" fill="#1A1A17">Coffee</text>
+    <text x="84" y="68" font-size="11" fill="#8A887E">14 items</text>
+  </g>
+  <g transform="translate(308, 686)">
+    <rect width="268" height="104" rx="18" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <circle cx="44" cy="52" r="26" fill="#E6F2EE"/>
+    <text x="44" y="60" text-anchor="middle" font-size="20">🍨</text>
+    <text x="84" y="48" font-size="14" font-weight="700" fill="#1A1A17">Ice Cream</text>
+    <text x="84" y="68" font-size="11" fill="#8A887E">10 items</text>
+  </g>
+  <text x="300" y="820" text-anchor="middle" font-size="11" font-weight="600" fill="#F26B3A">+ Show 2 more categories</text>
+
+  <!-- Bottom tab bar -->
+  <rect x="0" y="876" width="600" height="84" fill="#FFFFFF"/>
+  <rect x="0" y="876" width="600" height="1" fill="#E5E3DA"/>
+  <g transform="translate(80, 900)">
+    <rect x="-40" y="-6" width="80" height="48" rx="16" fill="#FEE6DC"/>
+    <text y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#F26B3A">Menu</text>
+  </g>
+  <g transform="translate(220, 900)">
+    <text y="36" text-anchor="middle" font-size="10" font-weight="500" fill="#4D4B44">Cart (3)</text>
+  </g>
+  <g transform="translate(380, 900)">
+    <text y="36" text-anchor="middle" font-size="10" font-weight="500" fill="#C9C7BD">Status</text>
+  </g>
+  <g transform="translate(520, 900)">
+    <text y="36" text-anchor="middle" font-size="10" font-weight="500" fill="#4D4B44">More</text>
+  </g>
+
+  <text x="300" y="954" text-anchor="middle" font-size="8" letter-spacing="2" fill="#C9C7BD">RESPONSIVE · 600×960 · COMPACT PORTRAIT (7" ANDROID)</text>
+</svg>

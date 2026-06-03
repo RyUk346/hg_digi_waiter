@@ -1,0 +1,248 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="1024" fill="#F5EFE6"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="240" height="1024" fill="#FBF8F2"/>
+  <line x1="240" y1="0" x2="240" y2="1024" stroke="#E5DCCC"/>
+  <g transform="translate(24, 32)">
+    <circle cx="16" cy="16" r="16" fill="#C5572D"/>
+    <text x="16" y="22" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="600" font-size="16" fill="#FBF8F2">H</text>
+    <text x="44" y="14" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#1F1A17">Hyperglow<tspan font-style="italic" fill="#C5572D"> Admin</tspan></text>
+    <text x="44" y="28" font-family="Geist Mono, monospace" font-size="9" letter-spacing="2" fill="#A29687">SEVANA SYSTEM · v2.4</text>
+  </g>
+  <line x1="24" y1="88" x2="216" y2="88" stroke="#E5DCCC"/>
+  <text x="32" y="116" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">OVERVIEW</text>
+  <g transform="translate(16, 128)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Dashboard</text></g>
+  <g transform="translate(16, 168)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Live orders</text></g>
+  <g transform="translate(16, 208)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Order history</text></g>
+  <text x="32" y="276" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#C5572D">MENU</text>
+  <g transform="translate(16, 288)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Categories</text></g>
+  <g transform="translate(16, 328)">
+    <rect width="208" height="40" rx="11" fill="#F0D8C9"/>
+    <text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#C5572D"><tspan font-style="italic">Items</tspan></text>
+  </g>
+  <g transform="translate(16, 368)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Extras &amp; modifiers</text></g>
+  <text x="32" y="432" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">OPERATIONS</text>
+  <g transform="translate(16, 444)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Devices / Tables</text></g>
+  <g transform="translate(16, 484)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Stations</text></g>
+  <g transform="translate(16, 524)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Staff</text></g>
+  <g transform="translate(16, 564)"><text x="20" y="25" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Reports</text></g>
+  <g transform="translate(16, 956)">
+    <rect width="208" height="52" rx="14" fill="#F5EFE6"/>
+    <circle cx="30" cy="26" r="15" fill="#C5572D"/>
+    <text x="30" y="31" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" font-weight="600" fill="#FBF8F2">MR</text>
+    <text x="54" y="22" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#1F1A17">Mahmudur R.</text>
+    <text x="54" y="38" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#6B5F55">OWNER</text>
+  </g>
+
+  <!-- Top header -->
+  <rect x="240" y="0" width="1200" height="72" fill="#FBF8F2"/>
+  <line x1="240" y1="72" x2="1440" y2="72" stroke="#E5DCCC"/>
+  <g transform="translate(272, 18)">
+    <rect width="36" height="36" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+    <g transform="translate(18, 18)" stroke="#1F1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-7" y1="0" x2="7" y2="0"/>
+      <polyline points="-2,-5 -7,0 -2,5"/>
+    </g>
+  </g>
+  <text x="320" y="34" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">MENU · ITEMS</text>
+  <text x="320" y="56" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" letter-spacing="-0.4" fill="#1F1A17">Edit · <tspan font-style="italic" fill="#C5572D">Glow Smash Burger</tspan></text>
+  <g transform="translate(1140, 18)"><rect width="80" height="36" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/><text x="40" y="23" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="13" fill="#1F1A17">Preview</text></g>
+  <g transform="translate(1228, 18)"><rect width="80" height="36" rx="11" fill="#FBF8F2" stroke="#E5DCCC"/><text x="40" y="23" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" fill="#3A322C">Cancel</text></g>
+  <g transform="translate(1316, 18)"><rect width="108" height="36" rx="11" fill="#C5572D"/><text x="54" y="23" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">Save <tspan font-style="italic" fill="#F0D8C9">changes</tspan></text></g>
+
+  <!-- LEFT column -->
+  <g transform="translate(272, 96)">
+    <!-- Image card -->
+    <rect width="660" height="280" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Item <tspan font-style="italic" fill="#C5572D">photos</tspan></text>
+    <text x="24" y="56" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">UP TO 4 IMAGES · JPG/PNG · 1080×1080</text>
+    <g transform="translate(24, 76)">
+      <rect width="180" height="180" rx="12" fill="#F0D8C9"/>
+      <g transform="translate(90, 90)">
+        <ellipse cx="0" cy="14" rx="56" ry="6" fill="#9F3F1C"/>
+        <path d="M-56 0 a 56 28 0 0 1 112 0 Z" fill="#D69537"/>
+        <rect x="-56" y="-2" width="112" height="6" fill="#3D5A3D"/>
+        <rect x="-56" y="4" width="112" height="6" fill="#FBF8F2"/>
+      </g>
+      <g transform="translate(0, 156)">
+        <rect width="180" height="24" rx="0 0 12 12" fill="#1F1A17" opacity="0.78"/>
+        <text x="90" y="16" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#FBF8F2">⭐ PRIMARY</text>
+      </g>
+    </g>
+    <g transform="translate(220, 76)">
+      <rect width="84" height="84" rx="10" fill="#F4D5A8"/>
+      <text x="42" y="56" text-anchor="middle" font-size="36" opacity="0.7">🍔</text>
+    </g>
+    <g transform="translate(316, 76)">
+      <rect width="84" height="84" rx="10" fill="#F4D5A8"/>
+      <text x="42" y="56" text-anchor="middle" font-size="36" opacity="0.7">🍟</text>
+    </g>
+    <g transform="translate(412, 76)">
+      <rect width="84" height="84" rx="10" fill="#FBF8F2" stroke="#E5DCCC" stroke-dasharray="4,4"/>
+      <text x="42" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="22" fill="#A29687">+</text>
+      <text x="42" y="62" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#A29687">ADD</text>
+    </g>
+    <g transform="translate(220, 168)">
+      <rect width="276" height="88" rx="12" fill="#F5EFE6" stroke="#E5DCCC" stroke-dasharray="4,4"/>
+      <g transform="translate(138, 30)" stroke="#C5572D" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M-14 0 L0 -14 L14 0"/>
+        <line x1="0" y1="-14" x2="0" y2="14"/>
+      </g>
+      <text x="138" y="68" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="13" font-weight="500" fill="#C5572D">Drop files or browse</text>
+    </g>
+  </g>
+
+  <!-- Basics card -->
+  <g transform="translate(272, 392)">
+    <rect width="660" height="430" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Basics</text>
+    <text x="24" y="68" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">ITEM NAME</text>
+    <g transform="translate(24, 76)">
+      <rect width="612" height="44" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="28" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#1F1A17">Glow Smash<tspan font-style="italic" fill="#C5572D"> Burger</tspan></text>
+    </g>
+    <text x="624" y="138" text-anchor="end" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#A29687">18 / 80</text>
+    <text x="24" y="172" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">SHORT DESCRIPTION · TABLETOP</text>
+    <g transform="translate(24, 180)">
+      <rect width="612" height="44" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="28" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="14" fill="#1F1A17">Beef · Cheddar · Glow Sauce · Brioche bun · House pickles</text>
+    </g>
+    <text x="24" y="258" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">LONG DESCRIPTION</text>
+    <g transform="translate(24, 266)">
+      <rect width="612" height="100" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="28" font-family="Fraunces, Georgia, serif" font-size="13" fill="#1F1A17">Two smashed beef patties, melted aged cheddar, our signature</text>
+      <text x="14" y="46" font-family="Fraunces, Georgia, serif" font-size="13" fill="#1F1A17">Glow sauce, crisp lettuce, tomato, and house-made pickles on</text>
+      <text x="14" y="64" font-family="Fraunces, Georgia, serif" font-size="13" fill="#1F1A17">a toasted brioche bun. Served with a side of golden fries.</text>
+      <text x="14" y="86" font-family="Geist, sans-serif" font-style="italic" font-size="11" fill="#A29687">Tip: Customers see this on the item detail screen.</text>
+    </g>
+    <text x="24" y="392" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">TAGS</text>
+    <g transform="translate(24, 402)">
+      <rect width="86" height="28" rx="10" fill="#F0D8C9"/>
+      <text x="43" y="19" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F3F1C">⭐ SIGNATURE</text>
+    </g>
+    <g transform="translate(118, 402)"><rect width="68" height="28" rx="10" fill="#FFF3DC"/><text x="34" y="19" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F6F10">🔥 HOT</text></g>
+    <g transform="translate(194, 402)"><rect width="64" height="28" rx="10" fill="#F0D8C9"/><text x="32" y="19" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F3F1C">BEEF</text></g>
+    <g transform="translate(266, 402)"><rect width="86" height="28" rx="10" fill="#FBF8F2" stroke="#E5DCCC" stroke-dasharray="3,3"/><text x="43" y="19" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#A29687">+ ADD TAG</text></g>
+  </g>
+
+  <!-- RIGHT column -->
+  <g transform="translate(948, 96)">
+    <!-- Pricing -->
+    <rect width="460" height="200" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Pricing &amp; <tspan font-style="italic" fill="#C5572D">inventory</tspan></text>
+    <text x="24" y="68" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">BASE PRICE</text>
+    <g transform="translate(24, 76)">
+      <rect width="200" height="44" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="28" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#A29687">$</text>
+      <text x="32" y="28" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">12.50</text>
+      <text x="180" y="28" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" fill="#A29687">USD</text>
+    </g>
+    <text x="244" y="68" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">COST</text>
+    <g transform="translate(244, 76)">
+      <rect width="192" height="44" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="28" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#A29687">$</text>
+      <text x="32" y="28" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">4.20</text>
+      <text x="180" y="28" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" fill="#4F9E5F">66% MARGIN</text>
+    </g>
+    <g transform="translate(24, 140)">
+      <rect width="412" height="44" rx="11" fill="#D7E1D2"/>
+      <g transform="translate(20, 22)"><rect width="40" height="20" rx="10" fill="#4F9E5F" x="-20" y="-10"/><circle cx="10" cy="0" r="8" fill="#FBF8F2"/></g>
+      <text x="60" y="28" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#3D5A3D"><tspan font-style="italic">In stock</tspan> — visible to customers</text>
+      <text x="398" y="28" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#3D5A3D">TOGGLE OFF TO HIDE</text>
+    </g>
+  </g>
+
+  <!-- Category & routing -->
+  <g transform="translate(948, 312)">
+    <rect width="460" height="160" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Category &amp; <tspan font-style="italic" fill="#C5572D">routing</tspan></text>
+    <text x="24" y="68" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">CATEGORY</text>
+    <g transform="translate(24, 76)">
+      <rect width="200" height="44" rx="11" fill="#F0D8C9" stroke="#C5572D"/>
+      <circle cx="22" cy="22" r="10" fill="#FBF8F2"/>
+      <text x="22" y="26" text-anchor="middle" font-size="11">⭐</text>
+      <text x="40" y="28" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="13" font-weight="500" fill="#1F1A17">Signature</text>
+    </g>
+    <text x="244" y="68" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">SECONDARY</text>
+    <g transform="translate(244, 76)">
+      <rect width="192" height="44" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <circle cx="22" cy="22" r="10" fill="#F0D8C9"/>
+      <text x="22" y="26" text-anchor="middle" font-size="11">🍔</text>
+      <text x="40" y="28" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="13" font-weight="500" fill="#1F1A17">Burgers</text>
+    </g>
+    <text x="24" y="136" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#3A322C">ROUTES TO:</text>
+    <g transform="translate(108, 124)">
+      <rect width="120" height="24" rx="6" fill="#F0D8C9"/>
+      <text x="60" y="16" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#9F3F1C">🍔 MAIN KITCHEN</text>
+    </g>
+  </g>
+
+  <!-- Variants -->
+  <g transform="translate(948, 488)">
+    <rect width="460" height="184" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Size <tspan font-style="italic" fill="#C5572D">variants</tspan></text>
+    <text x="436" text-anchor="end" y="36" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#C5572D">+ ADD</text>
+    <g transform="translate(24, 56)">
+      <rect width="412" height="48" rx="11" fill="#F0D8C9" stroke="#C5572D"/>
+      <circle cx="22" cy="24" r="8" fill="#C5572D"/>
+      <circle cx="22" cy="24" r="3" fill="#FBF8F2"/>
+      <text x="40" y="20" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17"><tspan font-style="italic">Regular</tspan></text>
+      <text x="40" y="36" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">SINGLE PATTY · 425 KCAL</text>
+      <text x="328" y="30" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $0.00</text>
+      <text x="398" y="30" text-anchor="end" font-family="Geist Mono, monospace" font-size="14" fill="#A29687">⋯</text>
+    </g>
+    <g transform="translate(24, 116)">
+      <rect width="412" height="48" rx="11" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <circle cx="22" cy="24" r="8" fill="none" stroke="#D9CFBE" stroke-width="2"/>
+      <text x="40" y="20" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17"><tspan font-style="italic">Large</tspan></text>
+      <text x="40" y="36" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">DOUBLE PATTY · 680 KCAL</text>
+      <text x="328" y="30" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#1F1A17">+ $3.50</text>
+      <text x="398" y="30" text-anchor="end" font-family="Geist Mono, monospace" font-size="14" fill="#A29687">⋯</text>
+    </g>
+  </g>
+
+  <!-- Extras -->
+  <g transform="translate(948, 688)">
+    <rect width="460" height="324" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="24" y="36" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Extras &amp; <tspan font-style="italic" fill="#C5572D">modifiers</tspan></text>
+    <text x="24" y="54" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#A29687">ADD-ONS CUSTOMERS PICK ON ITEM DETAIL</text>
+    <g transform="translate(24, 76)">
+      <rect width="412" height="28" rx="8" fill="#F5EFE6"/>
+      <text x="12" y="19" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1F1A17">ADD EXTRAS · MULTI-SELECT</text>
+      <text x="396" text-anchor="end" y="19" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#C5572D">+ ADD</text>
+    </g>
+    <g transform="translate(24, 110)">
+      <rect width="412" height="36" rx="10" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="23" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">Extra <tspan font-style="italic" fill="#C5572D">cheese</tspan></text>
+      <text x="280" y="23" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">+ $1.50</text>
+      <text x="328" y="23" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#4F9E5F">IN STOCK</text>
+      <text x="398" y="23" text-anchor="end" font-size="14" fill="#A29687">⋯</text>
+    </g>
+    <g transform="translate(24, 152)">
+      <rect width="412" height="36" rx="10" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="23" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">Crispy <tspan font-style="italic" fill="#C5572D">bacon</tspan></text>
+      <text x="280" y="23" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">+ $2.00</text>
+      <text x="328" y="23" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#4F9E5F">IN STOCK</text>
+      <text x="398" y="23" text-anchor="end" font-size="14" fill="#A29687">⋯</text>
+    </g>
+    <g transform="translate(24, 194)">
+      <rect width="412" height="36" rx="10" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="23" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">Fried <tspan font-style="italic" fill="#C5572D">egg</tspan></text>
+      <text x="280" y="23" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">+ $1.00</text>
+      <text x="328" y="23" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#4F9E5F">IN STOCK</text>
+      <text x="398" y="23" text-anchor="end" font-size="14" fill="#A29687">⋯</text>
+    </g>
+    <g transform="translate(24, 236)">
+      <rect width="412" height="36" rx="10" fill="#F5EFE6" stroke="#E5DCCC"/>
+      <text x="14" y="23" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">Avocado <tspan font-style="italic" fill="#C5572D">slices</tspan></text>
+      <text x="280" y="23" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">+ $1.50</text>
+      <text x="328" y="23" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#4F9E5F">IN STOCK</text>
+      <text x="398" y="23" text-anchor="end" font-size="14" fill="#A29687">⋯</text>
+    </g>
+    <g transform="translate(24, 282)">
+      <rect width="412" height="32" rx="10" fill="#FBF8F2" stroke="#E5DCCC" stroke-dasharray="3,3"/>
+      <text x="206" y="21" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#C5572D">+ New modifier group</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,264 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="1440" height="1024" fill="#FAFAF7"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="240" height="1024" fill="#FFFFFF"/>
+  <rect x="239" y="0" width="1" height="1024" fill="#E5E3DA"/>
+  <g transform="translate(24, 32)">
+    <circle cx="16" cy="16" r="16" fill="#F26B3A"/>
+    <path d="M 10 14 H 22 L 20 22 Q 20 24 18 24 H 14 Q 12 24 12 22 Z" fill="#FFFFFF"/>
+    <text x="46" y="14" font-size="15" font-weight="700" fill="#1A1A17">Hyperglow</text>
+    <text x="46" y="28" font-size="10" font-weight="600" letter-spacing="2" fill="#8A887E">ADMIN</text>
+  </g>
+  <line x1="24" y1="88" x2="216" y2="88" stroke="#F2F1EC"/>
+  <text x="32" y="116" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">OVERVIEW</text>
+  <g transform="translate(16, 128)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Dashboard</text></g>
+  <g transform="translate(16, 168)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Live orders</text></g>
+  <g transform="translate(16, 208)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Order history</text></g>
+  <text x="32" y="276" font-size="10" font-weight="700" letter-spacing="2" fill="#F26B3A">MENU</text>
+  <g transform="translate(16, 288)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Categories</text></g>
+  <g transform="translate(16, 328)">
+    <rect width="208" height="40" rx="12" fill="#FEE6DC"/>
+    <text x="40" y="25" font-size="13" font-weight="700" fill="#F26B3A">Items</text>
+  </g>
+  <g transform="translate(16, 368)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Extras &amp; modifiers</text></g>
+  <text x="32" y="432" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">OPERATIONS</text>
+  <g transform="translate(16, 444)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Devices / Tables</text></g>
+  <g transform="translate(16, 484)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Stations</text></g>
+  <g transform="translate(16, 524)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Staff</text></g>
+  <g transform="translate(16, 564)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Reports</text></g>
+  <text x="32" y="628" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">SETTINGS</text>
+  <g transform="translate(16, 640)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Payments</text></g>
+  <g transform="translate(16, 680)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Branding</text></g>
+  <g transform="translate(16, 952)">
+    <rect width="208" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="32" cy="28" r="16" fill="#F26B3A"/>
+    <text x="32" y="33" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">MR</text>
+    <text x="56" y="26" font-size="12" font-weight="700" fill="#1A1A17">Mahmudur R.</text>
+    <text x="56" y="42" font-size="11" fill="#8A887E">Owner</text>
+  </g>
+
+  <!-- Top header -->
+  <rect x="240" y="0" width="1200" height="72" fill="#FFFFFF"/>
+  <rect x="240" y="71" width="1200" height="1" fill="#E5E3DA"/>
+  <g transform="translate(272, 18)">
+    <rect width="36" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <g transform="translate(18, 18)" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-6" y1="0" x2="6" y2="0"/>
+      <polyline points="-2,-5 -6,0 -2,5"/>
+    </g>
+  </g>
+  <text x="320" y="34" font-size="11" fill="#8A887E">Menu · Items</text>
+  <text x="320" y="54" font-size="20" font-weight="700" fill="#1A1A17">Edit · Glow Smash Burger</text>
+  <g transform="translate(1140, 18)"><rect width="80" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/><text x="40" y="23" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A17">Preview</text></g>
+  <g transform="translate(1228, 18)"><rect width="80" height="36" rx="10" fill="#FFFFFF" stroke="#E5E3DA"/><text x="40" y="23" text-anchor="middle" font-size="12" font-weight="600" fill="#4D4B44">Cancel</text></g>
+  <g transform="translate(1316, 18)"><rect width="108" height="36" rx="10" fill="#F26B3A"/><text x="54" y="23" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Save changes</text></g>
+
+  <!-- LEFT column -->
+  <g transform="translate(272, 96)">
+    <g>
+      <rect width="660" height="280" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="24" y="36" font-size="14" font-weight="700" fill="#1A1A17">Item photos</text>
+      <text x="24" y="54" font-size="12" fill="#8A887E">Up to 4 images · JPG/PNG · 1080×1080 recommended</text>
+      <g transform="translate(24, 76)">
+        <rect width="180" height="180" rx="12" fill="#FEE6DC"/>
+        <g transform="translate(90, 90)">
+          <ellipse cx="0" cy="14" rx="56" ry="6" fill="#D4502A"/>
+          <path d="M-56 0 a56 28 0 0 1 112 0 Z" fill="#E8A33B"/>
+          <rect x="-56" y="-2" width="112" height="6" fill="#2D8A66"/>
+          <rect x="-56" y="4" width="112" height="6" fill="#FFFFFF"/>
+        </g>
+        <g transform="translate(0, 156)">
+          <rect width="180" height="24" rx="0 0 12 12" fill="#1A1A17" opacity="0.7"/>
+          <text x="90" y="16" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">⭐ Primary</text>
+        </g>
+      </g>
+      <g transform="translate(220, 76)">
+        <rect width="84" height="84" rx="10" fill="#FBE5DF"/>
+        <text x="42" y="56" text-anchor="middle" font-size="36" opacity="0.7">🍔</text>
+      </g>
+      <g transform="translate(316, 76)">
+        <rect width="84" height="84" rx="10" fill="#FFEAD1"/>
+        <text x="42" y="56" text-anchor="middle" font-size="36" opacity="0.7">🍟</text>
+      </g>
+      <g transform="translate(412, 76)">
+        <rect width="84" height="84" rx="10" fill="#FFFFFF" stroke="#E5E3DA" stroke-dasharray="4,4"/>
+        <text x="42" y="44" text-anchor="middle" font-size="22" fill="#8A887E">+</text>
+        <text x="42" y="62" text-anchor="middle" font-size="10" fill="#8A887E">Add</text>
+      </g>
+      <g transform="translate(220, 168)">
+        <rect width="276" height="88" rx="12" fill="#FAFAF7" stroke="#E5E3DA" stroke-dasharray="4,4"/>
+        <g transform="translate(138, 30)" stroke="#F26B3A" stroke-width="2" stroke-linecap="round" fill="none">
+          <path d="M-14 0 L0 -14 L14 0"/>
+          <line x1="0" y1="-14" x2="0" y2="14"/>
+        </g>
+        <text x="138" y="68" text-anchor="middle" font-size="12" font-weight="600" fill="#F26B3A">Drop files or browse</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 296)">
+      <rect width="660" height="430" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="24" y="36" font-size="14" font-weight="700" fill="#1A1A17">Basics</text>
+
+      <text x="24" y="68" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">ITEM NAME</text>
+      <g transform="translate(24, 76)">
+        <rect width="612" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="28" font-size="14" font-weight="600" fill="#1A1A17">Glow Smash Burger</text>
+      </g>
+      <text x="624" y="124" text-anchor="end" font-size="10" fill="#8A887E">18 / 80</text>
+
+      <text x="24" y="158" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">SHORT DESCRIPTION (TABLETOP)</text>
+      <g transform="translate(24, 166)">
+        <rect width="612" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="28" font-size="14" fill="#1A1A17">Beef · Cheddar · Glow Sauce · Brioche bun · House pickles</text>
+      </g>
+
+      <text x="24" y="244" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">LONG DESCRIPTION</text>
+      <g transform="translate(24, 252)">
+        <rect width="612" height="100" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="28" font-size="13" fill="#1A1A17">Two smashed beef patties, melted aged cheddar, our signature Glow</text>
+        <text x="14" y="46" font-size="13" fill="#1A1A17">sauce, crisp lettuce, tomato, and house-made pickles on a toasted</text>
+        <text x="14" y="64" font-size="13" fill="#1A1A17">brioche bun. Served with a side of fries.</text>
+        <text x="14" y="86" font-size="11" fill="#8A887E">Tip: Customers see this on the item detail screen.</text>
+      </g>
+
+      <text x="24" y="378" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">TAGS</text>
+      <g transform="translate(24, 388)">
+        <rect width="80" height="28" rx="10" fill="#FBE5DF"/>
+        <text x="40" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#D4502A">⭐ Signature</text>
+      </g>
+      <g transform="translate(112, 388)">
+        <rect width="62" height="28" rx="10" fill="#FFF3DC"/>
+        <text x="31" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#B8780E">🔥 Hot</text>
+      </g>
+      <g transform="translate(182, 388)">
+        <rect width="70" height="28" rx="10" fill="#FBE5DF"/>
+        <text x="35" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#D4502A">Beef</text>
+      </g>
+      <g transform="translate(260, 388)">
+        <rect width="80" height="28" rx="10" fill="#FFFFFF" stroke="#E5E3DA" stroke-dasharray="3,3"/>
+        <text x="40" y="18" text-anchor="middle" font-size="11" font-weight="500" fill="#8A887E">+ Add tag</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT column -->
+  <g transform="translate(948, 96)">
+    <g>
+      <rect width="460" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="24" y="36" font-size="14" font-weight="700" fill="#1A1A17">Pricing &amp; inventory</text>
+      <text x="24" y="64" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">BASE PRICE</text>
+      <g transform="translate(24, 72)">
+        <rect width="200" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="28" font-size="14" font-weight="700" fill="#8A887E">$</text>
+        <text x="32" y="28" font-size="14" font-weight="700" fill="#1A1A17">12.50</text>
+        <text x="180" y="28" text-anchor="end" font-size="11" fill="#8A887E">USD</text>
+      </g>
+      <text x="244" y="64" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">COST</text>
+      <g transform="translate(244, 72)">
+        <rect width="192" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="28" font-size="14" font-weight="700" fill="#8A887E">$</text>
+        <text x="32" y="28" font-size="14" font-weight="700" fill="#1A1A17">4.20</text>
+        <text x="180" y="28" text-anchor="end" font-size="11" fill="#2D8A66">66% margin</text>
+      </g>
+      <g transform="translate(24, 140)">
+        <rect width="412" height="44" rx="12" fill="#E6F2EE"/>
+        <g transform="translate(20, 22)"><rect width="40" height="20" rx="10" fill="#2D8A66" x="-20" y="-10"/><circle cx="10" cy="0" r="8" fill="#FFFFFF"/></g>
+        <text x="60" y="28" font-size="13" font-weight="700" fill="#2D8A66">In stock — visible to customers</text>
+        <text x="398" y="28" text-anchor="end" font-size="11" fill="#4D4B44">Toggle off to hide instantly</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 216)">
+      <rect width="460" height="160" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="24" y="36" font-size="14" font-weight="700" fill="#1A1A17">Category &amp; routing</text>
+      <text x="24" y="68" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">CATEGORY</text>
+      <g transform="translate(24, 76)">
+        <rect width="200" height="44" rx="12" fill="#FBE5DF" stroke="#F26B3A"/>
+        <circle cx="22" cy="22" r="10" fill="#FFFFFF"/>
+        <text x="22" y="26" text-anchor="middle" font-size="11">⭐</text>
+        <text x="40" y="28" font-size="13" font-weight="600" fill="#1A1A17">Signature</text>
+        <polyline points="180,18 188,26 196,18" fill="none" stroke="#4D4B44" stroke-width="1.5"/>
+      </g>
+      <text x="244" y="68" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">SECONDARY</text>
+      <g transform="translate(244, 76)">
+        <rect width="192" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <circle cx="22" cy="22" r="10" fill="#FBE5DF"/>
+        <text x="22" y="26" text-anchor="middle" font-size="11">🍔</text>
+        <text x="40" y="28" font-size="13" font-weight="600" fill="#1A1A17">Burgers</text>
+      </g>
+      <text x="24" y="136" font-size="11" font-weight="700" fill="#1A1A17">Routes to:</text>
+      <g transform="translate(108, 124)">
+        <rect width="100" height="24" rx="6" fill="#FEE6DC"/>
+        <text x="50" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#D4502A">🍔 Main Kitchen</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 396)">
+      <rect width="460" height="184" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="24" y="36" font-size="14" font-weight="700" fill="#1A1A17">Size variants</text>
+      <text x="436" y="36" text-anchor="end" font-size="11" font-weight="600" fill="#F26B3A">+ Add variant</text>
+      <g transform="translate(24, 56)">
+        <rect width="412" height="48" rx="12" fill="#FAFAF7" stroke="#F26B3A"/>
+        <circle cx="22" cy="24" r="8" fill="#F26B3A"/>
+        <circle cx="22" cy="24" r="3" fill="#FFFFFF"/>
+        <text x="40" y="20" font-size="13" font-weight="700" fill="#1A1A17">Regular</text>
+        <text x="40" y="36" font-size="11" fill="#8A887E">Single patty · 425 kcal</text>
+        <text x="320" y="30" font-size="13" font-weight="700" fill="#1A1A17">+ $0.00</text>
+        <text x="398" y="30" text-anchor="end" font-size="14" fill="#8A887E">⋯</text>
+      </g>
+      <g transform="translate(24, 116)">
+        <rect width="412" height="48" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <circle cx="22" cy="24" r="8" fill="none" stroke="#C9C7BD" stroke-width="2"/>
+        <text x="40" y="20" font-size="13" font-weight="700" fill="#1A1A17">Large</text>
+        <text x="40" y="36" font-size="11" fill="#8A887E">Double patty · 680 kcal</text>
+        <text x="320" y="30" font-size="13" font-weight="700" fill="#1A1A17">+ $3.50</text>
+        <text x="398" y="30" text-anchor="end" font-size="14" fill="#8A887E">⋯</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 600)">
+      <rect width="460" height="324" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="24" y="36" font-size="14" font-weight="700" fill="#1A1A17">Extras &amp; modifiers</text>
+      <text x="24" y="54" font-size="11" fill="#8A887E">Add-ons customers can pick on the item detail screen</text>
+
+      <g transform="translate(24, 76)">
+        <rect width="412" height="28" rx="8" fill="#F2F1EC"/>
+        <text x="12" y="19" font-size="11" font-weight="700" letter-spacing="1.5" fill="#1A1A17">ADD EXTRAS · MULTI-SELECT (OPTIONAL)</text>
+        <text x="396" y="19" text-anchor="end" font-size="11" fill="#F26B3A" font-weight="600">+ Add</text>
+      </g>
+      <g transform="translate(24, 110)">
+        <rect width="412" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="23" font-size="12" font-weight="600" fill="#1A1A17">Extra cheese</text>
+        <text x="280" y="23" text-anchor="end" font-size="12" font-weight="700" fill="#1A1A17">+ $1.50</text>
+        <text x="320" y="23" font-size="11" fill="#8A887E">in stock</text>
+        <text x="398" y="23" text-anchor="end" font-size="14" fill="#8A887E">⋯</text>
+      </g>
+      <g transform="translate(24, 152)">
+        <rect width="412" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="23" font-size="12" font-weight="600" fill="#1A1A17">Crispy bacon</text>
+        <text x="280" y="23" text-anchor="end" font-size="12" font-weight="700" fill="#1A1A17">+ $2.00</text>
+        <text x="320" y="23" font-size="11" fill="#8A887E">in stock</text>
+        <text x="398" y="23" text-anchor="end" font-size="14" fill="#8A887E">⋯</text>
+      </g>
+      <g transform="translate(24, 194)">
+        <rect width="412" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="23" font-size="12" font-weight="600" fill="#1A1A17">Fried egg</text>
+        <text x="280" y="23" text-anchor="end" font-size="12" font-weight="700" fill="#1A1A17">+ $1.00</text>
+        <text x="320" y="23" font-size="11" fill="#8A887E">in stock</text>
+        <text x="398" y="23" text-anchor="end" font-size="14" fill="#8A887E">⋯</text>
+      </g>
+      <g transform="translate(24, 236)">
+        <rect width="412" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <text x="14" y="23" font-size="12" font-weight="600" fill="#1A1A17">Avocado slices</text>
+        <text x="280" y="23" text-anchor="end" font-size="12" font-weight="700" fill="#1A1A17">+ $1.50</text>
+        <text x="320" y="23" font-size="11" fill="#8A887E">in stock</text>
+        <text x="398" y="23" text-anchor="end" font-size="14" fill="#8A887E">⋯</text>
+      </g>
+      <g transform="translate(24, 282)">
+        <rect width="412" height="32" rx="10" fill="#FFFFFF" stroke="#E5E3DA" stroke-dasharray="3,3"/>
+        <text x="206" y="21" text-anchor="middle" font-size="11" font-weight="600" fill="#F26B3A">+ New modifier group (e.g. Remove items, Spice level)</text>
+      </g>
+    </g>
+  </g>
+</svg>

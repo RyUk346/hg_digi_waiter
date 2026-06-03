@@ -1,0 +1,233 @@
+<svg width="1024" height="600" viewBox="0 0 1024 600" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="1024" height="600" fill="#FAFAF7"/>
+
+  <!-- Top app bar -->
+  <rect x="0" y="0" width="1024" height="64" fill="#FFFFFF"/>
+  <rect x="0" y="63" width="1024" height="1" fill="#E5E3DA"/>
+  <text x="20" y="22" font-size="10" font-weight="600" fill="#8A887E">19:42</text>
+  <text x="100" y="22" font-size="10" fill="#8A887E">Wi-Fi · HG-Guest</text>
+  <g transform="translate(20, 32)">
+    <circle r="12" fill="#F26B3A"/>
+    <path d="M -4 -1 H 4 L 3 4 Q 3 5 2 5 H -2 Q -3 5 -3 4 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="40" y="48" font-size="15" font-weight="700" fill="#1A1A17">Hyperglow Café</text>
+  <text x="160" y="48" font-size="11" fill="#8A887E">· Browse menu</text>
+
+  <g transform="translate(420, 16)">
+    <rect width="280" height="32" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <g transform="translate(14, 16)" stroke="#8A887E" stroke-width="1.5" fill="none">
+      <circle cx="0" cy="0" r="5"/>
+      <line x1="4" y1="4" x2="9" y2="9" stroke-linecap="round"/>
+    </g>
+    <text x="32" y="20" font-size="11" fill="#8A887E">Search dishes…</text>
+  </g>
+  <g transform="translate(880, 16)">
+    <rect width="68" height="32" rx="16" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="12" cy="16" r="4" fill="#2D8A66"/>
+    <text x="22" y="20" font-size="11" font-weight="600" fill="#1A1A17">Table 7</text>
+  </g>
+  <g transform="translate(960, 14)">
+    <rect width="44" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <g transform="translate(22, 18)" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-7 -4 H7 L5 4 H-5 Z"/>
+      <circle cx="-4" cy="7" r="1.5"/>
+      <circle cx="4" cy="7" r="1.5"/>
+    </g>
+    <circle cx="34" cy="6" r="8" fill="#F26B3A"/>
+    <text x="34" y="9" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">3</text>
+  </g>
+
+  <!-- LEFT: Categories -->
+  <rect x="0" y="64" width="280" height="486" fill="#FFFFFF"/>
+  <rect x="279" y="64" width="1" height="486" fill="#E5E3DA"/>
+  <text x="20" y="92" font-size="13" font-weight="700" fill="#1A1A17">Categories</text>
+  <text x="260" y="92" text-anchor="end" font-size="11" fill="#8A887E">8</text>
+  <g transform="translate(12, 108)">
+    <rect width="256" height="44" rx="12" fill="#FEE6DC" stroke="#F26B3A" stroke-width="1.5"/>
+    <circle cx="24" cy="22" r="12" fill="#FFFFFF"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">⭐</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Signature</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">12 items · Chef's picks</text>
+  </g>
+  <g transform="translate(12, 160)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#FFF3DC"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">🔥</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Most Popular</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">18 items</text>
+  </g>
+  <g transform="translate(12, 212)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#FBE5DF"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">🍔</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Burgers</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">9 items</text>
+  </g>
+  <g transform="translate(12, 264)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#FFEAD1"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">🍕</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Pizza</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">11 items</text>
+  </g>
+  <g transform="translate(12, 316)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#F3E2C8"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">🍝</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Pasta</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">7 items</text>
+  </g>
+  <g transform="translate(12, 368)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#EFE0D2"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">☕</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Coffee</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">14 items</text>
+  </g>
+  <g transform="translate(12, 420)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#E6F2EE"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">🍨</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Ice Cream</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">10 items</text>
+  </g>
+  <g transform="translate(12, 472)">
+    <rect width="256" height="44" rx="12" fill="#FAFAF7"/>
+    <circle cx="24" cy="22" r="12" fill="#E1ECF6"/>
+    <text x="24" y="26" text-anchor="middle" font-size="13">🥤</text>
+    <text x="44" y="20" font-size="12" font-weight="700" fill="#1A1A17">Drinks</text>
+    <text x="44" y="34" font-size="10" fill="#8A887E">15 items</text>
+  </g>
+
+  <!-- RIGHT: Featured items -->
+  <text x="300" y="92" font-size="13" font-weight="700" fill="#1A1A17">Signature · Chef's picks</text>
+  <text x="1004" y="92" text-anchor="end" font-size="11" font-weight="600" fill="#F26B3A">View all 12 →</text>
+
+  <g transform="translate(300, 108)">
+    <rect width="232" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="232" height="120" rx="16" fill="#FEE6DC"/>
+    <rect y="104" width="232" height="16" fill="#FEE6DC"/>
+    <g transform="translate(116, 64)">
+      <ellipse cx="0" cy="22" rx="50" ry="6" fill="#D4502A"/>
+      <path d="M-50 4 a50 26 0 0 1 100 0 Z" fill="#E8A33B"/>
+      <rect x="-50" y="0" width="100" height="5" fill="#2D8A66"/>
+      <rect x="-50" y="5" width="100" height="5" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(12, 12)">
+      <rect width="74" height="22" rx="11" fill="#FFFFFF"/>
+      <text x="37" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#F26B3A">⭐ TOP</text>
+    </g>
+    <text x="14" y="144" font-size="13" font-weight="700" fill="#1A1A17">Glow Smash Burger</text>
+    <text x="14" y="160" font-size="11" fill="#8A887E">Beef · Cheddar</text>
+    <text x="14" y="184" font-size="14" font-weight="700" fill="#1A1A17">$12.50</text>
+    <g transform="translate(184, 168)">
+      <rect width="32" height="24" rx="8" fill="#F26B3A"/>
+      <text x="16" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+</text>
+    </g>
+  </g>
+  <g transform="translate(544, 108)">
+    <rect width="232" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="232" height="120" rx="16" fill="#FFEAD1"/>
+    <rect y="104" width="232" height="16" fill="#FFEAD1"/>
+    <g transform="translate(116, 64)">
+      <circle cx="0" cy="0" r="42" fill="#D4502A"/>
+      <circle cx="0" cy="0" r="36" fill="#E8A33B"/>
+      <circle cx="-12" cy="-6" r="6" fill="#D43A3A"/>
+      <circle cx="10" cy="-8" r="5" fill="#FFFFFF"/>
+      <circle cx="4" cy="10" r="5" fill="#2D8A66"/>
+    </g>
+    <text x="14" y="144" font-size="13" font-weight="700" fill="#1A1A17">Truffle Pizza 12"</text>
+    <text x="14" y="160" font-size="11" fill="#8A887E">Truffle oil · Mushroom</text>
+    <text x="14" y="184" font-size="14" font-weight="700" fill="#1A1A17">$18.00</text>
+    <g transform="translate(184, 168)">
+      <rect width="32" height="24" rx="8" fill="#F26B3A"/>
+      <text x="16" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+</text>
+    </g>
+  </g>
+  <g transform="translate(788, 108)">
+    <rect width="232" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="232" height="120" rx="16" fill="#E6F2EE"/>
+    <rect y="104" width="232" height="16" fill="#E6F2EE"/>
+    <g transform="translate(116, 64)">
+      <path d="M-20 8 L 0 30 L 20 8 Z" fill="#FFE9C2" stroke="#B8780E" stroke-width="2"/>
+      <circle cx="0" cy="-4" r="22" fill="#FFFFFF"/>
+      <circle cx="-8" cy="-6" r="6" fill="#FBE5DF"/>
+    </g>
+    <text x="14" y="144" font-size="13" font-weight="700" fill="#1A1A17">Signature Sundae</text>
+    <text x="14" y="160" font-size="11" fill="#8A887E">3 scoops · Hot fudge</text>
+    <text x="14" y="184" font-size="14" font-weight="700" fill="#1A1A17">$9.50</text>
+    <g transform="translate(184, 168)">
+      <rect width="32" height="24" rx="8" fill="#F26B3A"/>
+      <text x="16" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+</text>
+    </g>
+  </g>
+  <g transform="translate(300, 320)">
+    <rect width="232" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="232" height="120" rx="16" fill="#F3E2C8"/>
+    <rect y="104" width="232" height="16" fill="#F3E2C8"/>
+    <g transform="translate(116, 64)">
+      <ellipse cx="0" cy="20" rx="48" ry="6" fill="#D4502A"/>
+      <path d="M-48 -10 a48 28 0 0 1 96 0 L 38 20 a40 8 0 0 1 -76 0 Z" fill="#E8A33B"/>
+      <path d="M-30 -10 q5 -16 30 -8" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    </g>
+    <text x="14" y="144" font-size="13" font-weight="700" fill="#1A1A17">Chef's Carbonara</text>
+    <text x="14" y="160" font-size="11" fill="#8A887E">Truffle · Pancetta</text>
+    <text x="14" y="184" font-size="14" font-weight="700" fill="#1A1A17">$22.00</text>
+    <g transform="translate(184, 168)">
+      <rect width="32" height="24" rx="8" fill="#F26B3A"/>
+      <text x="16" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+</text>
+    </g>
+  </g>
+  <g transform="translate(544, 320)">
+    <rect width="232" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="232" height="120" rx="16" fill="#FBE5DF"/>
+    <rect y="104" width="232" height="16" fill="#FBE5DF"/>
+    <g transform="translate(116, 64)">
+      <path d="M-20 24 q 0 -50 20 -50 q 20 0 20 50 z" fill="#D43A3A"/>
+      <path d="M-12 0 q 4 -10 12 -10" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    </g>
+    <text x="14" y="144" font-size="13" font-weight="700" fill="#1A1A17">Glow Hot Wings</text>
+    <text x="14" y="160" font-size="11" font-weight="700" fill="#D43A3A">OUT OF STOCK</text>
+    <text x="14" y="184" font-size="14" font-weight="700" fill="#8A887E">$11.00</text>
+    <g transform="translate(184, 168)">
+      <rect width="32" height="24" rx="8" fill="#C9C7BD"/>
+      <text x="16" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+</text>
+    </g>
+  </g>
+  <g transform="translate(788, 320)">
+    <rect width="232" height="200" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <rect width="232" height="120" rx="16" fill="#EFE0D2"/>
+    <rect y="104" width="232" height="16" fill="#EFE0D2"/>
+    <g transform="translate(116, 64)">
+      <path d="M-22 -16 H26 L22 22 Q22 26 18 26 H-18 Q-22 26 -22 22 Z" fill="#FFFFFF" stroke="#4D4B44" stroke-width="2"/>
+      <ellipse cx="2" cy="-16" rx="24" ry="4" fill="#D4502A"/>
+      <path d="M26 -8 Q36 -8 36 4 Q36 12 28 12" fill="none" stroke="#4D4B44" stroke-width="2"/>
+    </g>
+    <text x="14" y="144" font-size="13" font-weight="700" fill="#1A1A17">Glow Cold Brew</text>
+    <text x="14" y="160" font-size="11" fill="#8A887E">24h slow-steeped</text>
+    <text x="14" y="184" font-size="14" font-weight="700" fill="#1A1A17">$6.20</text>
+    <g transform="translate(184, 168)">
+      <rect width="32" height="24" rx="8" fill="#F26B3A"/>
+      <text x="16" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">+</text>
+    </g>
+  </g>
+
+  <!-- Bottom tab bar -->
+  <rect x="0" y="550" width="1024" height="50" fill="#FFFFFF"/>
+  <rect x="0" y="550" width="1024" height="1" fill="#E5E3DA"/>
+  <g transform="translate(200, 575)">
+    <rect x="-50" y="-12" width="100" height="36" rx="14" fill="#FEE6DC"/>
+    <text y="6" text-anchor="middle" font-size="11" font-weight="700" fill="#F26B3A">Menu</text>
+  </g>
+  <g transform="translate(420, 575)">
+    <text y="6" text-anchor="middle" font-size="11" font-weight="500" fill="#4D4B44">Cart (3)</text>
+  </g>
+  <g transform="translate(620, 575)">
+    <text y="6" text-anchor="middle" font-size="11" font-weight="500" fill="#C9C7BD">Status</text>
+  </g>
+  <g transform="translate(820, 575)">
+    <text y="6" text-anchor="middle" font-size="11" font-weight="500" fill="#4D4B44">More</text>
+  </g>
+
+  <text x="512" y="595" text-anchor="middle" font-size="7" letter-spacing="2" fill="#C9C7BD">RESPONSIVE · 1024×600 · LANDSCAPE TABLET · SPLIT LAYOUT (CATEGORIES LEFT, ITEMS RIGHT)</text>
+</svg>

@@ -1,0 +1,24 @@
+{
+  "name": "@hyperglow/realtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bridge Postgres LISTEN/NOTIFY to Socket.io clients. Used by the admin web today and the device apps later.",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "postgres": "^3.4.5",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

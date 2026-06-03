@@ -1,0 +1,245 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#1F1A17"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1920" height="84" fill="#2B2520"/>
+  <line x1="0" y1="84" x2="1920" y2="84" stroke="#3D362F"/>
+  <g transform="translate(32, 42)">
+    <circle r="18" fill="#3D5A3D"/>
+    <path d="M -6 4 L 0 14 L 6 4 Z" fill="#F4D5A8"/>
+    <circle cy="0" r="7" fill="#FBF8F2"/>
+  </g>
+  <text x="68" y="36" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#FBF8F2">Hyperglow<tspan font-style="italic" fill="#C5572D"> Ice Cream</tspan></text>
+  <text x="68" y="58" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2.4" fill="#A29687">STATION DISPLAY · VENDOR VIEW</text>
+  <g transform="translate(960, 32)" text-anchor="middle">
+    <text font-family="Fraunces, Georgia, serif" font-size="30" font-weight="500" fill="#FBF8F2">20<tspan font-style="italic" fill="#C5572D">:</tspan>04<tspan font-style="italic" fill="#C5572D">:</tspan>55</text>
+    <text y="22" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#A29687">FRIDAY · MAY 15, 2026</text>
+  </g>
+  <g transform="translate(1180, 22)" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2" fill="#A29687">
+    <text>QUEUE</text>
+    <text x="56" font-family="Fraunces, Georgia, serif" font-size="26" font-weight="500" fill="#FBF8F2">3</text>
+    <text x="100">SCOOPING</text>
+    <text x="200" font-family="Fraunces, Georgia, serif" font-size="26" font-weight="500" fill="#3D5A3D">1</text>
+    <text x="240">READY</text>
+    <text x="304" font-family="Fraunces, Georgia, serif" font-size="26" font-weight="500" fill="#4F9E5F">2</text>
+    <text x="344">AVG</text>
+    <text x="394" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#FBF8F2">02:14</text>
+  </g>
+  <g transform="translate(1772, 22)">
+    <rect width="124" height="44" rx="14" fill="rgba(255,255,255,0.05)"/>
+    <circle cx="22" cy="22" r="14" fill="#3D5A3D"/>
+    <text x="22" y="27" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" font-weight="600" fill="#FBF8F2">RN</text>
+    <text x="42" y="20" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="13" font-weight="500" fill="#FBF8F2">Raisa</text>
+    <text x="42" y="34" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#A29687">VENDOR</text>
+  </g>
+
+  <!-- ===== Sidebar ===== -->
+  <rect x="0" y="84" width="240" height="996" fill="#2B2520"/>
+  <line x1="240" y1="84" x2="240" y2="1080" stroke="#3D362F"/>
+  <text x="24" y="124" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#A29687">STATIONS</text>
+
+  <g transform="translate(16, 140)">
+    <rect width="208" height="48" rx="11" fill="rgba(255,255,255,0.04)"/>
+    <text x="20" y="30" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">All stations</text>
+  </g>
+  <g transform="translate(16, 196)">
+    <rect width="208" height="48" rx="11" fill="rgba(255,255,255,0.04)"/>
+    <text x="20" y="30" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">Main Kitchen</text>
+  </g>
+  <g transform="translate(16, 252)">
+    <rect width="208" height="48" rx="11" fill="rgba(255,255,255,0.04)"/>
+    <text x="20" y="30" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">Bar Station</text>
+  </g>
+  <!-- Ice Cream active -->
+  <g transform="translate(16, 308)">
+    <rect width="208" height="58" rx="14" fill="#3D5A3D"/>
+    <text x="20" y="26" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#FBF8F2"><tspan font-style="italic" fill="#D7E1D2">Ice cream</tspan> vendor</text>
+    <text x="20" y="46" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#D7E1D2">3 ITEMS · 1 PREP</text>
+  </g>
+  <g transform="translate(16, 378)">
+    <rect width="208" height="48" rx="11" fill="rgba(255,255,255,0.04)"/>
+    <text x="20" y="30" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">Pastry</text>
+  </g>
+
+  <!-- Flavors inventory -->
+  <text x="24" y="466" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#A29687">FLAVOURS</text>
+  <g transform="translate(16, 482)">
+    <rect width="208" height="36" rx="10" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="16" cy="18" r="4" fill="#4F9E5F"/>
+    <text x="30" y="22" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#FBF8F2">Vanilla bean</text>
+    <text x="194" y="22" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" fill="#A29687">12 L</text>
+  </g>
+  <g transform="translate(16, 522)">
+    <rect width="208" height="36" rx="10" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="16" cy="18" r="4" fill="#4F9E5F"/>
+    <text x="30" y="22" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#FBF8F2">Belgian chocolate</text>
+    <text x="194" y="22" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" fill="#A29687">8 L</text>
+  </g>
+  <g transform="translate(16, 562)">
+    <rect width="208" height="36" rx="10" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="16" cy="18" r="4" fill="#D69537"/>
+    <text x="30" y="22" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#FBF8F2">Mango sorbet</text>
+    <text x="194" y="22" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" fill="#D69537">2 L · LOW</text>
+  </g>
+  <g transform="translate(16, 602)">
+    <rect width="208" height="36" rx="10" fill="rgba(196,74,58,0.18)"/>
+    <circle cx="16" cy="18" r="4" fill="#C44A3A"/>
+    <text x="30" y="22" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#FBF8F2">Pistachio</text>
+    <text x="194" y="22" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="#C44A3A">OUT</text>
+  </g>
+  <g transform="translate(16, 642)">
+    <rect width="208" height="36" rx="10" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="16" cy="18" r="4" fill="#4F9E5F"/>
+    <text x="30" y="22" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="12" font-weight="500" fill="#FBF8F2">Strawberry swirl</text>
+    <text x="194" y="22" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" fill="#A29687">6 L</text>
+  </g>
+  <g transform="translate(16, 696)">
+    <rect width="208" height="44" rx="11" fill="#C5572D"/>
+    <text x="104" y="28" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#FBF8F2">Manage <tspan font-style="italic" fill="#F0D8C9">stock</tspan></text>
+  </g>
+
+  <!-- ===== Main ===== -->
+  <text x="272" y="128" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2.4" fill="#A29687">STATION VIEW</text>
+  <text x="272" y="170" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="500" letter-spacing="-0.6" fill="#FBF8F2"><tspan font-style="italic" fill="#C5572D">Ice cream</tspan> vendor</text>
+  <text x="272" y="194" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#6B5F55">FILTERED TO ICE CREAM ITEMS ONLY · 3 ACTIVE</text>
+  <g transform="translate(1700, 132)">
+    <rect width="188" height="40" rx="11" fill="rgba(255,255,255,0.04)"/>
+    <text x="14" y="26" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#FBF8F2">+ MANUAL TICKET</text>
+  </g>
+
+  <!-- Now scooping featured -->
+  <text x="272" y="232" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#3D5A3D">NOW SCOOPING</text>
+  <g transform="translate(272, 246)">
+    <rect width="1616" height="160" rx="20" fill="#FBF8F2" stroke="#3D5A3D" stroke-width="3"/>
+    <rect width="1616" height="6" rx="3" fill="#3D5A3D"/>
+    <g transform="translate(32, 42)">
+      <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#3D5A3D">TOKEN</text>
+      <text y="62" font-family="Fraunces, Georgia, serif" font-size="56" font-weight="500" letter-spacing="-1" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A042</text>
+    </g>
+    <g transform="translate(280, 42)">
+      <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#3D5A3D">TABLE</text>
+      <text y="62" font-family="Fraunces, Georgia, serif" font-size="56" font-weight="500" letter-spacing="-1" fill="#1F1A17">15</text>
+    </g>
+    <g transform="translate(420, 42)">
+      <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#3D5A3D">ELAPSED</text>
+      <text y="62" font-family="Fraunces, Georgia, serif" font-size="56" font-weight="500" letter-spacing="-1" fill="#3D5A3D">01<tspan font-style="italic" fill="#1F1A17">:</tspan>32</text>
+    </g>
+    <g transform="translate(680, 42)">
+      <text font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#1F1A17">2× Belgian Chocolate · 1× <tspan font-style="italic" fill="#C5572D">Vanilla Bean</tspan></text>
+      <text y="26" font-family="Geist, sans-serif" font-size="13" fill="#6B5F55">All on waffle cones · + Hot fudge on chocolate · Cherry on vanilla</text>
+      <text y="54" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#C44A3A">⚠ ALLERGY ON VANILLA · CUSTOMER NUT-FREE · USE CLEAN SCOOP</text>
+      <text y="76" font-family="Geist, sans-serif" font-style="italic" font-size="11" fill="#A29687">Linked to Main Kitchen order #A042 · Sync when burger plated</text>
+    </g>
+    <g transform="translate(1380, 56)">
+      <rect width="200" height="64" rx="14" fill="#3D5A3D"/>
+      <text x="100" y="40" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#FBF8F2">Mark <tspan font-style="italic" fill="#D7E1D2">ready</tspan> ✓</text>
+    </g>
+  </g>
+
+  <!-- Queued -->
+  <text x="272" y="442" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#A29687">QUEUED · 2 TICKETS</text>
+  <g transform="translate(272, 456)">
+    <rect width="1616" height="116" rx="18" fill="#FBF8F2"/>
+    <g transform="translate(32, 32)">
+      <text font-family="Fraunces, Georgia, serif" font-size="32" font-weight="500" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A047</text>
+      <text y="20" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#6B5F55">TABLE 07</text>
+    </g>
+    <g transform="translate(180, 32)">
+      <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">ELAPSED</text>
+      <text y="28" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#3D5A3D">06:12</text>
+    </g>
+    <g transform="translate(360, 36)">
+      <text font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">1× Vanilla Bean<tspan font-style="italic" fill="#C5572D"> Scoop</tspan> (2 scoops)</text>
+      <text y="22" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">WAFFLE CONE · + HOT FUDGE</text>
+      <text y="42" font-family="Geist, sans-serif" font-style="italic" font-size="11" fill="#A29687">Waiting on Main Kitchen burger · auto-start in ~3 min</text>
+    </g>
+    <g transform="translate(32, 84)">
+      <rect width="140" height="22" rx="11" fill="#FFF3DC"/>
+      <text x="70" y="15" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#9F6F10">AWAITING SYNC</text>
+    </g>
+    <g transform="translate(1280, 30)">
+      <rect width="140" height="56" rx="14" fill="#F5EFE6"/>
+      <text x="70" y="34" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">Skip sync</text>
+    </g>
+    <g transform="translate(1432, 30)">
+      <rect width="148" height="56" rx="14" fill="#D69537"/>
+      <text x="74" y="34" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#FBF8F2">Start <tspan font-style="italic" fill="#FFF3DC">now</tspan> ▶</text>
+    </g>
+  </g>
+
+  <g transform="translate(272, 588)">
+    <rect width="1616" height="116" rx="18" fill="#FBF8F2"/>
+    <g transform="translate(32, 32)">
+      <text font-family="Fraunces, Georgia, serif" font-size="32" font-weight="500" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A051</text>
+      <text y="20" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#6B5F55">TABLE 09</text>
+    </g>
+    <g transform="translate(180, 32)">
+      <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">ELAPSED</text>
+      <text y="28" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#3D5A3D">00:48</text>
+    </g>
+    <g transform="translate(360, 36)">
+      <text font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#1F1A17">3× Mango Sorbet · 1× <tspan font-style="italic" fill="#C5572D">Strawberry Swirl</tspan></text>
+      <text y="22" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">ALL CUPS · MANGO: LESS SWEET (NO SAUCE)</text>
+      <text y="42" font-family="Geist, sans-serif" font-style="italic" font-size="11" font-weight="500" fill="#D69537">⚠ Mango sorbet low (2 L) · 4 scoops needed</text>
+    </g>
+    <g transform="translate(32, 84)">
+      <rect width="100" height="22" rx="11" fill="#D7E1D2"/>
+      <text x="50" y="15" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1.5" fill="#3D5A3D">JUST IN</text>
+    </g>
+    <g transform="translate(1280, 30)">
+      <rect width="140" height="56" rx="14" fill="#F5EFE6"/>
+      <text x="70" y="34" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="500" fill="#3A322C">View detail</text>
+    </g>
+    <g transform="translate(1432, 30)">
+      <rect width="148" height="56" rx="14" fill="#3D5A3D"/>
+      <text x="74" y="34" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="500" fill="#FBF8F2"><tspan font-style="italic" fill="#D7E1D2">Accept</tspan></text>
+    </g>
+  </g>
+
+  <!-- Recently delivered -->
+  <text x="272" y="754" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#A29687">RECENTLY COMPLETED · LAST 30 MIN</text>
+  <g transform="translate(272, 768)">
+    <rect width="1616" height="200" rx="20" fill="#FBF8F2"/>
+    <g transform="translate(32, 28)" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#3A322C">
+      <text font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A041</text>
+      <text x="100" y="0" fill="#6B5F55">TABLE 04 · 1× CHOCOLATE · 1× VANILLA</text>
+      <text x="700" y="0" fill="#A29687">PREP 01:48</text>
+      <text x="880" y="0" fill="#3D5A3D">✓ READY 19:58</text>
+      <text x="1080" y="0" fill="#1F1A17">PICKED UP 20:01</text>
+      <g transform="translate(1500, -14)">
+        <rect width="80" height="28" rx="9" fill="#D7E1D2"/>
+        <text x="40" y="19" text-anchor="middle" font-size="10" fill="#3D5A3D">DELIVERED</text>
+      </g>
+    </g>
+    <line x1="32" y1="64" x2="1584" y2="64" stroke="#E5DCCC"/>
+    <g transform="translate(32, 84)" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#3A322C">
+      <text font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A039</text>
+      <text x="100" y="0" fill="#6B5F55">TABLE 11 · 2× STRAWBERRY SWIRL</text>
+      <text x="700" y="0" fill="#A29687">PREP 02:36</text>
+      <text x="880" y="0" fill="#3D5A3D">✓ READY 19:48</text>
+      <text x="1080" y="0" fill="#1F1A17">PICKED UP 19:52</text>
+      <g transform="translate(1500, -14)">
+        <rect width="80" height="28" rx="9" fill="#D7E1D2"/>
+        <text x="40" y="19" text-anchor="middle" font-size="10" fill="#3D5A3D">DELIVERED</text>
+      </g>
+    </g>
+    <line x1="32" y1="120" x2="1584" y2="120" stroke="#E5DCCC"/>
+    <g transform="translate(32, 140)" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1.5" fill="#3A322C">
+      <text font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A036</text>
+      <text x="100" y="0" fill="#6B5F55">TABLE 02 · 1× BELGIAN CHOCOLATE · 1× MANGO SORBET</text>
+      <text x="700" y="0" fill="#A29687">PREP 02:08</text>
+      <text x="880" y="0" fill="#3D5A3D">✓ READY 19:35</text>
+      <text x="1080" y="0" fill="#1F1A17">PICKED UP 19:38</text>
+      <g transform="translate(1500, -14)">
+        <rect width="80" height="28" rx="9" fill="#D7E1D2"/>
+        <text x="40" y="19" text-anchor="middle" font-size="10" fill="#3D5A3D">DELIVERED</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(272, 992)" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">
+    <text>AUTO-SYNC WITH MAIN KITCHEN · ICE CREAM PRE-PREPARED 60S BEFORE BURGER REACHES PASS</text>
+    <text x="1616" text-anchor="end">CONNECTED · WS-PROD-1 · 92MS</text>
+  </g>
+</svg>

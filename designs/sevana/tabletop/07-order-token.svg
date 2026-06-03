@@ -1,0 +1,129 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1280" fill="#FBF8F2"/>
+  <!-- Soft top wash -->
+  <path d="M0 0 H800 V400 Q400 480 0 400 Z" fill="#D7E1D2" opacity="0.6"/>
+  <circle cx="80" cy="120" r="60" fill="#3D5A3D" opacity="0.06"/>
+  <circle cx="720" cy="320" r="100" fill="#C5572D" opacity="0.05"/>
+
+  <!-- Status bar -->
+  <g font-family="Geist Mono, monospace" font-size="11" fill="#3A322C" letter-spacing="0.5">
+    <text x="24" y="28">19:52</text>
+    <text x="776" y="28" text-anchor="end">WI-FI · 96%</text>
+  </g>
+
+  <!-- Success mark -->
+  <g transform="translate(400, 156)">
+    <circle r="64" fill="#3D5A3D" opacity="0.14"/>
+    <circle r="46" fill="#3D5A3D"/>
+    <polyline points="-16,2 -4,14 18,-12" fill="none" stroke="#FBF8F2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Confetti -->
+    <circle cx="-80" cy="-40" r="4" fill="#C5572D"/>
+    <circle cx="86" cy="-20" r="5" fill="#D69537"/>
+    <circle cx="-100" cy="20" r="3" fill="#3D5A3D"/>
+    <circle cx="98" cy="36" r="4" fill="#B58836"/>
+    <rect x="-70" y="-66" width="6" height="6" rx="1" fill="#C5572D" transform="rotate(30 -67 -63)"/>
+    <rect x="64" y="-56" width="6" height="6" rx="1" fill="#D69537" transform="rotate(-20 67 -53)"/>
+  </g>
+
+  <!-- Headline -->
+  <text x="400" y="288" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#3D5A3D">ORDER CONFIRMED · 19:52</text>
+  <text x="400" y="334" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="400" letter-spacing="-1" fill="#1F1A17">Thank <tspan font-style="italic" fill="#C5572D">you.</tspan></text>
+  <text x="400" y="362" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" fill="#6B5F55">Paid · $56.58 · Visa ••42</text>
+
+  <!-- ===== Token card ===== -->
+  <g transform="translate(60, 410)">
+    <rect width="680" height="240" rx="24" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <!-- Corner accent -->
+    <rect width="680" height="6" rx="3" fill="#C5572D"/>
+    <text x="340" y="58" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" letter-spacing="3" fill="#6B5F55">YOUR ORDER TOKEN</text>
+    <line x1="40" y1="76" x2="640" y2="76" stroke="#E5DCCC" stroke-dasharray="4,6"/>
+    <text x="340" y="174" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="96" font-weight="500" letter-spacing="-2" fill="#1F1A17"><tspan font-style="italic" fill="#C5572D">#</tspan>A047</text>
+    <text x="340" y="212" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" fill="#6B5F55">Show this if needed — your server will bring it to <tspan font-weight="600" fill="#1F1A17">Table 7</tspan></text>
+  </g>
+
+  <!-- ===== Status pills ===== -->
+  <g transform="translate(60, 686)">
+    <text font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#1F1A17">Order <tspan font-style="italic" fill="#C5572D">status</tspan></text>
+    <text x="680" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#6B5F55">UPDATES LIVE</text>
+    <!-- Accepted (active) -->
+    <g transform="translate(0, 20)">
+      <rect width="210" height="64" rx="14" fill="#D7E1D2" stroke="#3D5A3D" stroke-width="1.5"/>
+      <circle cx="24" cy="32" r="10" fill="#3D5A3D"/>
+      <polyline points="20,32 23,35 28,29" fill="none" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="42" y="28" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#1F1A17">Accepted</text>
+      <text x="42" y="46" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#3D5A3D">JUST NOW</text>
+    </g>
+    <!-- Preparing -->
+    <g transform="translate(234, 20)">
+      <rect width="210" height="64" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <circle cx="24" cy="32" r="10" fill="none" stroke="#D9CFBE" stroke-width="2"/>
+      <text x="42" y="28" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#6B5F55">Preparing</text>
+      <text x="42" y="46" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#A29687">UP NEXT</text>
+    </g>
+    <!-- Ready -->
+    <g transform="translate(468, 20)">
+      <rect width="212" height="64" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+      <circle cx="24" cy="32" r="10" fill="none" stroke="#D9CFBE" stroke-width="2"/>
+      <text x="42" y="28" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#6B5F55">Ready</text>
+      <text x="42" y="46" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#A29687">~ 15 MIN</text>
+    </g>
+  </g>
+
+  <!-- ===== ETA + Server pair ===== -->
+  <g transform="translate(60, 800)">
+    <rect width="330" height="86" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <g transform="translate(28, 44)" stroke="#C5572D" stroke-width="2" stroke-linecap="round" fill="none">
+      <circle r="14"/>
+      <polyline points="0,-8 0,0 6,5"/>
+    </g>
+    <text x="60" y="36" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#6B5F55">ESTIMATED TIME</text>
+    <text x="60" y="68" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#1F1A17">~ <tspan font-style="italic" fill="#C5572D">15</tspan> minutes</text>
+  </g>
+  <g transform="translate(410, 800)">
+    <rect width="330" height="86" rx="14" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <g transform="translate(28, 44)" stroke="#3D5A3D" stroke-width="2" stroke-linecap="round" fill="none">
+      <circle cx="0" cy="-4" r="6"/>
+      <path d="M-10 12 a 10 10 0 0 1 20 0"/>
+    </g>
+    <text x="60" y="36" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#6B5F55">SERVED BY</text>
+    <text x="60" y="68" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#1F1A17">Chen<tspan font-style="italic" fill="#C5572D"> L.</tspan></text>
+  </g>
+
+  <!-- Mini summary -->
+  <g transform="translate(60, 906)">
+    <rect width="680" height="156" rx="16" fill="#FBF8F2" stroke="#E5DCCC"/>
+    <text x="20" y="34" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="500" fill="#1F1A17">Your <tspan font-style="italic" fill="#C5572D">order</tspan></text>
+    <text x="660" text-anchor="end" y="34" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1.5" fill="#6B5F55">4 ITEMS</text>
+    <line x1="20" y1="50" x2="660" y2="50" stroke="#E5DCCC"/>
+    <g transform="translate(20, 76)">
+      <text font-family="Geist, sans-serif" font-size="13" fill="#1F1A17">2× Glow Smash Burger</text>
+      <text x="640" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">$32.00</text>
+      <text y="16" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="#6B5F55">REGULAR · +CHEESE +BACON · NO PICKLE · MED</text>
+    </g>
+    <g transform="translate(20, 116)">
+      <text font-family="Geist, sans-serif" font-size="13" fill="#1F1A17">1× Iced Honey Latte</text>
+      <text x="640" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">$6.80</text>
+    </g>
+    <g transform="translate(20, 138)">
+      <text font-family="Geist, sans-serif" font-size="13" fill="#1F1A17">1× Vanilla Bean Scoop</text>
+      <text x="640" text-anchor="end" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="500" fill="#1F1A17">$7.20</text>
+    </g>
+  </g>
+
+  <!-- ===== Action buttons ===== -->
+  <g transform="translate(60, 1090)">
+    <rect width="680" height="68" rx="14" fill="#1F1A17"/>
+    <text x="24" y="42" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="500" fill="#FBF8F2">Track <tspan font-style="italic" fill="#F0D8C9">live</tspan> order</text>
+    <g transform="translate(640, 34)" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-8" y1="0" x2="8" y2="0"/>
+      <polyline points="3,-6 8,0 3,6"/>
+    </g>
+  </g>
+  <g transform="translate(60, 1172)">
+    <rect width="680" height="56" rx="14" fill="none" stroke="#E5DCCC" stroke-width="1.5"/>
+    <text x="340" y="36" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="500" fill="#3A322C">Order more items</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="400" y="1258" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">RECEIPT EMAILED TO YOU · COPY QUEUED FOR PRINTING</text>
+</svg>

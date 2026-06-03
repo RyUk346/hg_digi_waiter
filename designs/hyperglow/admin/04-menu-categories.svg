@@ -1,0 +1,302 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="1440" height="1024" fill="#FAFAF7"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="240" height="1024" fill="#FFFFFF"/>
+  <rect x="239" y="0" width="1" height="1024" fill="#E5E3DA"/>
+  <g transform="translate(24, 32)">
+    <circle cx="16" cy="16" r="16" fill="#F26B3A"/>
+    <path d="M 10 14 H 22 L 20 22 Q 20 24 18 24 H 14 Q 12 24 12 22 Z" fill="#FFFFFF"/>
+    <text x="46" y="14" font-size="15" font-weight="700" fill="#1A1A17">Hyperglow</text>
+    <text x="46" y="28" font-size="10" font-weight="600" letter-spacing="2" fill="#8A887E">ADMIN</text>
+  </g>
+  <line x1="24" y1="88" x2="216" y2="88" stroke="#F2F1EC"/>
+
+  <text x="32" y="116" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">OVERVIEW</text>
+  <g transform="translate(16, 128)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Dashboard</text></g>
+  <g transform="translate(16, 168)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Live orders</text></g>
+  <g transform="translate(16, 208)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Order history</text></g>
+
+  <text x="32" y="276" font-size="10" font-weight="700" letter-spacing="2" fill="#F26B3A">MENU</text>
+  <g transform="translate(16, 288)">
+    <rect width="208" height="40" rx="12" fill="#FEE6DC"/>
+    <text x="40" y="25" font-size="13" font-weight="700" fill="#F26B3A">Categories</text>
+    <g transform="translate(170, 12)">
+      <rect width="22" height="18" rx="6" fill="#F26B3A"/>
+      <text x="11" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">8</text>
+    </g>
+  </g>
+  <g transform="translate(16, 328)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Items</text></g>
+  <g transform="translate(16, 368)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Extras &amp; modifiers</text></g>
+  <text x="32" y="432" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">OPERATIONS</text>
+  <g transform="translate(16, 444)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Devices / Tables</text></g>
+  <g transform="translate(16, 484)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Stations</text></g>
+  <g transform="translate(16, 524)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Staff</text></g>
+  <g transform="translate(16, 564)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Reports</text></g>
+  <text x="32" y="628" font-size="10" font-weight="700" letter-spacing="2" fill="#8A887E">SETTINGS</text>
+  <g transform="translate(16, 640)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Payments</text></g>
+  <g transform="translate(16, 680)"><text x="40" y="25" font-size="13" font-weight="500" fill="#4D4B44">Branding</text></g>
+
+  <g transform="translate(16, 952)">
+    <rect width="208" height="56" rx="14" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <circle cx="32" cy="28" r="16" fill="#F26B3A"/>
+    <text x="32" y="33" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">MR</text>
+    <text x="56" y="26" font-size="12" font-weight="700" fill="#1A1A17">Mahmudur R.</text>
+    <text x="56" y="42" font-size="11" fill="#8A887E">Owner</text>
+  </g>
+
+  <!-- Top header -->
+  <rect x="240" y="0" width="1200" height="72" fill="#FFFFFF"/>
+  <rect x="240" y="71" width="1200" height="1" fill="#E5E3DA"/>
+  <text x="272" y="36" font-size="20" font-weight="700" fill="#1A1A17">Menu · Categories</text>
+  <text x="272" y="54" font-size="12" fill="#8A887E">8 categories · drag to reorder · live changes push to all tabletops in seconds</text>
+  <g transform="translate(1196, 18)">
+    <rect width="100" height="36" rx="10" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <text x="50" y="23" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A17">Bulk edit</text>
+  </g>
+  <g transform="translate(1304, 18)">
+    <rect width="116" height="36" rx="10" fill="#F26B3A"/>
+    <text x="58" y="23" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">+ New category</text>
+  </g>
+
+  <!-- LEFT PANE: Category list -->
+  <g transform="translate(272, 96)">
+    <rect width="480" height="900" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <text x="20" y="36" font-size="14" font-weight="700" fill="#1A1A17">All categories</text>
+    <text x="460" y="36" text-anchor="end" font-size="12" fill="#8A887E">8 total</text>
+
+    <g transform="translate(12, 56)">
+      <rect width="456" height="80" rx="14" fill="#FEE6DC" stroke="#F26B3A" stroke-width="2"/>
+      <g transform="translate(20, 40)" stroke="#F26B3A" stroke-width="1.5" stroke-linecap="round">
+        <line x1="-3" y1="-6" x2="3" y2="-6"/>
+        <line x1="-3" y1="0" x2="3" y2="0"/>
+        <line x1="-3" y1="6" x2="3" y2="6"/>
+      </g>
+      <circle cx="58" cy="40" r="22" fill="#FFFFFF"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">⭐</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Signature</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">12 items · Chef's picks · Position #1</text>
+      <g transform="translate(360, 30)">
+        <rect width="40" height="20" rx="10" fill="#2D8A66"/>
+        <circle cx="30" cy="10" r="8" fill="#FFFFFF"/>
+      </g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 148)">
+      <rect width="456" height="80" rx="14" fill="#FAFAF7"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round">
+        <line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/>
+      </g>
+      <circle cx="58" cy="40" r="22" fill="#FFF3DC"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">🔥</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Most Popular</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">18 items · Auto-curated · Position #2</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#2D8A66"/><circle cx="30" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 240)">
+      <rect width="456" height="80" rx="14" fill="#FAFAF7"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round"><line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/></g>
+      <circle cx="58" cy="40" r="22" fill="#FBE5DF"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">🍔</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Burgers</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">9 items · Beef · Chicken · Veg · Position #3</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#2D8A66"/><circle cx="30" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 332)">
+      <rect width="456" height="80" rx="14" fill="#FAFAF7"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round"><line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/></g>
+      <circle cx="58" cy="40" r="22" fill="#FFEAD1"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">🍕</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Pizza</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">11 items · Hand-stretched · Position #4</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#2D8A66"/><circle cx="30" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 424)">
+      <rect width="456" height="80" rx="14" fill="#FAFAF7"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round"><line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/></g>
+      <circle cx="58" cy="40" r="22" fill="#F3E2C8"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">🍝</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Pasta</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">7 items · Fresh daily · Position #5</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#2D8A66"/><circle cx="30" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 516)">
+      <rect width="456" height="80" rx="14" fill="#FAFAF7"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round"><line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/></g>
+      <circle cx="58" cy="40" r="22" fill="#EFE0D2"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">☕</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Coffee</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">14 items · Hot · Iced · Position #6</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#2D8A66"/><circle cx="30" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 608)">
+      <rect width="456" height="80" rx="14" fill="#FAFAF7"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round"><line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/></g>
+      <circle cx="58" cy="40" r="22" fill="#E6F2EE"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20">🍨</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#1A1A17">Ice Cream</text>
+      <text x="92" y="56" font-size="12" fill="#4D4B44">10 items · House-made · Position #7</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#2D8A66"/><circle cx="30" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#2D8A66">Active</text>
+    </g>
+    <g transform="translate(12, 700)">
+      <rect width="456" height="80" rx="14" fill="#F2F1EC"/>
+      <g transform="translate(20, 40)" stroke="#8A887E" stroke-width="1.5" stroke-linecap="round"><line x1="-3" y1="-6" x2="3" y2="-6"/><line x1="-3" y1="0" x2="3" y2="0"/><line x1="-3" y1="6" x2="3" y2="6"/></g>
+      <circle cx="58" cy="40" r="22" fill="#E5E3DA"/>
+      <text x="58" y="46" text-anchor="middle" font-size="20" opacity="0.5">🥐</text>
+      <text x="92" y="36" font-size="15" font-weight="700" fill="#8A887E">Pastries</text>
+      <text x="92" y="56" font-size="12" fill="#8A887E">0 items · Hidden from customers · Position #8</text>
+      <g transform="translate(360, 30)"><rect width="40" height="20" rx="10" fill="#C9C7BD"/><circle cx="10" cy="10" r="8" fill="#FFFFFF"/></g>
+      <text x="404" y="44" font-size="11" font-weight="600" fill="#8A887E">Hidden</text>
+    </g>
+    <g transform="translate(12, 792)">
+      <rect width="456" height="60" rx="14" fill="#FFFFFF" stroke="#E5E3DA" stroke-dasharray="4,4"/>
+      <text x="228" y="38" text-anchor="middle" font-size="13" font-weight="600" fill="#F26B3A">+ Add new category</text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANE: Selected category editor -->
+  <g transform="translate(776, 96)">
+    <rect width="632" height="900" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <text x="24" y="36" font-size="11" font-weight="700" letter-spacing="2" fill="#F26B3A">EDITING CATEGORY</text>
+    <g transform="translate(24, 56)">
+      <circle cx="36" cy="36" r="36" fill="#FEE6DC"/>
+      <text x="36" y="46" text-anchor="middle" font-size="32">⭐</text>
+      <text x="84" y="32" font-size="22" font-weight="700" fill="#1A1A17">Signature</text>
+      <text x="84" y="54" font-size="12" fill="#8A887E">12 items · Last edited 3 days ago by Mahmudur</text>
+      <g transform="translate(84, 64)">
+        <rect width="64" height="20" rx="6" fill="#F2F1EC"/>
+        <text x="32" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4B44">/menu/signature</text>
+      </g>
+    </g>
+
+    <line x1="24" y1="160" x2="608" y2="160" stroke="#F2F1EC"/>
+
+    <text x="24" y="192" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">NAME</text>
+    <g transform="translate(24, 200)">
+      <rect width="584" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="14" y="28" font-size="14" font-weight="600" fill="#1A1A17">Signature</text>
+    </g>
+
+    <text x="24" y="276" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">SHORT DESCRIPTION (TABLETOP)</text>
+    <g transform="translate(24, 284)">
+      <rect width="584" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+      <text x="14" y="28" font-size="14" fill="#1A1A17">Chef's picks</text>
+    </g>
+
+    <g transform="translate(24, 348)">
+      <text font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">ICON</text>
+      <g transform="translate(0, 8)">
+        <rect width="80" height="80" rx="14" fill="#FEE6DC" stroke="#F26B3A"/>
+        <text x="40" y="56" text-anchor="middle" font-size="36">⭐</text>
+        <text x="40" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#F26B3A">Change</text>
+      </g>
+    </g>
+    <g transform="translate(124, 348)">
+      <text font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">DEFAULT STATION</text>
+      <g transform="translate(0, 8)">
+        <rect width="200" height="44" rx="12" fill="#FAFAF7" stroke="#E5E3DA"/>
+        <circle cx="20" cy="22" r="6" fill="#FEE6DC"/>
+        <text x="32" y="28" font-size="13" font-weight="600" fill="#1A1A17">Main Kitchen</text>
+        <polyline points="180,18 188,26 196,18" fill="none" stroke="#4D4B44" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(0, 64)">
+        <text font-size="11" fill="#8A887E">Used as the default routing</text>
+        <text y="14" font-size="11" fill="#8A887E">for new items in this category.</text>
+      </g>
+    </g>
+    <g transform="translate(348, 348)">
+      <text font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">VISIBILITY</text>
+      <g transform="translate(0, 8)">
+        <rect width="260" height="44" rx="12" fill="#E6F2EE"/>
+        <g transform="translate(14, 22)"><rect width="40" height="20" rx="10" fill="#2D8A66" x="-20" y="-10"/><circle cx="10" cy="0" r="8" fill="#FFFFFF"/></g>
+        <text x="50" y="28" font-size="13" font-weight="700" fill="#2D8A66">Visible to customers</text>
+      </g>
+      <text y="80" font-size="11" fill="#8A887E">Toggle off to hide this category instantly on all tabletops.</text>
+    </g>
+
+    <line x1="24" y1="488" x2="608" y2="488" stroke="#F2F1EC"/>
+    <text x="24" y="516" font-size="11" font-weight="700" letter-spacing="2" fill="#8A887E">AVAILABLE DURING</text>
+    <g transform="translate(24, 524)"><rect width="76" height="32" rx="10" fill="#1A1A17"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Mon</text></g>
+    <g transform="translate(108, 524)"><rect width="76" height="32" rx="10" fill="#1A1A17"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Tue</text></g>
+    <g transform="translate(192, 524)"><rect width="76" height="32" rx="10" fill="#1A1A17"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Wed</text></g>
+    <g transform="translate(276, 524)"><rect width="76" height="32" rx="10" fill="#1A1A17"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Thu</text></g>
+    <g transform="translate(360, 524)"><rect width="76" height="32" rx="10" fill="#1A1A17"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Fri</text></g>
+    <g transform="translate(444, 524)"><rect width="76" height="32" rx="10" fill="#FFFFFF" stroke="#E5E3DA"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="600" fill="#8A887E">Sat</text></g>
+    <g transform="translate(528, 524)"><rect width="76" height="32" rx="10" fill="#FFFFFF" stroke="#E5E3DA"/><text x="38" y="21" text-anchor="middle" font-size="11" font-weight="600" fill="#8A887E">Sun</text></g>
+    <text x="24" y="580" font-size="11" fill="#8A887E">Time window: 11:00 — 22:00 · </text>
+    <text x="190" y="580" font-size="11" font-weight="700" fill="#F26B3A">Edit hours</text>
+
+    <line x1="24" y1="612" x2="608" y2="612" stroke="#F2F1EC"/>
+    <text x="24" y="644" font-size="14" font-weight="700" fill="#1A1A17">Items in this category (12)</text>
+    <g transform="translate(420, 622)">
+      <rect width="184" height="32" rx="10" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="92" y="21" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1A17">Manage items →</text>
+    </g>
+
+    <g transform="translate(24, 664)">
+      <rect width="180" height="40" rx="10" fill="#FAFAF7"/>
+      <circle cx="20" cy="20" r="10" fill="#FBE5DF"/>
+      <text x="20" y="24" text-anchor="middle" font-size="11">🍔</text>
+      <text x="38" y="18" font-size="11" font-weight="600" fill="#1A1A17">Glow Smash Burger</text>
+      <text x="38" y="32" font-size="10" fill="#8A887E">$12.50 · in stock</text>
+    </g>
+    <g transform="translate(216, 664)">
+      <rect width="180" height="40" rx="10" fill="#FAFAF7"/>
+      <circle cx="20" cy="20" r="10" fill="#FFEAD1"/>
+      <text x="20" y="24" text-anchor="middle" font-size="11">🍕</text>
+      <text x="38" y="18" font-size="11" font-weight="600" fill="#1A1A17">Truffle Pizza 12"</text>
+      <text x="38" y="32" font-size="10" fill="#8A887E">$18.00 · in stock</text>
+    </g>
+    <g transform="translate(408, 664)">
+      <rect width="200" height="40" rx="10" fill="#FAFAF7"/>
+      <circle cx="20" cy="20" r="10" fill="#F3E2C8"/>
+      <text x="20" y="24" text-anchor="middle" font-size="11">🍝</text>
+      <text x="38" y="18" font-size="11" font-weight="600" fill="#1A1A17">Chef's Truffle Carbonara</text>
+      <text x="38" y="32" font-size="10" fill="#8A887E">$22.00 · in stock</text>
+    </g>
+    <g transform="translate(24, 712)">
+      <rect width="180" height="40" rx="10" fill="#FAFAF7"/>
+      <circle cx="20" cy="20" r="10" fill="#E6F2EE"/>
+      <text x="20" y="24" text-anchor="middle" font-size="11">🍨</text>
+      <text x="38" y="18" font-size="11" font-weight="600" fill="#1A1A17">Signature Sundae</text>
+      <text x="38" y="32" font-size="10" fill="#8A887E">$9.50 · in stock</text>
+    </g>
+    <g transform="translate(216, 712)">
+      <rect width="180" height="40" rx="10" fill="#FBE5DF"/>
+      <circle cx="20" cy="20" r="10" fill="#FBE5DF"/>
+      <text x="20" y="24" text-anchor="middle" font-size="11">🌶</text>
+      <text x="38" y="18" font-size="11" font-weight="600" fill="#1A1A17">Glow Hot Wings</text>
+      <text x="38" y="32" font-size="10" font-weight="600" fill="#D43A3A">$11.00 · OUT</text>
+    </g>
+    <g transform="translate(408, 712)">
+      <rect width="200" height="40" rx="10" fill="#FAFAF7"/>
+      <circle cx="20" cy="20" r="10" fill="#EFE0D2"/>
+      <text x="20" y="24" text-anchor="middle" font-size="11">☕</text>
+      <text x="38" y="18" font-size="11" font-weight="600" fill="#1A1A17">Glow Cold Brew</text>
+      <text x="38" y="32" font-size="10" fill="#8A887E">$6.20 · in stock</text>
+    </g>
+    <g transform="translate(24, 760)">
+      <text font-size="11" font-weight="600" fill="#F26B3A">+ Show 6 more items</text>
+    </g>
+
+    <line x1="24" y1="800" x2="608" y2="800" stroke="#F2F1EC"/>
+    <g transform="translate(24, 824)">
+      <rect width="116" height="44" rx="12" fill="#FBE5DF"/>
+      <text x="58" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#D43A3A">Delete</text>
+    </g>
+    <g transform="translate(380, 824)">
+      <rect width="100" height="44" rx="12" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="50" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#4D4B44">Cancel</text>
+    </g>
+    <g transform="translate(492, 824)">
+      <rect width="116" height="44" rx="12" fill="#F26B3A"/>
+      <text x="58" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Save changes</text>
+    </g>
+  </g>
+</svg>

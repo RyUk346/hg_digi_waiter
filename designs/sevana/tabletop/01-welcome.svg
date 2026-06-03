@@ -1,0 +1,106 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="terraGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#C5572D"/>
+      <stop offset="1" stop-color="#9F3F1C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== Paper background ===== -->
+  <rect width="800" height="1280" fill="#FBF8F2"/>
+  <!-- Soft cream wash (top half) -->
+  <path d="M0 0 H800 V680 Q400 760 0 680 Z" fill="#F5EFE6"/>
+  <!-- Decorative warm haze -->
+  <circle cx="700" cy="120" r="160" fill="#C5572D" opacity="0.05"/>
+  <circle cx="80" cy="540" r="120" fill="#3D5A3D" opacity="0.06"/>
+
+  <!-- ===== Status bar (Geist Mono, ink-2) ===== -->
+  <g font-family="Geist Mono, JetBrains Mono, Menlo, Consolas, monospace" font-size="11" fill="#3A322C" letter-spacing="0.5">
+    <text x="24" y="32">19:42</text>
+    <text x="776" y="32" text-anchor="end">WI-FI · SEVANA-GUEST</text>
+  </g>
+
+  <!-- ===== Brand mark (italic serif inside circle) ===== -->
+  <g transform="translate(400, 220)">
+    <circle r="62" fill="#1F1A17"/>
+    <circle r="62" fill="none" stroke="#C5572D" stroke-width="1" opacity="0.35"/>
+    <circle r="72" fill="none" stroke="#C5572D" stroke-width="0.5" opacity="0.18"/>
+    <text text-anchor="middle" y="12" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="500" font-size="58" fill="#FBF8F2">H</text>
+  </g>
+
+  <!-- ===== Wordmark ===== -->
+  <g font-family="Fraunces, Georgia, serif" text-anchor="middle">
+    <text x="400" y="350" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#1F1A17">Hyperglow<tspan font-style="italic" fill="#C5572D"> Café</tspan></text>
+  </g>
+  <text x="400" y="378" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" letter-spacing="2.4" fill="#A29687">EST · 2026 · DHAKA</text>
+
+  <!-- Thin divider -->
+  <line x1="340" y1="416" x2="460" y2="416" stroke="#D9CFBE"/>
+  <circle cx="400" cy="416" r="3" fill="#C5572D"/>
+
+  <!-- ===== Greeting block ===== -->
+  <g text-anchor="middle">
+    <text x="400" y="478" font-family="Geist Mono, monospace" font-size="12" letter-spacing="3" fill="#6B5F55">GOOD EVENING</text>
+    <text x="400" y="572" font-family="Fraunces, Georgia, serif" font-size="64" font-weight="400" letter-spacing="-1.6" fill="#1F1A17">Welcome <tspan font-style="italic" fill="#C5572D">back</tspan>.</text>
+    <text x="400" y="610" font-family="Geist, system-ui, sans-serif" font-size="15" fill="#6B5F55">A slow menu, made for the table.</text>
+    <text x="400" y="632" font-family="Geist, system-ui, sans-serif" font-size="15" fill="#6B5F55">Browse, customise, and order in seconds.</text>
+  </g>
+
+  <!-- ===== Table chip (Sevana ink pill with green pulse) ===== -->
+  <g transform="translate(400, 720)">
+    <rect x="-120" y="-26" width="240" height="52" rx="26" fill="#1F1A17"/>
+    <circle cx="-86" cy="0" r="5" fill="#4F9E5F"/>
+    <circle cx="-86" cy="0" r="10" fill="#4F9E5F" opacity="0.22"/>
+    <text x="-66" y="-2" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">SEATED AT</text>
+    <text x="-66" y="14" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="16" font-weight="500" fill="#FBF8F2">Table seven</text>
+  </g>
+
+  <!-- ===== Primary CTA (ink-black with terra accent text) ===== -->
+  <g transform="translate(80, 836)">
+    <rect width="640" height="84" rx="20" fill="#1F1A17"/>
+    <text x="32" y="38" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2.4" fill="#A29687">BEGIN</text>
+    <text x="32" y="64" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="500" fill="#FBF8F2">Browse the <tspan font-style="italic" fill="#F0D8C9">menu</tspan></text>
+    <!-- Arrow circle -->
+    <g transform="translate(584, 42)">
+      <circle r="24" fill="#C5572D"/>
+      <g stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <line x1="-8" y1="0" x2="8" y2="0"/>
+        <polyline points="3,-6 8,0 3,6"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== Secondary CTA ===== -->
+  <g transform="translate(80, 940)">
+    <rect width="640" height="68" rx="18" fill="#FBF8F2" stroke="#E5DCCC" stroke-width="1.5"/>
+    <!-- bell icon -->
+    <g transform="translate(40, 34)" stroke="#3A322C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-10 -4 a 10 10 0 1 1 20 0 v 4 l 4 6 H -14 l 4 -6 z"/>
+      <path d="M-4 8 a 4 4 0 0 0 8 0"/>
+    </g>
+    <text x="68" y="40" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" fill="#1F1A17">Call a <tspan font-style="italic" fill="#C5572D">server</tspan></text>
+    <text x="604" y="40" text-anchor="end" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">OPTIONAL →</text>
+  </g>
+
+  <!-- ===== Language strip ===== -->
+  <g transform="translate(400, 1100)" text-anchor="middle">
+    <text font-family="Geist Mono, monospace" font-size="10" letter-spacing="3" fill="#A29687">CHOOSE LANGUAGE</text>
+  </g>
+  <g transform="translate(400, 1144)" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14">
+    <text font-weight="500" fill="#1F1A17">English</text>
+    <text x="-110" fill="#A29687">·</text>
+    <text x="-86" fill="#6B5F55">Español</text>
+    <text x="-20" fill="#A29687">·</text>
+    <text x="4" fill="#6B5F55">বাংলা</text>
+    <text x="62" fill="#A29687">·</text>
+    <text x="86" fill="#6B5F55">Français</text>
+    <text x="158" fill="#A29687">·</text>
+    <text x="182" fill="#6B5F55">العربية</text>
+  </g>
+
+  <!-- ===== Footer ===== -->
+  <g transform="translate(400, 1224)" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2" fill="#A29687">
+    <text>HYPERGLOW CAFÉ · POWERED BY DIGITAL WAITER</text>
+    <text y="18">SEVANA SYSTEM · v 2.4.1</text>
+  </g>
+</svg>

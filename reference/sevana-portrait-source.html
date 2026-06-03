@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sevana — Digital Waiter · Portrait Tablet · Kitchen Display</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5EFE6; --paper:#FBF8F2; --ink:#1F1A17; --ink-2:#3A322C;
+    --ink-3:#6B5F55; --ink-4:#A29687;
+    --terra:#C5572D; --terra-deep:#9F3F1C; --terra-soft:#F0D8C9;
+    --forest:#3D5A3D; --forest-soft:#D7E1D2; --gold:#B58836;
+    --line:#E5DCCC; --line-2:#D9CFBE;
+    --green:#4F9E5F; --amber:#D69537; --red:#C44A3A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#241F1B;font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased;color:var(--ink)}
+  body{padding:40px 24px}
+  .scrn-wrap{max-width:1920px;margin:0 auto 60px}
+  .scrn-label{color:#A29687;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;display:flex;justify-content:space-between;align-items:baseline}
+  .scrn-label strong{color:#F5EFE6;font-family:'Fraunces',serif;font-weight:500;font-size:18px;letter-spacing:-0.01em;text-transform:none}
+  .scrn-label strong em{font-style:italic;color:var(--terra-soft);font-weight:400}
+
+  /* THE SCREEN — exact device dimensions */
+  .screen{background:var(--paper);overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.2);border-radius:24px}
+  .screen.tablet{width:800px;height:1280px}
+  .screen.wide{width:1920px;height:1080px}
+
+  /* ====================================================== */
+  /* COMMON UI — TOP STATUS BAR (tablet, portrait)         */
+  /* ====================================================== */
+  .status-bar{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-2);background:var(--paper);letter-spacing:0.04em;border-bottom:1px solid transparent}
+  .status-bar .right{display:flex;gap:6px;align-items:center}
+  .status-bar.dark{background:var(--ink);color:var(--paper)}
+
+  /* ====================================================== */
+  /* SCREEN 1 — MENU BROWSER (800x1280)                    */
+  /* ====================================================== */
+  .menu-screen{display:flex;flex-direction:column;height:100%}
+  .menu-head{padding:22px 24px 18px;background:var(--paper);position:relative}
+  .menu-head .topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .brand-mini{display:flex;align-items:center;gap:10px}
+  .brand-mini .mk{width:30px;height:30px;border-radius:50%;background:var(--terra);color:var(--paper);font-family:'Fraunces',serif;font-style:italic;font-weight:600;display:grid;place-items:center;font-size:15px}
+  .brand-mini .nm{font-family:'Fraunces',serif;font-weight:500;font-size:16px;letter-spacing:-0.01em}
+  .brand-mini .nm em{font-style:italic;color:var(--terra)}
+  .table-chip{background:var(--ink);color:var(--paper);padding:7px 13px;border-radius:999px;font-size:11px;font-family:'Geist Mono',monospace;display:flex;align-items:center;gap:7px;letter-spacing:0.04em}
+  .table-chip .pulse{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(79,158,95,.25)}
+  .greet h1{font-family:'Fraunces',serif;font-size:34px;font-weight:400;letter-spacing:-0.02em;line-height:1.05;color:var(--ink)}
+  .greet h1 em{font-style:italic;color:var(--terra)}
+  .greet p{font-size:13px;color:var(--ink-3);margin-top:6px;line-height:1.4}
+  .search-row{margin-top:16px;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-size:13px;color:var(--ink-3);display:flex;align-items:center;gap:10px}
+
+  /* category strip */
+  .cat-strip{display:flex;gap:10px;padding:0 24px 18px;overflow-x:auto;white-space:nowrap}
+  .cat-strip::-webkit-scrollbar{display:none}
+  .cat-pill{display:flex;align-items:center;gap:9px;padding:11px 16px;border-radius:14px;background:var(--cream);border:1px solid var(--line);font-size:13px;font-weight:500;color:var(--ink-2);cursor:pointer;flex-shrink:0}
+  .cat-pill .ic{width:24px;height:24px;border-radius:7px;background:var(--paper);display:grid;place-items:center;font-size:14px;border:1px solid var(--line)}
+  .cat-pill.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .cat-pill.on .ic{background:var(--terra);border-color:var(--terra)}
+
+  /* main scroll area */
+  .menu-body{flex:1;overflow:auto;padding:6px 24px 120px}
+  .sec-h{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 12px}
+  .sec-h h2{font-family:'Fraunces',serif;font-size:19px;font-weight:500;letter-spacing:-0.01em}
+  .sec-h h2 em{font-style:italic;color:var(--terra);font-weight:400}
+  .sec-h .sort{font-size:10px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.1em;text-transform:uppercase}
+
+  /* hero signature cards */
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:6px}
+  .sig{background:var(--ink);border-radius:18px;padding:16px;color:var(--paper);height:200px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+  .sig.amber{background:linear-gradient(135deg,#C5572D 0%,#9F3F1C 100%)}
+  .sig.green{background:linear-gradient(135deg,#3D5A3D 0%,#2A402A 100%)}
+  .sig .b{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,.7);font-family:'Geist Mono',monospace}
+  .sig h3{font-family:'Fraunces',serif;font-size:18px;font-weight:500;line-height:1.15;margin-top:8px;letter-spacing:-0.01em}
+  .sig .fr{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2}
+  .sig .pr{font-family:'Fraunces',serif;font-size:20px;font-weight:500}
+  .sig .pl{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:18px;color:#fff}
+  .sig .em{position:absolute;right:-12px;top:-6px;font-size:88px;opacity:.32;transform:rotate(-12deg)}
+
+  /* 2-col items grid */
+  .items{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .item{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative}
+  .item.featured{border-color:var(--terra);box-shadow:0 0 0 1px var(--terra)}
+  .item .ph{height:130px;border-radius:11px;background:var(--cream);display:grid;place-items:center;font-size:54px;position:relative;overflow:hidden}
+  .item .ph.beef{background:linear-gradient(135deg,#E8C9A8,#C99670)}
+  .item .ph.chick{background:linear-gradient(135deg,#F0DBA8,#D6B86A)}
+  .item .ph.veg{background:linear-gradient(135deg,#D7E1D2,#A9C2A0)}
+  .item .ph.pizza{background:linear-gradient(135deg,#F4D5A8,#E0A056)}
+  .item .ph.coffee{background:linear-gradient(135deg,#D4B292,#8C6645)}
+  .item .ph .tag{position:absolute;top:7px;left:7px;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--paper);background:rgba(31,26,23,.78);padding:3px 6px;border-radius:5px;font-family:'Geist Mono',monospace}
+  .item h4{font-family:'Fraunces',serif;font-size:15px;font-weight:500;letter-spacing:-0.01em;line-height:1.15}
+  .item .desc{font-size:11px;color:var(--ink-3);line-height:1.4;height:30px;overflow:hidden}
+  .item .ifoot{display:flex;justify-content:space-between;align-items:center;margin-top:2px}
+  .item .pr2{font-family:'Fraunces',serif;font-size:16px;font-weight:500}
+  .item .add{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);border:none;display:grid;place-items:center;font-size:16px}
+  .item .stock-out{position:absolute;inset:0;background:rgba(245,239,230,.88);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;color:var(--terra-deep);font-size:14px}
+
+  /* sticky bottom cart */
+  .cart-stick{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:18px 22px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -8px 24px rgba(0,0,0,.25)}
+  .cart-stick .cs-left{display:flex;align-items:center;gap:12px}
+  .cart-stick .cs-bag{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:20px;position:relative}
+  .cart-stick .cs-bag .badge{position:absolute;top:-4px;right:-4px;background:var(--terra);color:var(--paper);font-size:10px;font-weight:600;border-radius:10px;padding:2px 6px;font-family:'Geist Mono',monospace;border:2px solid var(--ink)}
+  .cart-stick .cs-txt small{font-size:10px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+  .cart-stick .cs-txt strong{font-family:'Fraunces',serif;font-size:18px;font-weight:500}
+  .cart-stick .cs-cta{background:var(--terra);color:var(--paper);border:none;padding:14px 22px;border-radius:12px;font-family:'Fraunces',serif;font-size:15px;font-weight:500;display:flex;align-items:center;gap:8px;letter-spacing:-0.01em}
+
+  /* ====================================================== */
+  /* SCREEN 2 — ITEM DETAIL                                */
+  /* ====================================================== */
+  .det-screen{display:flex;flex-direction:column;height:100%}
+  .det-hero{height:420px;background:linear-gradient(135deg,#E8C9A8 0%,#B6814F 100%);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:24px}
+  .det-hero .top-actions{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+  .det-hero .back{background:rgba(31,26,23,.7);color:var(--paper);border-radius:999px;padding:10px 16px;font-size:12px;font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .det-hero .actions{display:flex;gap:8px}
+  .det-hero .ab{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;font-size:18px;color:var(--ink)}
+  .det-hero .hero-em{position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);font-size:260px;filter:drop-shadow(0 16px 30px rgba(0,0,0,.2))}
+  .det-hero .tags{display:flex;gap:7px;position:relative;z-index:2}
+  .det-hero .tags span{background:rgba(255,255,255,.92);color:var(--ink);padding:6px 12px;border-radius:999px;font-size:11px;font-family:'Geist Mono',monospace;letter-spacing:0.04em;text-transform:uppercase}
+
+  .det-body{flex:1;overflow:auto;padding:24px 24px 120px}
+  .det-cat{font-size:10px;color:var(--terra);font-family:'Geist Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px}
+  .det-body h1{font-family:'Fraunces',serif;font-size:34px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin-bottom:6px}
+  .det-body h1 em{font-style:italic;color:var(--terra)}
+  .det-price{font-family:'Fraunces',serif;font-size:24px;font-weight:500;margin-bottom:14px}
+  .det-desc{font-size:14px;color:var(--ink-3);line-height:1.55;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:18px}
+  .ex-title{font-family:'Fraunces',serif;font-size:18px;font-weight:500;margin-bottom:2px}
+  .ex-title em{font-style:italic;color:var(--terra);font-weight:400}
+  .ex-sub{font-size:10px;color:var(--ink-4);font-family:'Geist Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
+  .ex-list{display:flex;flex-direction:column;gap:8px}
+  .ex-row{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+  .ex-row .l{display:flex;align-items:center;gap:11px}
+  .ex-row .chk{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line-2);background:var(--cream);display:grid;place-items:center;flex-shrink:0;font-size:12px}
+  .ex-row.on{border-color:var(--terra);background:var(--terra-soft)}
+  .ex-row.on .chk{background:var(--terra);border-color:var(--terra);color:var(--paper);font-weight:700}
+  .ex-row .nm{font-size:13.5px;font-weight:500}
+  .ex-row .nm span{display:block;font-size:10.5px;font-weight:400;color:var(--ink-3);margin-top:1px;font-family:'Geist Mono',monospace}
+  .ex-row .pr{font-family:'Fraunces',serif;font-size:14px;font-weight:500}
+
+  .det-stick{position:absolute;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:16px 22px 22px;display:flex;align-items:center;gap:12px}
+  .qpick{display:flex;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:5px}
+  .qpick button{width:32px;height:32px;border-radius:8px;border:none;background:transparent;font-size:18px;color:var(--ink)}
+  .qpick button.act{background:var(--ink);color:var(--paper)}
+  .qpick span{width:34px;text-align:center;font-family:'Fraunces',serif;font-size:17px;font-weight:500}
+  .det-stick .add-c{flex:1;background:var(--ink);color:var(--paper);border:none;padding:16px;border-radius:13px;font-family:'Fraunces',serif;font-size:16px;font-weight:500;display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
+  .det-stick .add-c em{font-style:italic;font-weight:400;color:var(--terra-soft)}
+
+  /* ====================================================== */
+  /* SCREEN 3 — CART                                        */
+  /* ====================================================== */
+  .cart-screen{display:flex;flex-direction:column;height:100%;background:var(--cream)}
+  .cart-h{padding:24px 24px 14px;background:var(--paper);border-bottom:1px solid var(--line)}
+  .cart-h .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .cart-h .back{font-size:13px;color:var(--ink);display:flex;align-items:center;gap:8px;font-weight:500}
+  .cart-h .clear{font-size:11px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.08em;text-transform:uppercase}
+  .cart-h h1{font-family:'Fraunces',serif;font-size:32px;font-weight:400;letter-spacing:-0.02em;margin-top:4px}
+  .cart-h h1 em{font-style:italic;color:var(--terra)}
+  .cart-h .meta{font-size:12px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;margin-top:6px}
+
+  .cart-body{flex:1;overflow:auto;padding:18px 24px 230px}
+  .ci{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:flex-start}
+  .ci .th{width:60px;height:60px;border-radius:11px;background:var(--cream);display:grid;place-items:center;font-size:30px}
+  .ci h5{font-family:'Fraunces',serif;font-size:16px;font-weight:500}
+  .ci .ex{font-size:11px;color:var(--ink-3);margin-top:4px;line-height:1.4;font-family:'Geist Mono',monospace;letter-spacing:0.02em}
+  .ci .qrow{display:flex;align-items:center;gap:8px;margin-top:10px}
+  .ci .qrow button{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);background:var(--cream);font-size:14px;color:var(--ink)}
+  .ci .qrow span{font-family:'Fraunces',serif;font-size:14px;font-weight:500;min-width:18px;text-align:center}
+  .ci .cp{font-family:'Fraunces',serif;font-size:17px;font-weight:500;text-align:right}
+  .ci .cp small{display:block;font-size:10px;color:var(--ink-4);font-family:'Geist Mono',monospace;margin-top:2px;font-weight:400}
+
+  .tip-box{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:8px;margin-bottom:14px}
+  .tip-box .lbl{font-size:10px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between}
+  .tip-box .lbl span{color:var(--ink-2)}
+  .tip-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .tip-opts button{padding:11px 0;border-radius:9px;border:1px solid var(--line);background:var(--cream);color:var(--ink-2);font-family:'Geist',sans-serif;font-size:13px;font-weight:500;cursor:pointer}
+  .tip-opts button.on{background:var(--terra);border-color:var(--terra);color:var(--paper)}
+
+  .cart-stick-pay{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:20px 22px 24px;box-shadow:0 -12px 30px rgba(0,0,0,.3)}
+  .totals-mini{font-family:'Geist Mono',monospace;font-size:12px;color:#A29687}
+  .totals-mini .row{display:flex;justify-content:space-between;margin-bottom:5px}
+  .totals-mini hr{border:none;border-top:1px dashed #3D362F;margin:8px 0}
+  .totals-mini .grand{display:flex;justify-content:space-between;align-items:baseline}
+  .totals-mini .grand span{color:#D9CFBE;font-size:13px;letter-spacing:0.06em}
+  .totals-mini .grand strong{font-family:'Fraunces',serif;font-size:26px;font-weight:500;color:var(--paper)}
+  .pay-go{margin-top:14px;width:100%;background:var(--terra);color:var(--paper);border:none;padding:17px;border-radius:13px;font-family:'Fraunces',serif;font-size:17px;font-weight:500;display:flex;justify-content:center;align-items:center;gap:10px;letter-spacing:-0.01em}
+
+  /* ====================================================== */
+  /* SCREEN 4 — PAYMENT                                     */
+  /* ====================================================== */
+  .pay-screen-p{display:flex;flex-direction:column;height:100%}
+  .pay-h{background:var(--ink);color:var(--paper);padding:24px 24px 28px}
+  .pay-h .back{font-size:12px;color:#A29687;display:flex;align-items:center;gap:8px;margin-bottom:14px;font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase}
+  .pay-h .lbl{font-size:11px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px}
+  .pay-h h1{font-family:'Fraunces',serif;font-size:32px;font-weight:400;line-height:1.05;letter-spacing:-0.02em;margin-bottom:18px}
+  .pay-h h1 em{font-style:italic;color:var(--terra-soft)}
+  .pay-h .total-card{background:#2B2520;border:1px solid #3D362F;border-radius:14px;padding:18px;display:flex;justify-content:space-between;align-items:center}
+  .pay-h .total-card .l small{font-size:10px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:4px}
+  .pay-h .total-card .l strong{font-family:'Fraunces',serif;font-size:34px;font-weight:500;letter-spacing:-0.02em}
+  .pay-h .total-card .r{text-align:right;font-size:11px;color:#A29687;font-family:'Geist Mono',monospace;line-height:1.4}
+  .pay-h .total-card .r strong{display:block;color:var(--paper);font-family:'Fraunces',serif;font-size:15px;font-weight:500;margin-bottom:2px}
+
+  .pay-body{flex:1;overflow:auto;padding:22px 24px 24px}
+  .nfc-card{background:linear-gradient(135deg,#3D5A3D 0%,#2A402A 100%);color:var(--paper);border-radius:20px;padding:28px;text-align:center;margin-bottom:18px;position:relative;overflow:hidden}
+  .nfc-card .ring{width:110px;height:110px;border-radius:50%;border:2px solid rgba(255,255,255,.32);margin:0 auto 16px;display:grid;place-items:center;position:relative}
+  .nfc-card .ring::before,.nfc-card .ring::after{content:'';position:absolute;inset:-10px;border:1.5px solid rgba(255,255,255,.18);border-radius:50%}
+  .nfc-card .ring::after{inset:-22px;border-color:rgba(255,255,255,.08)}
+  .nfc-card .ring svg{width:46px;height:46px;color:var(--paper)}
+  .nfc-card h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;margin-bottom:4px}
+  .nfc-card p{font-size:11px;color:rgba(255,255,255,.7);font-family:'Geist Mono',monospace;letter-spacing:0.1em;text-transform:uppercase}
+
+  .or-div{display:flex;align-items:center;gap:12px;color:var(--ink-4);font-size:10px;font-family:'Geist Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;margin:18px 0}
+  .or-div::before,.or-div::after{content:'';flex:1;height:1px;background:var(--line)}
+  .stripe-card{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--cream)}
+  .stripe-card .head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .stripe-card .head h4{font-family:'Fraunces',serif;font-size:16px;font-weight:500}
+  .stripe-card .head .bk{font-size:9px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+  .stripe-card .head .bk::before{content:'';width:16px;height:11px;background:#635BFF;border-radius:2px}
+  .fld{margin-bottom:10px}
+  .fld label{display:block;font-size:9px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px}
+  .fld .inp{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:11px 13px;font-size:13px;color:var(--ink);font-family:'Geist Mono',monospace}
+  .fld-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .pay-btn{margin-top:12px;width:100%;background:var(--ink);color:var(--paper);border:none;padding:14px;border-radius:11px;font-family:'Fraunces',serif;font-size:15px;font-weight:500}
+
+  /* ====================================================== */
+  /* SCREEN 5 — ORDER CONFIRMED                             */
+  /* ====================================================== */
+  .conf-screen{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 28px;position:relative;background:var(--paper);overflow:hidden}
+  .conf-screen::before{content:'';position:absolute;top:-200px;right:-160px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(197,87,45,.14) 0%,transparent 70%)}
+  .conf-screen::after{content:'';position:absolute;bottom:-180px;left:-160px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(61,90,61,.11) 0%,transparent 70%)}
+  .conf-inner{position:relative;text-align:center;max-width:540px}
+  .conf-orn{font-family:'Fraunces',serif;font-style:italic;color:var(--terra);font-size:14px;letter-spacing:0.1em;margin-bottom:18px}
+  .conf-inner h1{font-family:'Fraunces',serif;font-size:48px;font-weight:400;letter-spacing:-0.02em;line-height:1;margin-bottom:14px}
+  .conf-inner h1 em{font-style:italic;color:var(--terra)}
+  .conf-inner .sub{font-size:14px;color:var(--ink-3);line-height:1.5;margin:0 auto 32px;max-width:360px}
+  .tok-box{display:inline-block;background:var(--ink);color:var(--paper);padding:24px 56px;border-radius:22px;margin-bottom:30px;position:relative}
+  .tok-box::before,.tok-box::after{content:'';position:absolute;top:50%;width:20px;height:20px;border-radius:50%;background:var(--paper);transform:translateY(-50%)}
+  .tok-box::before{left:-10px}
+  .tok-box::after{right:-10px}
+  .tok-box .l{font-size:11px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:8px}
+  .tok-box .n{font-family:'Fraunces',serif;font-size:72px;font-weight:500;letter-spacing:-0.04em;line-height:1}
+  .conf-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
+  .conf-stat{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 12px;text-align:left}
+  .conf-stat .ll{font-size:9px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:5px}
+  .conf-stat .vv{font-family:'Fraunces',serif;font-size:18px;font-weight:500;letter-spacing:-0.01em}
+  .conf-stat .vv em{font-style:italic;color:var(--terra)}
+  .conf-btns{display:flex;flex-direction:column;gap:10px}
+  .conf-btns button{padding:15px 24px;border-radius:12px;font-family:'Fraunces',serif;font-size:16px;font-weight:500;border:none}
+  .conf-btns .pri{background:var(--ink);color:var(--paper)}
+  .conf-btns .sec{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+
+  /* ====================================================== */
+  /* SCREEN 6 — LIVE ORDER STATUS                           */
+  /* ====================================================== */
+  .stat-screen{height:100%;display:flex;flex-direction:column}
+  .stat-h{background:var(--cream);padding:24px 24px 22px;border-bottom:1px solid var(--line)}
+  .stat-h .ht{font-size:11px;color:var(--terra);font-family:'Geist Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:10px}
+  .stat-h h1{font-family:'Fraunces',serif;font-size:32px;font-weight:400;letter-spacing:-0.02em;line-height:1.05}
+  .stat-h h1 em{font-style:italic;color:var(--terra)}
+  .stat-h .meta{display:flex;gap:18px;margin-top:14px;font-size:11px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.04em}
+  .stat-h .meta strong{display:block;font-family:'Fraunces',serif;color:var(--ink);font-size:15px;font-weight:500;margin-top:2px;letter-spacing:-0.01em}
+
+  .stat-step{padding:24px;background:var(--paper)}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;padding:14px 0;position:relative}
+  .step + .step::before{content:'';position:absolute;left:22px;top:-12px;width:2px;height:28px;background:var(--line)}
+  .step.done + .step::before, .step.done + .active::before{background:var(--terra)}
+  .step .dot{width:44px;height:44px;border-radius:50%;background:var(--paper);border:1.5px solid var(--line);display:grid;place-items:center;font-family:'Fraunces',serif;font-size:14px;color:var(--ink-3);font-weight:500}
+  .step.done .dot{background:var(--terra);border-color:var(--terra);color:var(--paper)}
+  .step.active .dot{background:var(--ink);border-color:var(--ink);color:var(--paper);box-shadow:0 0 0 4px rgba(31,26,23,.1)}
+  .step .info h4{font-family:'Fraunces',serif;font-size:18px;font-weight:500;margin-bottom:3px}
+  .step .info p{font-size:11px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.04em}
+  .step.pending .info h4{color:var(--ink-4)}
+
+  .live-ind{margin:0 24px;padding:13px 16px;background:var(--ink);color:var(--paper);border-radius:11px;font-size:12.5px;display:flex;align-items:center;gap:10px}
+  .live-ind .ld{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(79,158,95,.25)}
+
+  .stat-sum{padding:22px 24px;flex:1;overflow:auto}
+  .stat-sum h3{font-family:'Fraunces',serif;font-size:18px;font-weight:500;margin-bottom:3px}
+  .stat-sum h3 em{font-style:italic;color:var(--terra)}
+  .stat-sum .sub{font-size:11px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .si{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .si:last-child{border-bottom:none}
+  .si .th{width:48px;height:48px;border-radius:10px;background:var(--cream);display:grid;place-items:center;font-size:24px}
+  .si h5{font-family:'Fraunces',serif;font-size:14px;font-weight:500}
+  .si .ql{font-size:10px;color:var(--ink-4);font-family:'Geist Mono',monospace;letter-spacing:0.04em;margin-top:2px}
+  .si .ex{font-size:10.5px;color:var(--ink-3);margin-top:4px;line-height:1.4}
+  .si .pr{font-family:'Fraunces',serif;font-size:14px;font-weight:500}
+  .grand{margin-top:14px;padding-top:14px;border-top:1.5px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline}
+  .grand small{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3)}
+  .grand strong{font-family:'Fraunces',serif;font-size:28px;font-weight:500}
+
+  /* ====================================================== */
+  /* SCREEN 7 — ADMIN PANEL (1920x1080)                     */
+  /* ====================================================== */
+  .admin{display:grid;grid-template-columns:220px 1fr;height:100%}
+  .a-side{background:var(--ink);color:var(--paper);padding:22px 14px;display:flex;flex-direction:column;gap:3px}
+  .a-side .brand2{padding:6px 12px 22px;border-bottom:1px solid #3D362F;margin-bottom:14px}
+  .a-side .brand2 .b1{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-0.01em}
+  .a-side .brand2 .b1 em{font-style:italic;color:var(--terra-soft)}
+  .a-side .brand2 .b2{font-size:9.5px;color:#A29687;letter-spacing:0.18em;text-transform:uppercase;font-family:'Geist Mono',monospace;margin-top:3px}
+  .a-tag{font-size:9.5px;color:#A29687;letter-spacing:0.18em;text-transform:uppercase;font-family:'Geist Mono',monospace;padding:12px 12px 5px}
+  .a-nav{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;color:#D9CFBE;font-weight:500}
+  .a-nav.on{background:#2F2924;color:var(--paper)}
+  .a-nav .ic{width:20px;height:20px;display:grid;place-items:center}
+  .a-nav .ct{margin-left:auto;background:var(--terra);color:var(--paper);font-size:9.5px;padding:2px 7px;border-radius:999px;font-family:'Geist Mono',monospace}
+  .a-side .me{margin-top:auto;padding:12px;display:flex;align-items:center;gap:10px;border-top:1px solid #3D362F}
+  .a-side .me .av{width:30px;height:30px;border-radius:50%;background:var(--terra);display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:600;color:var(--paper);font-size:13px}
+  .a-side .me .ml{font-size:12.5px;font-weight:500}
+  .a-side .me .ms{font-size:9.5px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.06em}
+
+  .a-main{padding:24px 32px;overflow:auto;background:var(--paper)}
+  .a-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px}
+  .a-head h1{font-family:'Fraunces',serif;font-size:30px;font-weight:400;letter-spacing:-0.02em}
+  .a-head h1 em{font-style:italic;color:var(--terra)}
+  .a-head p{font-size:12px;color:var(--ink-3);margin-top:3px}
+  .a-head .right{display:flex;gap:8px;align-items:center}
+  .pill{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:11px;color:var(--ink-2);font-family:'Geist Mono',monospace;letter-spacing:0.04em}
+  .a-btn{background:var(--ink);color:var(--paper);border:none;padding:9px 16px;border-radius:9px;font-family:'Fraunces',serif;font-size:13px;font-weight:500}
+
+  .stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+  .sc{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative;overflow:hidden}
+  .sc.dark{background:var(--ink);color:var(--paper)}
+  .sc.dark .lbl{color:#A29687}
+  .sc .lbl{font-size:10px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px}
+  .sc .val{font-family:'Fraunces',serif;font-size:26px;font-weight:500;letter-spacing:-0.02em;line-height:1}
+  .sc .val em{font-style:italic;color:var(--terra);font-weight:400}
+  .sc.dark .val em{color:var(--terra-soft)}
+  .sc .delta{font-size:10px;color:var(--green);font-family:'Geist Mono',monospace;letter-spacing:0.04em;margin-top:7px}
+  .sc .delta.dn{color:var(--red)}
+
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+  .panel-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+  .panel-h h2{font-family:'Fraunces',serif;font-size:18px;font-weight:500}
+  .panel-h h2 em{font-style:italic;color:var(--terra)}
+  .panel-h .meta{font-size:10px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+  .panel-h .meta .ld{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px rgba(79,158,95,.2)}
+
+  .live-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .tile{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;flex-direction:column;gap:7px}
+  .tile.prep{border-color:var(--terra);box-shadow:inset 3px 0 0 var(--terra)}
+  .tile.rdy{border-color:var(--forest);box-shadow:inset 3px 0 0 var(--forest)}
+  .tile .t1{display:flex;justify-content:space-between;align-items:flex-start}
+  .tile .tk{font-size:11px;color:var(--ink-3)}
+  .tile .tk strong{display:block;font-family:'Fraunces',serif;font-size:20px;color:var(--ink);font-weight:500;letter-spacing:-0.02em;margin-top:1px}
+  .tile .tb{font-size:9px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;background:var(--paper);padding:3px 6px;border-radius:5px;border:1px solid var(--line)}
+  .tile .its{font-size:11px;color:var(--ink-2);line-height:1.45;flex:1}
+  .tile .tf{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding-top:8px;border-top:1px dashed var(--line)}
+  .tile .tf .amt{font-family:'Fraunces',serif;font-weight:500;font-size:13px}
+  .tile .tf .st{font-size:9px;font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;padding:3px 7px;border-radius:5px}
+  .st.acc{background:#E7DEC8;color:#7A5F1A}
+  .st.prep{background:#F0D8C9;color:var(--terra-deep)}
+  .st.rdy{background:#D7E1D2;color:#2A4A2A}
+
+  .dev-tabs{display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap}
+  .dev-tab{padding:9px 13px;border-radius:9px;background:var(--cream);border:1px solid var(--line);font-size:11px;display:flex;flex-direction:column;gap:1px;min-width:88px}
+  .dev-tab .dn{font-family:'Fraunces',serif;font-size:13px;font-weight:500;letter-spacing:-0.01em}
+  .dev-tab .dm{font-size:9px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.04em}
+  .dev-tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .dev-tab.on .dm{color:#A29687}
+
+  .mt{width:100%;border-collapse:collapse}
+  .mt th{text-align:left;font-size:9.5px;font-family:'Geist Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);padding:11px 10px;border-bottom:1px solid var(--line);font-weight:500}
+  .mt td{padding:11px 10px;font-size:12px;border-bottom:1px solid var(--line);vertical-align:middle}
+  .ic-cell{display:flex;align-items:center;gap:10px}
+  .ic-cell .th{width:36px;height:36px;border-radius:9px;background:var(--cream);display:grid;place-items:center;font-size:19px}
+  .ic-cell .nn{font-family:'Fraunces',serif;font-weight:500;font-size:14px;letter-spacing:-0.01em}
+  .ic-cell .cc{font-size:9px;color:var(--ink-3);font-family:'Geist Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;margin-top:1px}
+  .pr-c{font-family:'Fraunces',serif;font-weight:500;font-size:14px}
+  .st-c{font-size:10px;color:var(--ink-2);font-family:'Geist Mono',monospace;letter-spacing:0.04em}
+  .sd{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;background:var(--terra)}
+  .sd.k{background:var(--terra)} .sd.b{background:var(--gold)} .sd.i{background:#8AA9B8}
+  .sw{position:relative;width:36px;height:20px;background:var(--line-2);border-radius:999px}
+  .sw::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;background:var(--paper);border-radius:50%;transition:all .2s}
+  .sw.on{background:var(--forest)}
+  .sw.on::after{left:18px}
+  .sw.out{background:var(--red)}
+
+  /* ====================================================== */
+  /* SCREEN 8 — KITCHEN DISPLAY (1920x1080)                 */
+  /* ====================================================== */
+  .kit{background:#1A1714;height:100%;padding:24px 30px;color:var(--paper)}
+  .kit-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .kit-h .left{display:flex;align-items:baseline;gap:16px}
+  .kit-h h1{font-family:'Fraunces',serif;font-size:28px;font-weight:400;letter-spacing:-0.02em}
+  .kit-h h1 em{font-style:italic;color:var(--terra-soft)}
+  .kit-h .station{font-size:10px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;padding:5px 11px;border:1px solid #3D362F;border-radius:999px}
+  .kit-h .stats{display:flex;gap:22px}
+  .ks{text-align:right}
+  .ks .l{font-size:9.5px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.12em;text-transform:uppercase}
+  .ks .v{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-0.01em}
+  .ks .v em{font-style:italic;color:var(--terra-soft)}
+
+  .kit-tabs{display:flex;gap:6px;margin-bottom:18px;border-bottom:1px solid #3D362F}
+  .kt{padding:10px 16px;background:transparent;border:none;color:#A29687;font-family:'Geist',sans-serif;font-size:12px;font-weight:500;border-bottom:2px solid transparent;display:flex;align-items:center;gap:7px}
+  .kt.on{color:var(--paper);border-bottom-color:var(--terra)}
+  .kt .c{font-size:9px;background:#3D362F;color:#D9CFBE;padding:2px 7px;border-radius:999px;font-family:'Geist Mono',monospace}
+  .kt.on .c{background:var(--terra);color:var(--paper)}
+
+  .tk-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .tkt{background:#241F1B;border:1px solid #3D362F;border-radius:14px;padding:14px;display:flex;flex-direction:column;min-height:340px}
+  .tkt.prep{border-color:var(--terra);box-shadow:0 0 0 1px var(--terra),0 0 30px rgba(197,87,45,.08)}
+  .tkt.rdy{border-color:var(--forest);box-shadow:0 0 0 1px var(--forest)}
+  .tkt.urg{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 0 20px rgba(196,74,58,.18)}
+  .tkt-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed #3D362F}
+  .tkt-top .ll{font-size:9px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1px}
+  .tkt-num{font-family:'Fraunces',serif;font-size:26px;font-weight:500;letter-spacing:-0.03em;line-height:1}
+  .tkt-num em{font-style:italic;color:var(--terra-soft)}
+  .tkt-top .r{text-align:right}
+  .tkt-tab{font-family:'Fraunces',serif;font-size:15px;font-weight:500}
+  .tkt-tm{font-size:10px;color:var(--terra-soft);font-family:'Geist Mono',monospace;margin-top:1px}
+  .tkt-tm.urg{color:#FF8A78}
+  .tkt-its{display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:10px}
+  .ti{display:flex;gap:9px;align-items:flex-start}
+  .ti .qb{background:#3D362F;color:var(--paper);font-family:'Fraunces',serif;font-size:11px;font-weight:500;padding:2px 7px;border-radius:5px;flex-shrink:0;min-width:24px;text-align:center}
+  .ti .qb.x{background:var(--terra);color:var(--paper)}
+  .ti h5{font-family:'Fraunces',serif;font-size:13px;font-weight:500;letter-spacing:-0.01em;line-height:1.2}
+  .ti .ex{font-size:9.5px;color:#A29687;font-family:'Geist Mono',monospace;letter-spacing:0.02em;margin-top:3px;line-height:1.4}
+  .ti .ex .add{color:var(--terra-soft)}
+  .tkt-foot{padding-top:10px;border-top:1px dashed #3D362F}
+  .tkt-stat{font-size:9px;font-family:'Geist Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;padding:4px 9px;border-radius:5px;align-self:flex-start;display:inline-block;margin-bottom:7px}
+  .tkt-stat.acc{background:#5C4A2E;color:#F0DBA8}
+  .tkt-stat.prep{background:var(--terra);color:var(--paper)}
+  .tkt-stat.rdy{background:var(--forest);color:#D7E1D2}
+  .tkt-actions{display:flex;gap:5px;margin-top:3px}
+  .ka{flex:1;padding:9px;border-radius:8px;border:none;font-family:'Fraunces',serif;font-size:11.5px;font-weight:500;letter-spacing:-0.01em}
+  .ka.pri{background:var(--terra);color:var(--paper)}
+  .ka.gh{background:transparent;border:1px solid #3D362F;color:#A29687}
+  .ka.suc{background:var(--forest);color:var(--paper)}
+</style>
+</head>
+<body>
+
+<!-- ================================================== -->
+<!-- SCREEN 1: MENU BROWSER -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>01 · <em>Menu Browser</em> · Customer Tablet (Portrait)</strong>
+    <span>800 × 1280 PX · ANDROID 11+ · L1108 PORTRAIT</span>
+  </div>
+  <div class="screen tablet" data-export="01-customer-menu">
+    <div class="menu-screen">
+      <div class="status-bar">
+        <span>7:42 PM</span>
+        <span class="right">📶 NFC · ●●●●○ 4G · 🔋 92%</span>
+      </div>
+
+      <div class="menu-head">
+        <div class="topline">
+          <div class="brand-mini">
+            <div class="mk">S</div>
+            <div class="nm">Sevana <em>·</em></div>
+          </div>
+          <div class="table-chip">
+            <span class="pulse"></span>
+            <span>TABLE 07</span>
+          </div>
+        </div>
+        <div class="greet">
+          <h1>Good evening,<br><em>Table 07</em></h1>
+          <p>Tonight's specials are below — your digital waiter is ready</p>
+        </div>
+        <div class="search-row">
+          <span style="font-size:14px">🔍</span>
+          <span>Search the menu…</span>
+        </div>
+      </div>
+
+      <div class="cat-strip">
+        <div class="cat-pill on"><span class="ic">🔥</span>All</div>
+        <div class="cat-pill"><span class="ic">🍔</span>Burgers</div>
+        <div class="cat-pill"><span class="ic">🍕</span>Pizza</div>
+        <div class="cat-pill"><span class="ic">🍝</span>Pasta</div>
+        <div class="cat-pill"><span class="ic">🥗</span>Salads</div>
+        <div class="cat-pill"><span class="ic">☕</span>Coffee</div>
+        <div class="cat-pill"><span class="ic">🍦</span>Gelato</div>
+      </div>
+
+      <div class="menu-body">
+        <div class="sec-h">
+          <h2>House <em>Signatures</em></h2>
+          <span class="sort">VIEW ALL →</span>
+        </div>
+        <div class="sig-grid">
+          <div class="sig amber">
+            <div>
+              <span class="b">★ MOST LOVED</span>
+              <h3>Smoked Wagyu<br>Stack Burger</h3>
+            </div>
+            <div class="fr">
+              <span class="pr">$24</span>
+              <span class="pl">+</span>
+            </div>
+            <span class="em">🍔</span>
+          </div>
+          <div class="sig green">
+            <div>
+              <span class="b">SEASONAL</span>
+              <h3>Burrata &amp;<br>Heirloom Tomato</h3>
+            </div>
+            <div class="fr">
+              <span class="pr">$18</span>
+              <span class="pl">+</span>
+            </div>
+            <span class="em">🥗</span>
+          </div>
+        </div>
+
+        <div class="sec-h">
+          <h2>From the <em>Burgers</em></h2>
+          <span class="sort">SORT ↓</span>
+        </div>
+        <div class="items">
+          <div class="item featured">
+            <div class="ph beef"><span style="font-size:50px">🍔</span><span class="tag">BESTSELLER</span></div>
+            <h4>Wagyu Smokehouse</h4>
+            <p class="desc">Wagyu, aged cheddar, applewood bacon, charred onion jam</p>
+            <div class="ifoot"><span class="pr2">$24</span><button class="add">+</button></div>
+          </div>
+          <div class="item">
+            <div class="ph chick"><span style="font-size:50px">🍗</span></div>
+            <h4>Spiced Chicken</h4>
+            <p class="desc">Buttermilk chicken, harissa mayo, pickled slaw, brioche</p>
+            <div class="ifoot"><span class="pr2">$16</span><button class="add">+</button></div>
+          </div>
+          <div class="item">
+            <div class="ph veg"><span style="font-size:50px">🥬</span><span class="tag">VEGAN</span></div>
+            <h4>Garden Stack</h4>
+            <p class="desc">Black bean &amp; quinoa, avocado, tomato relish, vegan aioli</p>
+            <div class="ifoot"><span class="pr2">$15</span><button class="add">+</button></div>
+          </div>
+          <div class="item">
+            <div class="ph chick"><span style="font-size:50px">🍔</span></div>
+            <h4>Nashville Hot</h4>
+            <p class="desc">Crispy fried chicken, Nashville oil, pickles, ranch slaw</p>
+            <div class="ifoot"><span class="pr2">$17</span><button class="add">+</button></div>
+            <div class="stock-out">Sold out tonight</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-stick">
+        <div class="cs-left">
+          <div class="cs-bag">🛒<span class="badge">3</span></div>
+          <div class="cs-txt">
+            <small>3 items in cart</small>
+            <strong>$63.50</strong>
+          </div>
+        </div>
+        <button class="cs-cta">View Cart →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 2: ITEM DETAIL -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>02 · <em>Item Detail with Extras</em></strong>
+    <span>800 × 1280 PX · OPENS ON ITEM TAP</span>
+  </div>
+  <div class="screen tablet" data-export="02-customer-item-detail">
+    <div class="det-screen">
+      <div class="det-hero">
+        <div class="top-actions">
+          <span class="back">← Burgers</span>
+          <div class="actions">
+            <span class="ab">♡</span>
+            <span class="ab">⋯</span>
+          </div>
+        </div>
+        <span class="hero-em">🍔</span>
+        <div class="tags">
+          <span>★ Bestseller</span>
+          <span>14 min prep</span>
+          <span>GF bun option</span>
+        </div>
+      </div>
+      <div class="det-body">
+        <div class="det-cat">Burgers · Signature</div>
+        <h1>Wagyu <em>Smokehouse</em></h1>
+        <div class="det-price">$24.00</div>
+        <p class="det-desc">A 200g grass-fed wagyu patty smoked over applewood, layered with aged cheddar, candied bacon, charred onion jam, and our house pickle. Served on a toasted potato brioche bun with hand-cut rosemary fries.</p>
+
+        <div class="ex-title">Add <em>Extras</em></div>
+        <div class="ex-sub">Customize your burger · Optional</div>
+
+        <div class="ex-list">
+          <div class="ex-row on">
+            <div class="l"><span class="chk">✓</span><span class="nm">Extra Aged Cheddar<span>+1 slice, melted</span></span></div>
+            <span class="pr">+ $2.50</span>
+          </div>
+          <div class="ex-row on">
+            <div class="l"><span class="chk">✓</span><span class="nm">Sliced Avocado<span>Hand-mashed, lime</span></span></div>
+            <span class="pr">+ $3.00</span>
+          </div>
+          <div class="ex-row">
+            <div class="l"><span class="chk"></span><span class="nm">Sunny-Side Egg<span>Free-range, runny yolk</span></span></div>
+            <span class="pr">+ $2.00</span>
+          </div>
+          <div class="ex-row">
+            <div class="l"><span class="chk"></span><span class="nm">Applewood Bacon (Double)<span>2 extra slices</span></span></div>
+            <span class="pr">+ $3.50</span>
+          </div>
+          <div class="ex-row">
+            <div class="l"><span class="chk"></span><span class="nm">Truffle Aioli<span>Black truffle, garlic</span></span></div>
+            <span class="pr">+ $2.00</span>
+          </div>
+          <div class="ex-row">
+            <div class="l"><span class="chk"></span><span class="nm">Gluten-Free Bun<span>Toasted brioche-style</span></span></div>
+            <span class="pr">+ $1.50</span>
+          </div>
+        </div>
+      </div>
+      <div class="det-stick">
+        <div class="qpick">
+          <button>−</button>
+          <span>1</span>
+          <button class="act">+</button>
+        </div>
+        <button class="add-c">Add to Cart <em>$29.50 →</em></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 3: CART -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>03 · <em>Cart &amp; Tip</em></strong>
+    <span>800 × 1280 PX · REACHED FROM STICKY CART BAR</span>
+  </div>
+  <div class="screen tablet" data-export="03-customer-cart">
+    <div class="cart-screen">
+      <div class="cart-h">
+        <div class="top">
+          <span class="back">← Back</span>
+          <span class="clear">CLEAR ALL</span>
+        </div>
+        <h1>Your <em>Order</em></h1>
+        <div class="meta">TABLE 07 · 3 ITEMS · DRAFT</div>
+      </div>
+
+      <div class="cart-body">
+        <div class="ci">
+          <div class="th">🍔</div>
+          <div>
+            <h5>Wagyu Smokehouse</h5>
+            <div class="ex">+ Extra aged cheddar<br>+ Sliced avocado</div>
+            <div class="qrow"><button>−</button><span>1</span><button>+</button></div>
+          </div>
+          <div class="cp">$29.50<small>$24 + $5.50</small></div>
+        </div>
+        <div class="ci">
+          <div class="th">🍝</div>
+          <div>
+            <h5>Truffle Pappardelle</h5>
+            <div class="ex">+ Soft poached egg</div>
+            <div class="qrow"><button>−</button><span>1</span><button>+</button></div>
+          </div>
+          <div class="cp">$24.00<small>$22 + $2</small></div>
+        </div>
+        <div class="ci">
+          <div class="th">☕</div>
+          <div>
+            <h5>Flat White</h5>
+            <div class="ex">Oat milk</div>
+            <div class="qrow"><button>−</button><span>2</span><button>+</button></div>
+          </div>
+          <div class="cp">$11.00<small>$5.50 × 2</small></div>
+        </div>
+
+        <div class="tip-box">
+          <div class="lbl"><span>ADD A TIP</span><span>15% selected</span></div>
+          <div class="tip-opts">
+            <button>10%</button>
+            <button class="on">15%</button>
+            <button>20%</button>
+            <button>Custom</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-stick-pay">
+        <div class="totals-mini">
+          <div class="row"><span>Subtotal</span><span>$63.50</span></div>
+          <div class="row"><span>Tax (8.5%)</span><span>$5.40</span></div>
+          <div class="row"><span>Tip · 15%</span><span>$9.53</span></div>
+          <hr>
+          <div class="grand"><span>TOTAL</span><strong>$78.43</strong></div>
+        </div>
+        <button class="pay-go">Confirm &amp; Pay →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 4: PAYMENT -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>04 · <em>Payment · NFC or Stripe</em></strong>
+    <span>800 × 1280 PX · CHECKOUT</span>
+  </div>
+  <div class="screen tablet" data-export="04-customer-payment">
+    <div class="pay-screen-p">
+      <div class="pay-h">
+        <span class="back">← BACK · CART</span>
+        <div class="lbl">CHECKOUT · ORDER A·47</div>
+        <h1>One <em>last</em> step.</h1>
+        <div class="total-card">
+          <div class="l">
+            <small>Total due</small>
+            <strong>$78.43</strong>
+          </div>
+          <div class="r">
+            <strong>3 items</strong>
+            Table 07<br>
+            tip incl.
+          </div>
+        </div>
+      </div>
+      <div class="pay-body">
+        <div class="nfc-card">
+          <div class="ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M4 12a8 8 0 0 1 16 0"/>
+              <path d="M7 12a5 5 0 0 1 10 0"/>
+              <path d="M10 12a2 2 0 0 1 4 0"/>
+            </svg>
+          </div>
+          <h3>Tap your card here</h3>
+          <p>NFC reader is active · contactless</p>
+        </div>
+
+        <div class="or-div">OR PAY WITH CARD</div>
+
+        <div class="stripe-card">
+          <div class="head">
+            <h4>Stripe Secure Checkout</h4>
+            <span class="bk">Powered by Stripe</span>
+          </div>
+          <div class="fld">
+            <label>Card number</label>
+            <div class="inp">4242 4242 4242 4242</div>
+          </div>
+          <div class="fld-row">
+            <div class="fld"><label>Expiry</label><div class="inp">12 / 27</div></div>
+            <div class="fld"><label>CVC</label><div class="inp">•••</div></div>
+          </div>
+          <button class="pay-btn">Pay $78.43 securely</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 5: CONFIRMED -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>05 · <em>Order Confirmed · Token Issued</em></strong>
+    <span>800 × 1280 PX · APPEARS AFTER PAYMENT</span>
+  </div>
+  <div class="screen tablet" data-export="05-customer-confirmed">
+    <div class="conf-screen">
+      <div class="conf-inner">
+        <div class="conf-orn">— received in the kitchen —</div>
+        <h1>Order<br><em>confirmed.</em></h1>
+        <p class="sub">Thank you. Your order is on its way to the kitchen. Use the token below to track its progress.</p>
+        <div class="tok-box">
+          <div class="l">Your token number</div>
+          <div class="n">A·47</div>
+        </div>
+        <div class="conf-stats">
+          <div class="conf-stat">
+            <div class="ll">EST. READY</div>
+            <div class="vv"><em>~18</em> min</div>
+          </div>
+          <div class="conf-stat">
+            <div class="ll">ITEMS</div>
+            <div class="vv"><em>3</em> dishes</div>
+          </div>
+          <div class="conf-stat">
+            <div class="ll">PAID VIA</div>
+            <div class="vv"><em>NFC</em> tap</div>
+          </div>
+        </div>
+        <div class="conf-btns">
+          <button class="pri">View Order Summary →</button>
+          <button class="sec">Order again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 6: LIVE STATUS -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>06 · <em>Live Order Status</em></strong>
+    <span>800 × 1280 PX · PERSISTENT UNTIL ORDER ENDS</span>
+  </div>
+  <div class="screen tablet" data-export="06-customer-status">
+    <div class="stat-screen">
+      <div class="stat-h">
+        <div class="ht">ORDER A·47 · TABLE 07</div>
+        <h1>Your food is<br><em>being prepared.</em></h1>
+        <div class="meta">
+          <div>PLACED<strong>7:48 PM</strong></div>
+          <div>TOKEN<strong>A·47</strong></div>
+          <div>READY BY<strong>8:06 PM</strong></div>
+        </div>
+      </div>
+
+      <div class="stat-step">
+        <div class="step done">
+          <div class="dot">✓</div>
+          <div class="info">
+            <h4>Order Accepted</h4>
+            <p>RECEIVED · 7:48 PM</p>
+          </div>
+        </div>
+        <div class="step active">
+          <div class="dot">●</div>
+          <div class="info">
+            <h4>Preparing in Kitchen</h4>
+            <p>CHEF MARLEY STARTED · 7:51 PM</p>
+          </div>
+        </div>
+        <div class="step pending">
+          <div class="dot">3</div>
+          <div class="info">
+            <h4>Ready for Service</h4>
+            <p>ETA · 8:06 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="live-ind">
+        <span class="ld"></span>
+        Updates live — status changes instantly
+      </div>
+
+      <div class="stat-sum">
+        <h3>Order <em>Summary</em></h3>
+        <div class="sub">3 items · Token A·47</div>
+        <div class="si">
+          <div class="th">🍔</div>
+          <div>
+            <h5>Wagyu Smokehouse</h5>
+            <div class="ql">QTY 1</div>
+            <div class="ex">+ Extra cheddar · + Avocado</div>
+          </div>
+          <div class="pr">$29.50</div>
+        </div>
+        <div class="si">
+          <div class="th">🍝</div>
+          <div>
+            <h5>Truffle Pappardelle</h5>
+            <div class="ql">QTY 1</div>
+            <div class="ex">+ Soft poached egg</div>
+          </div>
+          <div class="pr">$24.00</div>
+        </div>
+        <div class="si">
+          <div class="th">☕</div>
+          <div>
+            <h5>Flat White</h5>
+            <div class="ql">QTY 2 · Oat milk</div>
+          </div>
+          <div class="pr">$11.00</div>
+        </div>
+        <div class="grand">
+          <small>TOTAL PAID</small>
+          <strong>$78.43</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 7: ADMIN PANEL -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>07 · <em>Admin Panel · Live Dashboard</em></strong>
+    <span>1920 × 1080 PX · DESKTOP / BACK-OFFICE</span>
+  </div>
+  <div class="screen wide" data-export="07-admin-dashboard">
+    <div class="admin">
+      <aside class="a-side">
+        <div class="brand2">
+          <div class="b1">Sevana<em>·</em>Admin</div>
+          <div class="b2">Restaurant Console</div>
+        </div>
+        <div class="a-nav on"><span class="ic">◉</span> Dashboard <span class="ct">12</span></div>
+        <div class="a-nav"><span class="ic">⊞</span> Live Orders</div>
+        <div class="a-nav"><span class="ic">⊟</span> Order History</div>
+        <div class="a-tag">CATALOG</div>
+        <div class="a-nav"><span class="ic">⌘</span> Menu Items</div>
+        <div class="a-nav"><span class="ic">▦</span> Categories</div>
+        <div class="a-nav"><span class="ic">⊕</span> Add-ons &amp; Extras</div>
+        <div class="a-tag">OPERATIONS</div>
+        <div class="a-nav"><span class="ic">▤</span> Stock</div>
+        <div class="a-nav"><span class="ic">⌗</span> Tables &amp; Devices</div>
+        <div class="a-nav"><span class="ic">⊜</span> Kitchen Stations</div>
+        <div class="a-nav"><span class="ic">⌬</span> Payments</div>
+        <div class="a-tag">INSIGHTS</div>
+        <div class="a-nav"><span class="ic">⏚</span> Reports</div>
+        <div class="a-nav"><span class="ic">⚙</span> Settings</div>
+        <div class="me">
+          <div class="av">M</div>
+          <div>
+            <div class="ml">Maria K.</div>
+            <div class="ms">FLOOR MANAGER</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="a-main">
+        <div class="a-head">
+          <div>
+            <h1>Tonight at a <em>glance</em></h1>
+            <p>Friday, May 15 · Dinner service · Live updates</p>
+          </div>
+          <div class="right">
+            <span class="pill">FRI · 7:54 PM</span>
+            <span class="pill">8 / 8 DEVICES ONLINE</span>
+            <button class="a-btn">+ New Item</button>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="sc dark">
+            <div class="lbl">TODAY'S REVENUE</div>
+            <div class="val"><em>$3,847</em>.20</div>
+            <div class="delta">↑ 18.4% vs last Fri</div>
+          </div>
+          <div class="sc">
+            <div class="lbl">ACTIVE ORDERS</div>
+            <div class="val">12</div>
+            <div class="delta">↑ 4 in last 10m</div>
+          </div>
+          <div class="sc">
+            <div class="lbl">ITEMS SOLD</div>
+            <div class="val">187</div>
+            <div class="delta">Wagyu leading</div>
+          </div>
+          <div class="sc">
+            <div class="lbl">AVG PREP</div>
+            <div class="val">14m</div>
+            <div class="delta dn">↓ 2m slower than target</div>
+          </div>
+          <div class="sc">
+            <div class="lbl">AVG TICKET</div>
+            <div class="val">$58</div>
+            <div class="delta">↑ $4 vs avg</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-h">
+            <h2>Live <em>order board</em></h2>
+            <span class="meta"><span class="ld"></span>UPDATES REAL-TIME · 12 ACTIVE</span>
+          </div>
+          <div class="live-grid">
+            <div class="tile">
+              <div class="t1"><div class="tk">Token<strong>A·47</strong></div><span class="tb">T·07</span></div>
+              <div class="its">Wagyu · Pappardelle · 2× Flat White</div>
+              <div class="tf"><span class="amt">$78.43</span><span class="st prep">Preparing</span></div>
+            </div>
+            <div class="tile prep">
+              <div class="t1"><div class="tk">Token<strong>A·46</strong></div><span class="tb">T·03</span></div>
+              <div class="its">Margherita · Caesar · Aperol</div>
+              <div class="tf"><span class="amt">$54.20</span><span class="st prep">Preparing</span></div>
+            </div>
+            <div class="tile rdy">
+              <div class="t1"><div class="tk">Token<strong>A·45</strong></div><span class="tb">T·11</span></div>
+              <div class="its">Tiramisu · 2× Espresso · Affogato</div>
+              <div class="tf"><span class="amt">$28.00</span><span class="st rdy">Ready</span></div>
+            </div>
+            <div class="tile">
+              <div class="t1"><div class="tk">Token<strong>A·44</strong></div><span class="tb">T·02</span></div>
+              <div class="its">Nashville · Mac &amp; Cheese · Iced Latte</div>
+              <div class="tf"><span class="amt">$36.80</span><span class="st acc">Accepted</span></div>
+            </div>
+            <div class="tile prep">
+              <div class="t1"><div class="tk">Token<strong>A·43</strong></div><span class="tb">T·09</span></div>
+              <div class="its">Lobster Roll · Chowder · Wine ×2</div>
+              <div class="tf"><span class="amt">$92.50</span><span class="st prep">Preparing</span></div>
+            </div>
+            <div class="tile">
+              <div class="t1"><div class="tk">Token<strong>A·42</strong></div><span class="tb">T·05</span></div>
+              <div class="its">Vegan Stack · Sweet Pot. Fries · Kombucha</div>
+              <div class="tf"><span class="amt">$24.00</span><span class="st acc">Accepted</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-h">
+            <h2>Order <em>history</em> · by device</h2>
+            <span class="meta">EACH TABLE HAS ITS OWN LEDGER</span>
+          </div>
+          <div class="dev-tabs">
+            <div class="dev-tab on"><span class="dn">All Tables</span><span class="dm">342 TODAY</span></div>
+            <div class="dev-tab"><span class="dn">Table 01</span><span class="dm">28</span></div>
+            <div class="dev-tab"><span class="dn">Table 02</span><span class="dm">31</span></div>
+            <div class="dev-tab"><span class="dn">Table 03</span><span class="dm">22</span></div>
+            <div class="dev-tab"><span class="dn">Table 07</span><span class="dm">19</span></div>
+            <div class="dev-tab"><span class="dn">Table 09</span><span class="dm">35</span></div>
+            <div class="dev-tab"><span class="dn">Table 11</span><span class="dm">14</span></div>
+            <div class="dev-tab"><span class="dn">Table 14</span><span class="dm">26</span></div>
+          </div>
+
+          <table class="mt">
+            <thead>
+              <tr><th>Item</th><th>Price</th><th>Routes to</th><th>Sold today</th><th>In stock</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="ic-cell"><div class="th">🍔</div><div><div class="nn">Wagyu Smokehouse</div><div class="cc">BURGERS · SIGNATURE</div></div></div></td>
+                <td class="pr-c">$24.00</td>
+                <td class="st-c"><span class="sd k"></span>KITCHEN</td>
+                <td class="st-c">38</td>
+                <td><div class="sw on"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ic-cell"><div class="th">🍔</div><div><div class="nn">Nashville Hot</div><div class="cc">BURGERS</div></div></div></td>
+                <td class="pr-c">$17.00</td>
+                <td class="st-c"><span class="sd k"></span>KITCHEN</td>
+                <td class="st-c">22</td>
+                <td><div class="sw out"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ic-cell"><div class="th">🍦</div><div><div class="nn">Pistachio Gelato</div><div class="cc">ICE CREAM</div></div></div></td>
+                <td class="pr-c">$7.50</td>
+                <td class="st-c"><span class="sd i"></span>ICE CREAM STATION</td>
+                <td class="st-c">17</td>
+                <td><div class="sw on"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ic-cell"><div class="th">☕</div><div><div class="nn">Flat White</div><div class="cc">COFFEE</div></div></div></td>
+                <td class="pr-c">$5.50</td>
+                <td class="st-c"><span class="sd b"></span>BAR / BARISTA</td>
+                <td class="st-c">61</td>
+                <td><div class="sw on"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== -->
+<!-- SCREEN 8: KITCHEN DISPLAY -->
+<!-- ================================================== -->
+<div class="scrn-wrap">
+  <div class="scrn-label">
+    <strong>08 · <em>Kitchen Display</em></strong>
+    <span>1920 × 1080 PX · ANDROID TV / WALL-MOUNTED</span>
+  </div>
+  <div class="screen wide" data-export="08-kitchen">
+    <div class="kit">
+      <div class="kit-h">
+        <div class="left">
+          <h1>Kitchen <em>Line</em></h1>
+          <span class="station">STATION · MAIN KITCHEN</span>
+        </div>
+        <div class="stats">
+          <div class="ks"><div class="l">ACTIVE</div><div class="v"><em>6</em></div></div>
+          <div class="ks"><div class="l">AVG TIME</div><div class="v">14<em>m</em></div></div>
+          <div class="ks"><div class="l">DONE TODAY</div><div class="v">94</div></div>
+          <div class="ks"><div class="l">SHIFT</div><div class="v">Marley<em>+2</em></div></div>
+        </div>
+      </div>
+
+      <div class="kit-tabs">
+        <button class="kt on">Main Kitchen <span class="c">6</span></button>
+        <button class="kt">Bar / Barista <span class="c">3</span></button>
+        <button class="kt">Ice Cream <span class="c">2</span></button>
+        <button class="kt">All Stations <span class="c">11</span></button>
+      </div>
+
+      <div class="tk-grid">
+        <div class="tkt urg">
+          <div class="tkt-top">
+            <div><div class="ll">TOKEN</div><div class="tkt-num">A·<em>40</em></div></div>
+            <div class="r"><div class="tkt-tab">Table 08</div><div class="tkt-tm urg">⏱ 18:42</div></div>
+          </div>
+          <div class="tkt-its">
+            <div class="ti"><div class="qb">1×</div><div><h5>Pesto Pappardelle</h5><div class="ex">+ <span class="add">extra parmesan</span><br>NO PINE NUTS · ALLERGY</div></div></div>
+            <div class="ti"><div class="qb">1×</div><div><h5>Bruschetta Plate</h5><div class="ex">3 pc · house bread</div></div></div>
+          </div>
+          <div class="tkt-foot">
+            <span class="tkt-stat prep">PREPARING · MARLEY</span>
+            <div class="tkt-actions"><button class="ka gh">Bump</button><button class="ka suc">Ready</button></div>
+          </div>
+        </div>
+
+        <div class="tkt prep">
+          <div class="tkt-top">
+            <div><div class="ll">TOKEN</div><div class="tkt-num">A·<em>47</em></div></div>
+            <div class="r"><div class="tkt-tab">Table 07</div><div class="tkt-tm">⏱ 06:14</div></div>
+          </div>
+          <div class="tkt-its">
+            <div class="ti"><div class="qb x">1×</div><div><h5>Wagyu Smokehouse</h5><div class="ex">+ <span class="add">extra cheddar</span><br>+ <span class="add">sliced avocado</span><br>MEDIUM RARE</div></div></div>
+            <div class="ti"><div class="qb">1×</div><div><h5>Truffle Pappardelle</h5><div class="ex">+ <span class="add">soft poached egg</span></div></div></div>
+          </div>
+          <div class="tkt-foot">
+            <span class="tkt-stat prep">PREPARING · MARLEY</span>
+            <div class="tkt-actions"><button class="ka gh">Bump</button><button class="ka suc">Ready</button></div>
+          </div>
+        </div>
+
+        <div class="tkt">
+          <div class="tkt-top">
+            <div><div class="ll">TOKEN</div><div class="tkt-num">A·<em>48</em></div></div>
+            <div class="r"><div class="tkt-tab">Table 02</div><div class="tkt-tm">⏱ 00:48</div></div>
+          </div>
+          <div class="tkt-its">
+            <div class="ti"><div class="qb">1×</div><div><h5>Lobster Roll</h5><div class="ex">+ <span class="add">extra lobster</span><br>SIDE: FRIES</div></div></div>
+            <div class="ti"><div class="qb">1×</div><div><h5>Clam Chowder</h5><div class="ex">cup size</div></div></div>
+            <div class="ti"><div class="qb">2×</div><div><h5>Garlic Knots</h5><div class="ex">house spread</div></div></div>
+          </div>
+          <div class="tkt-foot">
+            <span class="tkt-stat acc">ACCEPTED · 7:53 PM</span>
+            <div class="tkt-actions"><button class="ka pri">Start Preparing</button></div>
+          </div>
+        </div>
+
+        <div class="tkt rdy">
+          <div class="tkt-top">
+            <div><div class="ll">TOKEN</div><div class="tkt-num">A·<em>46</em></div></div>
+            <div class="r"><div class="tkt-tab">Table 03</div><div class="tkt-tm">⏱ 13:22</div></div>
+          </div>
+          <div class="tkt-its">
+            <div class="ti"><div class="qb">1×</div><div><h5>Margherita Pizza</h5><div class="ex">12" wood-fired</div></div></div>
+            <div class="ti"><div class="qb">1×</div><div><h5>Caesar Salad</h5><div class="ex">+ <span class="add">grilled chicken</span></div></div></div>
+          </div>
+          <div class="tkt-foot">
+            <span class="tkt-stat rdy">READY FOR PICKUP</span>
+            <div class="tkt-actions"><button class="ka suc">Handed to Server ✓</button></div>
+          </div>
+        </div>
+
+        <div class="tkt">
+          <div class="tkt-top">
+            <div><div class="ll">TOKEN</div><div class="tkt-num">A·<em>49</em></div></div>
+            <div class="r"><div class="tkt-tab">Table 11</div><div class="tkt-tm">⏱ 00:12</div></div>
+          </div>
+          <div class="tkt-its">
+            <div class="ti"><div class="qb">2×</div><div><h5>Double Stack Classic</h5><div class="ex">+ <span class="add">bacon</span> (×1)<br>NO ONIONS · BOTH</div></div></div>
+            <div class="ti"><div class="qb">1×</div><div><h5>Garden Stack (Vegan)</h5><div class="ex">no aioli swap</div></div></div>
+          </div>
+          <div class="tkt-foot">
+            <span class="tkt-stat acc">ACCEPTED · 7:54 PM</span>
+            <div class="tkt-actions"><button class="ka pri">Start Preparing</button></div>
+          </div>
+        </div>
+
+        <div class="tkt prep">
+          <div class="tkt-top">
+            <div><div class="ll">TOKEN</div><div class="tkt-num">A·<em>43</em></div></div>
+            <div class="r"><div class="tkt-tab">Table 09</div><div class="tkt-tm">⏱ 09:08</div></div>
+          </div>
+          <div class="tkt-its">
+            <div class="ti"><div class="qb">1×</div><div><h5>Lobster Roll</h5><div class="ex">classic, no extras</div></div></div>
+            <div class="ti"><div class="qb">1×</div><div><h5>Clam Chowder</h5><div class="ex">bread bowl</div></div></div>
+          </div>
+          <div class="tkt-foot">
+            <span class="tkt-stat prep">PREPARING · DEV</span>
+            <div class="tkt-actions"><button class="ka gh">Bump</button><button class="ka suc">Ready</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

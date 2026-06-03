@@ -1,0 +1,173 @@
+<svg width="800" height="1280" viewBox="0 0 800 1280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="800" height="1280" fill="#FAFAF7"/>
+
+  <!-- ===== Hero image area ===== -->
+  <rect width="800" height="380" fill="#FEE6DC"/>
+  <!-- Burger illustration -->
+  <g transform="translate(400, 240)">
+    <ellipse cx="0" cy="78" rx="160" ry="14" fill="#000000" opacity="0.08"/>
+    <ellipse cx="0" cy="64" rx="150" ry="22" fill="#D4502A"/>
+    <path d="M-150 6 a150 70 0 0 1 300 0 Z" fill="#E8A33B"/>
+    <ellipse cx="-90" cy="-40" rx="14" ry="8" fill="#FFFFFF" opacity="0.6"/>
+    <ellipse cx="-30" cy="-58" rx="10" ry="6" fill="#FFFFFF" opacity="0.45"/>
+    <ellipse cx="60" cy="-44" rx="10" ry="6" fill="#FFFFFF" opacity="0.45"/>
+    <rect x="-150" y="0" width="300" height="8" fill="#2D8A66"/>
+    <rect x="-150" y="8" width="300" height="10" fill="#FFFFFF"/>
+    <rect x="-150" y="18" width="300" height="6" fill="#8A887E"/>
+    <rect x="-150" y="24" width="300" height="14" fill="#D4502A"/>
+    <rect x="-150" y="38" width="300" height="8" fill="#E8A33B"/>
+  </g>
+
+  <!-- ===== Top bar overlay ===== -->
+  <text x="32" y="40" font-size="12" font-weight="600" fill="#1A1A17">19:46</text>
+  <text x="768" y="40" text-anchor="end" font-size="12" fill="#1A1A17">Wi-Fi · HG-Guest</text>
+  <!-- Back -->
+  <g transform="translate(32, 64)">
+    <rect width="52" height="52" rx="14" fill="#FFFFFF"/>
+    <g transform="translate(26, 26)" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="-8" y1="0" x2="8" y2="0"/>
+      <polyline points="-2,-6 -8,0 -2,6"/>
+    </g>
+  </g>
+  <!-- Heart -->
+  <g transform="translate(644, 64)">
+    <rect width="52" height="52" rx="14" fill="#FFFFFF"/>
+    <path d="M 26 38 C 14 30, 12 22, 18 18 C 22 15, 26 17, 26 21 C 26 17, 30 15, 34 18 C 40 22, 38 30, 26 38 Z" fill="none" stroke="#1A1A17" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <!-- Share -->
+  <g transform="translate(704, 64)">
+    <rect width="52" height="52" rx="14" fill="#FFFFFF"/>
+    <g transform="translate(26, 26)" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" fill="none">
+      <circle cx="-7" cy="0" r="3"/>
+      <circle cx="7" cy="-7" r="3"/>
+      <circle cx="7" cy="7" r="3"/>
+      <line x1="-4" y1="-2" x2="4" y2="-6"/>
+      <line x1="-4" y1="2" x2="4" y2="6"/>
+    </g>
+  </g>
+
+  <!-- ===== Title card (overlapping hero) ===== -->
+  <g transform="translate(32, 336)">
+    <rect width="736" height="120" rx="24" fill="#FFFFFF" stroke="#E5E3DA"/>
+    <g transform="translate(28, 24)">
+      <rect width="80" height="22" rx="11" fill="#FBE5DF"/>
+      <text x="40" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#D4502A">⭐ SIGNATURE</text>
+    </g>
+    <text x="60" y="76" font-size="24" font-weight="700" fill="#1A1A17">Glow Smash Burger</text>
+    <text x="60" y="100" font-size="13" fill="#8A887E">Beef · Cheddar · Glow Sauce · Brioche bun · House pickles</text>
+    <g transform="translate(680, 60)">
+      <text text-anchor="end" font-size="24" font-weight="700" fill="#1A1A17">$12.50</text>
+      <text text-anchor="end" y="22" font-size="12" font-weight="500" fill="#8A887E">★ 4.8 · 312</text>
+    </g>
+  </g>
+
+  <!-- ===== Choose size ===== -->
+  <g transform="translate(32, 488)">
+    <text font-size="15" font-weight="700" fill="#1A1A17">Size</text>
+    <text x="736" text-anchor="end" font-size="12" font-weight="600" fill="#D43A3A">REQUIRED</text>
+    <g transform="translate(0, 16)">
+      <rect width="356" height="64" rx="16" fill="#FFFFFF" stroke="#F26B3A" stroke-width="2"/>
+      <circle cx="32" cy="32" r="10" fill="#F26B3A"/>
+      <circle cx="32" cy="32" r="4" fill="#FFFFFF"/>
+      <text x="56" y="30" font-size="14" font-weight="600" fill="#1A1A17">Regular</text>
+      <text x="56" y="50" font-size="12" fill="#8A887E">Single patty · 425 kcal</text>
+      <text x="336" y="40" text-anchor="end" font-size="14" font-weight="700" fill="#1A1A17">+ $0.00</text>
+    </g>
+    <g transform="translate(380, 16)">
+      <rect width="356" height="64" rx="16" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <circle cx="32" cy="32" r="10" fill="none" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="56" y="30" font-size="14" font-weight="600" fill="#1A1A17">Large</text>
+      <text x="56" y="50" font-size="12" fill="#8A887E">Double patty · 680 kcal</text>
+      <text x="336" y="40" text-anchor="end" font-size="14" font-weight="700" fill="#1A1A17">+ $3.50</text>
+    </g>
+  </g>
+
+  <!-- ===== Add extras ===== -->
+  <g transform="translate(32, 596)">
+    <text font-size="15" font-weight="700" fill="#1A1A17">Add extras</text>
+    <text x="200" font-size="12" fill="#8A887E">Pick any (optional)</text>
+
+    <g transform="translate(0, 16)">
+      <rect width="356" height="56" rx="14" fill="#FEF5F0" stroke="#F26B3A"/>
+      <rect x="14" y="16" width="24" height="24" rx="6" fill="#F26B3A"/>
+      <polyline points="20,28 25,33 34,22" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="50" y="34" font-size="13" font-weight="600" fill="#1A1A17">Extra cheese</text>
+      <text x="336" y="35" text-anchor="end" font-size="13" font-weight="700" fill="#1A1A17">+ $1.50</text>
+    </g>
+    <g transform="translate(380, 16)">
+      <rect width="356" height="56" rx="14" fill="#FEF5F0" stroke="#F26B3A"/>
+      <rect x="14" y="16" width="24" height="24" rx="6" fill="#F26B3A"/>
+      <polyline points="20,28 25,33 34,22" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="50" y="34" font-size="13" font-weight="600" fill="#1A1A17">Crispy bacon</text>
+      <text x="336" y="35" text-anchor="end" font-size="13" font-weight="700" fill="#1A1A17">+ $2.00</text>
+    </g>
+    <g transform="translate(0, 84)">
+      <rect width="356" height="56" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <rect x="14" y="16" width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="50" y="34" font-size="13" font-weight="600" fill="#1A1A17">Fried egg</text>
+      <text x="336" y="35" text-anchor="end" font-size="13" font-weight="700" fill="#1A1A17">+ $1.00</text>
+    </g>
+    <g transform="translate(380, 84)">
+      <rect width="356" height="56" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <rect x="14" y="16" width="24" height="24" rx="6" fill="#FFFFFF" stroke="#C9C7BD" stroke-width="2"/>
+      <text x="50" y="34" font-size="13" font-weight="600" fill="#1A1A17">Avocado slices</text>
+      <text x="336" y="35" text-anchor="end" font-size="13" font-weight="700" fill="#1A1A17">+ $1.50</text>
+    </g>
+  </g>
+
+  <!-- ===== Remove items ===== -->
+  <g transform="translate(32, 768)">
+    <text font-size="15" font-weight="700" fill="#1A1A17">Remove items</text>
+    <text x="200" font-size="12" fill="#8A887E">Tap to remove</text>
+    <g transform="translate(0, 16)">
+      <rect width="172" height="44" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="86" y="29" text-anchor="middle" font-size="13" font-weight="500" fill="#4D4B44">Onion</text>
+    </g>
+    <g transform="translate(188, 16)">
+      <rect width="172" height="44" rx="14" fill="#FBE5DF" stroke="#D43A3A" stroke-dasharray="2,3"/>
+      <text x="86" y="29" text-anchor="middle" font-size="13" font-weight="600" fill="#D43A3A" text-decoration="line-through">Pickle</text>
+    </g>
+    <g transform="translate(376, 16)">
+      <rect width="172" height="44" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="86" y="29" text-anchor="middle" font-size="13" font-weight="500" fill="#4D4B44">Mayo</text>
+    </g>
+    <g transform="translate(564, 16)">
+      <rect width="172" height="44" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="86" y="29" text-anchor="middle" font-size="13" font-weight="500" fill="#4D4B44">Lettuce</text>
+    </g>
+  </g>
+
+  <!-- ===== Spice level ===== -->
+  <g transform="translate(32, 868)">
+    <text font-size="15" font-weight="700" fill="#1A1A17">Spice level</text>
+    <g transform="translate(0, 16)">
+      <rect width="237" height="48" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="118" y="31" text-anchor="middle" font-size="13" font-weight="600" fill="#1A1A17">Mild</text>
+    </g>
+    <g transform="translate(249, 16)">
+      <rect width="238" height="48" rx="14" fill="#FEF5F0" stroke="#F26B3A" stroke-width="2"/>
+      <text x="119" y="31" text-anchor="middle" font-size="13" font-weight="700" fill="#F26B3A">🌶 Medium</text>
+    </g>
+    <g transform="translate(499, 16)">
+      <rect width="237" height="48" rx="14" fill="#FFFFFF" stroke="#E5E3DA"/>
+      <text x="118" y="31" text-anchor="middle" font-size="13" font-weight="600" fill="#1A1A17">🌶🌶 Hot</text>
+    </g>
+  </g>
+
+  <!-- ===== Quantity + Add to cart sticky bar ===== -->
+  <rect x="0" y="1140" width="800" height="140" fill="#FFFFFF"/>
+  <rect x="0" y="1140" width="800" height="1" fill="#E5E3DA"/>
+  <!-- Quantity stepper -->
+  <g transform="translate(32, 1184)">
+    <rect width="156" height="56" rx="18" fill="#FAFAF7" stroke="#E5E3DA"/>
+    <text x="22" y="36" font-size="22" font-weight="700" fill="#1A1A17">–</text>
+    <text x="78" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1A1A17">2</text>
+    <text x="134" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#F26B3A">+</text>
+  </g>
+  <!-- Add to cart -->
+  <g transform="translate(208, 1184)">
+    <rect width="560" height="56" rx="18" fill="#F26B3A"/>
+    <text x="24" y="35" font-size="15" font-weight="700" fill="#FFFFFF">Add 2 to cart</text>
+    <text x="536" y="35" text-anchor="end" font-size="17" font-weight="700" fill="#FFFFFF">$32.00</text>
+  </g>
+</svg>
