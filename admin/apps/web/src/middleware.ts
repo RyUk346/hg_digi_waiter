@@ -10,6 +10,8 @@ import { NextResponse } from 'next/server';
  */
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
+const PUBLIC_PREFIXES = ['/login', '/register', '/forgot', '/reset'];
+
 function stripBase(p: string): string {
   if (BASE_PATH && p.startsWith(BASE_PATH)) {
     const rest = p.slice(BASE_PATH.length);
@@ -22,14 +24,18 @@ function withBase(p: string): string {
   return `${BASE_PATH}${p}`;
 }
 
+function isPublicPath(rel: string): boolean {
+  return PUBLIC_PREFIXES.some((p) => rel === p || rel.startsWith(p + '/'));
+}
+
 export default auth((req) => {
   const isLoggedIn = !!req.auth;
   const fullPath = req.nextUrl.pathname;
   const relPath = stripBase(fullPath);
-  const isAuthPage = relPath.startsWith('/login');
+  const isPublic = isPublicPath(relPath);
 
-  if (isAuthPage) {
-    if (isLoggedIn) {
+  if (isPublic) {
+    if (isLoggedIn && relPath === '/login') {
       return NextResponse.redirect(new URL(withBase('/overview'), req.nextUrl));
     }
     return NextResponse.next();
@@ -37,8 +43,6 @@ export default auth((req) => {
 
   if (!isLoggedIn) {
     const url = new URL(withBase('/login'), req.nextUrl);
-    // callbackUrl is what the user originally requested — use the full path
-    // (basePath included) so signIn returns them to the right place.
     url.searchParams.set('callbackUrl', fullPath);
     return NextResponse.redirect(url);
   }
@@ -46,5 +50,5 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ['/((?!api/auth|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api/auth|_next/static|_next/image|favicon.ico|uploads).*)'],
 };
