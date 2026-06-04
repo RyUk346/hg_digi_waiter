@@ -20,7 +20,11 @@ export function LiveRefresh({ venueId }: { venueId: string }) {
   const [lastEvent, setLastEvent] = useState<ChangeEvent | null>(null);
 
   useEffect(() => {
-    const url = process.env.NEXT_PUBLIC_REALTIME_URL ?? 'http://localhost:3001';
+    const url = process.env.NEXT_PUBLIC_REALTIME_URL;
+    // No URL configured → don't try to connect (the indicator stays "Offline").
+    // Prevents endless WebSocket retries against the current origin in production
+    // when the realtime bridge isn't deployed.
+    if (!url) return;
     const socket: Socket = io(url, { transports: ['websocket', 'polling'], reconnection: true });
 
     let refreshTimer: ReturnType<typeof setTimeout> | null = null;
