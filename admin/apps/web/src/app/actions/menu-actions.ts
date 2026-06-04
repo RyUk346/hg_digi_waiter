@@ -482,6 +482,13 @@ export async function saveMenuItemAndSteps(
     return { ok: false, errors, values: raw, rawStepsJson: stepsJson };
   }
 
+  // Defensive narrowing — TS can't connect the empty-errors check above to
+  // basic.success. Unreachable if reached (basic errors would have populated
+  // `errors` and we'd have returned), but the compiler needs it.
+  if (!basic.success) {
+    return { ok: false, errors: { _: 'Validation failed.' }, values: raw, rawStepsJson: stepsJson };
+  }
+
   const data = basic.data;
   let resultId = maybeId;
 
