@@ -4,6 +4,7 @@ import { AuthError } from 'next-auth';
 import { signIn } from '@/auth';
 import { googleEnabled } from '@/auth';
 import { GoogleButton } from '../_components/google-button';
+import { PasswordInput } from '@/components/password-input';
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -67,12 +68,9 @@ export default async function LoginPage({
               Forgot password?
             </Link>
           </div>
-          <input
-            name="password"
-            type="password"
-            required
-            className="mt-1 w-full px-3 py-2 bg-surface2 border border-border rounded text-ink focus:outline-none focus:ring-2 focus:ring-terra/30"
-          />
+          <div className="mt-1">
+            <PasswordInput name="password" required autoComplete="current-password" />
+          </div>
         </label>
 
         {params.error ? <p className="text-sm text-red">Invalid email or password.</p> : null}

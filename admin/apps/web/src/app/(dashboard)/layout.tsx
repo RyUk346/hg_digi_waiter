@@ -1,12 +1,18 @@
-import { auth } from '@/auth';
+import { redirect } from 'next/navigation';
 import { Sidebar } from '@/components/sidebar';
 import { TopBar } from '@/components/topbar';
 import { getVenue } from '@/lib/queries';
 import { db, tables } from '@hyperglow/db';
 import { eq, sql } from 'drizzle-orm';
+import { getCurrentUser, ROLE_PERMISSIONS, roleLabel } from '@/lib/rbac';
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const [venue, session] = await Promise.all([getVenue(), auth()]);
+  const [venue, user] = await Promise.all([getVenue(), getCurrentUser()]);
+
+  // Defence-in-depth — middleware should have already redirected. Belt-and-braces.
+  if (!user) redirect(`${BASE_PATH}/login`);
 
   if (!venue) {
     return (
@@ -21,13 +27,16 @@ export default async function DashboardLayout({ children }: { children: React.Re
     .from(tables)
     .where(eq(tables.venueId, venue.id));
 
+  const permissions = ROLE_PERMISSIONS[user.role] ?? [];
+
   return (
     <div className="flex min-h-screen bg-bg">
       <Sidebar
         venueName={venue.name}
         tableCount={tableCount ?? 0}
-        userName={session?.user?.name ?? 'Admin'}
-        userRole={(session?.user as { role?: string })?.role === 'admin' ? 'Operations Director' : 'Manager'}
+        userName={user.name ?? user.email}
+        userRole={roleLabel(user.role)}
+        allowedPermissions={permissions}
       />
       <div className="flex-1 min-w-0 flex flex-col">
         <TopBar venueId={venue.id} />

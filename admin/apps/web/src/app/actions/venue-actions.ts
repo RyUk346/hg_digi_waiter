@@ -3,9 +3,8 @@
 import { db, venues } from '@hyperglow/db';
 import { eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { z } from 'zod';
-import { auth } from '@/auth';
+import { PERMISSIONS, requirePermission, requireVenueAccess } from '@/lib/rbac';
 
 const venueSchema = z.object({
   name: z.string().trim().min(1, 'Venue name is required').max(120),
@@ -24,8 +23,9 @@ export async function updateVenue(
   _prev: VenueFormState,
   formData: FormData,
 ): Promise<VenueFormState> {
-  const session = await auth();
-  if (!session?.user) redirect('/login');
+  await requirePermission(PERMISSIONS.SETTINGS_WRITE);
+  // Defence-in-depth: even an admin can only edit their own venue.
+  await requireVenueAccess(venueId);
 
   const raw = Object.fromEntries(formData.entries()) as Record<string, string>;
   const parsed = venueSchema.safeParse({

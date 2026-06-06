@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
@@ -15,45 +16,68 @@ import {
   LogOut,
 } from 'lucide-react';
 import { logoutAction } from '@/app/actions/auth-actions';
+import { PERMISSIONS, type Permission } from '@/lib/permissions';
 
-const NAV_GROUPS = [
+interface NavItem {
+  href: Route;
+  label: string;
+  icon: typeof LayoutDashboard;
+  badge?: string;
+  permission: Permission;
+}
+
+interface NavGroup {
+  label: string;
+  items: NavItem[];
+}
+
+const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Performance',
     items: [
-      { href: '/overview', label: 'Dashboard', icon: LayoutDashboard },
-      { href: '/revenue', label: 'Revenue', icon: BarChart3 },
-      { href: '/games', label: 'Games', icon: Gamepad2, badge: 'NEW' },
-      { href: '/upsell', label: 'Upsell engine', icon: TrendingUp },
+      { href: '/overview', label: 'Dashboard', icon: LayoutDashboard, permission: PERMISSIONS.OVERVIEW_READ },
+      { href: '/revenue', label: 'Revenue', icon: BarChart3, permission: PERMISSIONS.REVENUE_READ },
+      { href: '/games', label: 'Games', icon: Gamepad2, badge: 'NEW', permission: PERMISSIONS.GAMES_READ },
+      { href: '/upsell', label: 'Upsell engine', icon: TrendingUp, permission: PERMISSIONS.UPSELL_READ },
     ],
   },
   {
     label: 'Operations',
     items: [
-      { href: '/alerts', label: 'Service', icon: Activity },
-      { href: '/servers', label: 'Team', icon: Users },
-      { href: '/menu', label: 'Menu & pricing', icon: BookOpen },
+      { href: '/alerts', label: 'Service', icon: Activity, permission: PERMISSIONS.ALERTS_READ },
+      { href: '/servers', label: 'Team', icon: Users, permission: PERMISSIONS.SERVERS_READ },
+      { href: '/menu', label: 'Menu & pricing', icon: BookOpen, permission: PERMISSIONS.MENU_READ },
     ],
   },
   {
     label: 'Governance',
     items: [
-      { href: '/compliance', label: 'Compliance', icon: ShieldCheck },
-      { href: '/settings', label: 'Settings', icon: Settings },
+      { href: '/compliance', label: 'Compliance', icon: ShieldCheck, permission: PERMISSIONS.COMPLIANCE_READ },
+      { href: '/settings', label: 'Settings', icon: Settings, permission: PERMISSIONS.SETTINGS_READ },
     ],
   },
-] as const;
+];
 
 export function Sidebar({
   venueName,
   tableCount,
   userName,
   userRole,
+  allowedPermissions,
 }: {
   venueName: string;
   tableCount: number;
   userName: string;
   userRole: string;
+  /** Permissions the current user has — used to filter nav items. */
+  allowedPermissions: readonly Permission[];
 }) {
+  const allowed = new Set(allowedPermissions);
+  const visibleGroups = NAV_GROUPS.map((g) => ({
+    ...g,
+    items: g.items.filter((i) => allowed.has(i.permission)),
+  })).filter((g) => g.items.length > 0);
+
   const pathname = usePathname();
   const initials = userName
     .split(' ')
@@ -78,7 +102,7 @@ export function Sidebar({
 
       {/* Nav groups */}
       <nav className="flex-1 px-3 py-4 overflow-y-auto">
-        {NAV_GROUPS.map((group) => (
+        {visibleGroups.map((group) => (
           <div key={group.label} className="mb-5">
             <p className="px-3 mb-1.5 text-[10px] uppercase tracking-[0.16em] text-sb-textSoft font-medium">
               {group.label}

@@ -2,7 +2,7 @@ import NextAuth, { type NextAuthConfig } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import Google from 'next-auth/providers/google';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import { db, users, accounts, sessions, verificationTokens } from '@hyperglow/db';
+import { db, users, accounts, sessions, verificationTokens, venues } from '@hyperglow/db';
 import { eq } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
@@ -107,7 +107,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       // Newly-created users (via the Drizzle adapter — i.e. Google sign-ins).
       // Default to admin role + first venue association. Public-registration policy.
       if (!user.id) return;
-      const [firstVenue] = await db.select({ id: users.venueId }).from(users).limit(1);
+      // BUG FIX: was selecting from users table (random first user's venueId).
+      // Should query venues directly so a fresh DB with no users still works.
+      const [firstVenue] = await db.select({ id: venues.id }).from(venues).limit(1);
       await db
         .update(users)
         .set({ role: 'admin', venueId: firstVenue?.id, emailVerified: new Date() })

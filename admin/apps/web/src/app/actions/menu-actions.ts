@@ -10,6 +10,7 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { auth } from '@/auth';
 import { getVenue } from '@/lib/queries';
+import { PERMISSIONS, type Permission, requirePermission } from '@/lib/rbac';
 
 const STATIONS = ['grill', 'pasta', 'pizza', 'cold', 'dessert', 'bar'] as const;
 const TINTS = ['', 'amber', 'rose', 'olive', 'blue', 'purple'] as const;
@@ -48,6 +49,17 @@ async function requireAuth() {
   return { session, venue };
 }
 
+/**
+ * Combines `requirePermission(perm)` with venue lookup for the user's branch.
+ * Use this at the top of every Server Action that mutates data.
+ */
+async function requirePerm(perm: Permission) {
+  const user = await requirePermission(perm);
+  const venue = await getVenue();
+  if (!venue) throw new Error('No venue. Run pnpm db:seed.');
+  return { user, venue };
+}
+
 function parse(formData: FormData) {
   const raw = Object.fromEntries(formData.entries()) as Record<string, string>;
   return {
@@ -79,7 +91,7 @@ function flattenErrors(err: z.ZodError): Record<string, string> {
 }
 
 export async function createMenuItem(_prev: MenuItemFormState, formData: FormData): Promise<MenuItemFormState> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_WRITE);
   const { raw, parsed } = parse(formData);
   if (!parsed.success) return { ok: false, errors: flattenErrors(parsed.error), values: raw };
 
@@ -116,7 +128,7 @@ export async function updateMenuItem(
   _prev: MenuItemFormState,
   formData: FormData,
 ): Promise<MenuItemFormState> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_WRITE);
   const { raw, parsed } = parse(formData);
   if (!parsed.success) return { ok: false, errors: flattenErrors(parsed.error), values: raw };
 
@@ -159,7 +171,7 @@ export type RestoreResult = { ok: true; name: string } | { ok: false; error: str
  * decision before they go live to guests.
  */
 export async function restoreMenuItem(id: string): Promise<RestoreResult> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_DELETE);
   const [item] = await db
     .select({ name: menuItems.name })
     .from(menuItems)
@@ -187,7 +199,7 @@ export type DeleteResult =
  *   must survive menu edits (SRS FR-MENU-001: "Items are deactivated, never deleted").
  */
 export async function deleteMenuItem(id: string): Promise<DeleteResult> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_DELETE);
 
   const [item] = await db
     .select({ id: menuItems.id, imageUrl: menuItems.imageUrl })
@@ -236,7 +248,7 @@ const ALLOWED_IMAGE_TYPES: Record<string, string> = {
 export async function uploadMenuImage(
   formData: FormData,
 ): Promise<{ ok: true; url: string } | { ok: false; error: string }> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_WRITE);
   const file = formData.get('image');
   if (!(file instanceof File)) return { ok: false, error: 'No file provided' };
   if (file.size === 0) return { ok: false, error: 'File is empty' };
@@ -271,7 +283,7 @@ async function deleteUploadedImage(imageUrl: string | null) {
 }
 
 export async function getCategoriesForVenue() {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_READ);
   return db
     .select({ id: menuCategories.id, name: menuCategories.name })
     .from(menuCategories)
@@ -312,7 +324,7 @@ export async function saveBuildSequence(
   _prev: BuildSequenceState,
   formData: FormData,
 ): Promise<BuildSequenceState> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_WRITE);
   const rawJson = formData.get('stepsJson');
   if (typeof rawJson !== 'string') {
     return { ok: false, errors: { _: 'Missing stepsJson payload.' }, rawStepsJson: '[]' };
@@ -373,7 +385,7 @@ export async function saveBuildSequence(
 
 /** Toggle availability without rebuilding the whole form. Spec: FR-MENU-008. */
 export async function toggleItemAvailability(formData: FormData) {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_TOGGLE_STOCK);
   const id = formData.get('id');
   const next = formData.get('available') === 'true';
   if (typeof id !== 'string') return;
@@ -390,7 +402,7 @@ export async function toggleItemAvailability(formData: FormData) {
 export async function createCategory(
   name: string,
 ): Promise<{ ok: true; category: { id: string; name: string } } | { ok: false; error: string }> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_WRITE);
   const trimmed = name.trim();
   if (!trimmed) return { ok: false, error: 'Category name is required' };
   if (trimmed.length > 80) return { ok: false, error: 'Category name is too long (max 80 chars)' };
@@ -432,7 +444,7 @@ export async function saveMenuItemAndSteps(
   _prev: SaveMenuItemState,
   formData: FormData,
 ): Promise<SaveMenuItemState> {
-  const { venue } = await requireAuth();
+  const { venue } = await requirePerm(PERMISSIONS.MENU_WRITE);
   const raw = Object.fromEntries(formData.entries()) as Record<string, string>;
 
   const basic = itemSchema.safeParse({

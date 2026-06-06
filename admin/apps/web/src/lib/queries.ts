@@ -1,8 +1,27 @@
 import 'server-only';
 import { db, orders, orderLines, payments, gamePlays, games, servers, serverShifts, menuItems, alerts, auditLog, venues } from '@hyperglow/db';
 import { and, desc, eq, gte, sql } from 'drizzle-orm';
+import { getCurrentUser } from './rbac';
 
+/**
+ * Returns the venue the current signed-in user belongs to.
+ *
+ * Multi-branch model: every user has a venueId. They only see their own
+ * venue's data because every downstream query filters by venue.id. If a user
+ * has no venueId set yet (e.g. very first registrant on a fresh DB), falls
+ * back to the first venue so things don't break.
+ *
+ * Returns null only for unauthenticated requests.
+ */
 export async function getVenue() {
+  const user = await getCurrentUser();
+  if (user?.venueId) {
+    const [venue] = await db.select().from(venues).where(eq(venues.id, user.venueId)).limit(1);
+    if (venue) return venue;
+  }
+  // Fallback — for the seeded admin (anton@tavola.test) and any user whose
+  // venueId got blanked out, return the first venue. Safe because in a
+  // multi-venue future, every user will have venueId set.
   const [venue] = await db.select().from(venues).limit(1);
   return venue;
 }

@@ -4,6 +4,7 @@ import { useActionState } from 'react';
 import Link from 'next/link';
 import { registerAction, type RegisterState } from '@/app/actions/auth-actions';
 import { GoogleButton } from '../_components/google-button';
+import { PasswordInput } from '@/components/password-input';
 
 export function RegisterForm({ googleEnabled }: { googleEnabled: boolean }) {
   const [state, formAction, pending] = useActionState<RegisterState, FormData>(registerAction, { ok: true });
@@ -44,26 +45,18 @@ export function RegisterForm({ googleEnabled }: { googleEnabled: boolean }) {
 
         <label className="block">
           <span className="text-xs uppercase tracking-wide text-muted">Password</span>
-          <input
-            name="password"
-            type="password"
-            required
-            minLength={8}
-            className="mt-1 w-full px-3 py-2 bg-surface2 border border-border rounded text-ink focus:outline-none focus:ring-2 focus:ring-terra/30"
-          />
+          <div className="mt-1">
+            <PasswordInput name="password" required minLength={8} autoComplete="new-password" />
+          </div>
           {errors.password ? <p className="text-xs text-red mt-1">{errors.password}</p> : null}
           <p className="text-xs text-muted italic mt-1">At least 8 characters.</p>
         </label>
 
         <label className="block">
           <span className="text-xs uppercase tracking-wide text-muted">Confirm password</span>
-          <input
-            name="confirm"
-            type="password"
-            required
-            minLength={8}
-            className="mt-1 w-full px-3 py-2 bg-surface2 border border-border rounded text-ink focus:outline-none focus:ring-2 focus:ring-terra/30"
-          />
+          <div className="mt-1">
+            <PasswordInput name="confirm" required minLength={8} autoComplete="new-password" />
+          </div>
           {errors.confirm ? <p className="text-xs text-red mt-1">{errors.confirm}</p> : null}
         </label>
 
