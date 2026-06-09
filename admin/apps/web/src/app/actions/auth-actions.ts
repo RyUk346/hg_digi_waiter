@@ -11,7 +11,11 @@ import { signIn, signOut } from '@/auth';
 import { passwordResetEmail, sendEmail, welcomeEmail } from '@/lib/email';
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const APP_URL = process.env.AUTH_URL ?? process.env.APP_URL ?? 'http://localhost:3000';
+
+// Strip the Auth.js path suffix if AUTH_URL contains it. The reset-email URL
+// needs to point at /<basePath>/reset/<token>, not /<basePath>/api/auth/reset/<token>.
+const APP_URL = (process.env.AUTH_URL ?? process.env.APP_URL ?? 'http://localhost:3000')
+  .replace(/\/api\/auth\/?$/, '');
 
 // ─── Login ────────────────────────────────────────────────────────────────
 
@@ -83,8 +87,21 @@ export async function registerAction(_prev: RegisterState, formData: FormData): 
     };
   }
 
-  // Public-registration policy: first venue, admin role, email auto-verified.
-  const [firstVenue] = await db.select({ id: venues.id }).from(venues).limit(1);
+  // Multi-tenant policy: every new user owns their OWN venue. Data isolation
+  // is enforced by every query filtering on session.user.venueId.
+  const slugBase = email.split('@')[0]?.replace(/[^a-z0-9-]/gi, '').toLowerCase() ?? 'user';
+  const slug = `${slugBase}-${randomBytes(3).toString('hex')}`;
+  const [newVenue] = await db
+    .insert(venues)
+    .values({
+      name: `${name}'s Restaurant`,
+      slug,
+      timezone: 'Europe/London',
+      currency: 'GBP',
+      recoveryBudgetPence: 20000,
+    })
+    .returning({ id: venues.id });
+
   const passwordHash = await bcrypt.hash(password, 10);
 
   await db.insert(users).values({
@@ -92,7 +109,7 @@ export async function registerAction(_prev: RegisterState, formData: FormData): 
     email,
     passwordHash,
     role: 'admin',
-    venueId: firstVenue?.id,
+    venueId: newVenue?.id,
     emailVerified: new Date(),
   });
 

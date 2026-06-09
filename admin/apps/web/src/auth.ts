@@ -1,4 +1,4 @@
-import NextAuth, { type NextAuthConfig } from 'next-auth';
+import NextAuth, { type NextAuthConfig, CredentialsSignin } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import Google from 'next-auth/providers/google';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
@@ -6,6 +6,13 @@ import { db, users, accounts, sessions, verificationTokens, venues } from '@hype
 import { eq } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
+
+// Custom credentials errors — Auth.js v5 surfaces the `code` field to the
+// login page, which translates it to a user-friendly message.
+class InvalidEmailError extends CredentialsSignin { code = 'InvalidEmail'; }
+class EmailNotFoundError extends CredentialsSignin { code = 'EmailNotFound'; }
+class WrongPasswordError extends CredentialsSignin { code = 'WrongPassword'; }
+class GoogleAccountError extends CredentialsSignin { code = 'GoogleAccount'; }
 
 const credentialsSchema = z.object({
   email: z.string().email(),
@@ -22,16 +29,17 @@ const providers: NextAuthConfig['providers'] = [
     },
     async authorize(raw) {
       const parsed = credentialsSchema.safeParse(raw);
-      if (!parsed.success) return null;
+      if (!parsed.success) throw new InvalidEmailError();
       const { email, password } = parsed.data;
       const [user] = await db
         .select()
         .from(users)
         .where(eq(users.email, email.toLowerCase()))
         .limit(1);
-      if (!user?.passwordHash) return null;
+      if (!user) throw new EmailNotFoundError();
+      if (!user.passwordHash) throw new GoogleAccountError();
       const ok = await bcrypt.compare(password, user.passwordHash);
-      if (!ok) return null;
+      if (!ok) throw new WrongPasswordError();
       return {
         id: user.id,
         email: user.email,
@@ -70,6 +78,31 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     signIn: '/login',
     error: '/login',
   },
+  // Behind a reverse proxy at a custom path, trust the X-Forwarded-* headers.
+  // Without this, Auth.js may construct callback URLs from the upstream host.
+  trustHost: true,
+  // Explicit cookie config: force path '/' on the PKCE + state + callback
+  // cookies so they're sent on every request regardless of basePath. Default
+  // is already '/' but documenting + locking it in defends against subtle
+  // path-scoping issues that surface with custom AUTH_URL paths.
+  cookies: {
+    pkceCodeVerifier: {
+      name: '__Secure-authjs.pkce.code_verifier',
+      options: { httpOnly: true, sameSite: 'lax', path: '/', secure: true },
+    },
+    state: {
+      name: '__Secure-authjs.state',
+      options: { httpOnly: true, sameSite: 'lax', path: '/', secure: true, maxAge: 900 },
+    },
+    callbackUrl: {
+      name: '__Secure-authjs.callback-url',
+      options: { httpOnly: true, sameSite: 'lax', path: '/', secure: true },
+    },
+    csrfToken: {
+      name: '__Host-authjs.csrf-token',
+      options: { httpOnly: true, sameSite: 'lax', path: '/', secure: true },
+    },
+  },
   providers,
   callbacks: {
     async jwt({ token, user, trigger }) {
@@ -104,16 +137,42 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   events: {
     async createUser({ user }) {
-      // Newly-created users (via the Drizzle adapter — i.e. Google sign-ins).
-      // Default to admin role + first venue association. Public-registration policy.
+      // Newly-created users via Drizzle adapter (Google sign-ins).
+      // Multi-tenant policy: each new user owns their OWN venue. Data isolation
+      // is enforced by every query filtering on session.user.venueId.
       if (!user.id) return;
-      // BUG FIX: was selecting from users table (random first user's venueId).
-      // Should query venues directly so a fresh DB with no users still works.
-      const [firstVenue] = await db.select({ id: venues.id }).from(venues).limit(1);
+
+      const slugBase = (user.email ?? user.id)
+        .split('@')[0]
+        ?.replace(/[^a-z0-9-]/gi, '')
+        .toLowerCase() ?? 'user';
+      const slug = `${slugBase}-${Math.random().toString(36).slice(2, 8)}`;
+      const [newVenue] = await db
+        .insert(venues)
+        .values({
+          name: `${user.name ?? 'My'}'s Restaurant`,
+          slug,
+          timezone: 'Europe/London',
+          currency: 'GBP',
+          recoveryBudgetPence: 20000,
+        })
+        .returning({ id: venues.id });
+
       await db
         .update(users)
-        .set({ role: 'admin', venueId: firstVenue?.id, emailVerified: new Date() })
+        .set({ role: 'admin', venueId: newVenue?.id, emailVerified: new Date() })
         .where(eq(users.id, user.id));
+
+      // Welcome email — best-effort
+      if (user.email) {
+        try {
+          const { welcomeEmail, sendEmail } = await import('@/lib/email');
+          const { html, text } = welcomeEmail({ name: user.name ?? '' });
+          await sendEmail({ to: user.email, subject: 'Welcome to HyperGlow', html, text });
+        } catch (err) {
+          console.error('[google-signup] welcome email failed', err);
+        }
+      }
     },
   },
 });
