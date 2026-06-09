@@ -1,326 +1,699 @@
 # HyperGlow Platform — Project Handover
 
-> Authored in a Claude.ai chat session. Describes the **intended** architecture and product decisions. Note that the on-disk `tabletop-app/` has since diverged in stack choices (see §15).
+> **Read this file first.** It is the entry point for any new developer or Claude session. Deeper specs and runbooks live under `admin/docs/`.
+
+**Last updated:** 2026-06-04 (post-RBAC, post-production-deploy)
+
+---
+
+## 0. TL;DR
+
+HyperGlow is a tabletop-tablet restaurant SaaS. Four apps:
+
+| App | Audience | State |
+|---|---|---|
+| **Admin portal** (`admin/`) | Head office (browser) | ✅ Built and deployed |
+| **Order App** (`tabletop-app/`) | Guests at the table | 🚧 Partial RN scaffold; not wired to admin DB yet |
+| **Kitchen App** | Chefs | ❌ Not started in this repo |
+| **Manager App** | Floor manager | ❌ Not started in this repo |
+
+The **admin portal** is the thing actively under development. It's live at:
+
+```
+Local dev:  http://localhost:3000
+Production: https://location.hyperglow.co.uk/SoftPOS/Test
+GitHub:     https://github.com/RyUk346/hg_digi_waiter
+VPS path:   /var/www/location/hg_digi_waiter/admin
+```
+
+Seed login: `anton@tavola.test` / `tavola`.
+
+---
 
 ## 1. Product Overview
-**HyperGlow** is a tabletop-tablet restaurant tech SaaS platform. It eliminates the traditional waiter workflow by letting guests order, pay, and entertain themselves from a tablet at their table. Investor positioning:
-1. **Revenue uplift via behavioural upsell sequencing** (15–30% AOV uplift)
-2. **Cost reduction via at-table self-service**
+
+**HyperGlow** eliminates the traditional waiter workflow by letting guests order, pay, and entertain themselves from a tablet at their table. Two investor angles:
+
+1. **Revenue uplift via behavioural upsell sequencing** (15–30% AOV uplift via build sequences, cross-sells, drinks-during-wait, games)
+2. **Cost reduction via at-table self-service** (fewer floor staff, payment processed at the table)
 
 **Tavola** is the fictional Italian bistro demo client. Tavola Soho is the primary venue. Manager: **Anton Joseph** (Operations Director on admin portal, Floor Manager on the manager app).
 
-**Investor one-liner:** "A self-service tabletop ordering platform that drives revenue uplift via behavioural upsell sequencing and reduces operating costs by routing orders directly to the kitchen and processing payment at the table — eliminating the traditional waiter workflow."
+**Investor one-liner:** "A self-service tabletop ordering platform that drives revenue uplift via behavioural upsell sequencing and reduces operating costs by routing orders directly to the kitchen and processing payment at the table."
+
+---
 
 ## 2. The Four Apps
-| App | Audience | Platform | Resolution | Status |
-|-----|----------|----------|------------|--------|
-| **Order App** | Guest (tablet at table) | React Native Android | 800×1200 portrait | HTML demo + RN project delivered |
-| **Kitchen App** | Chefs (KDS at pass) | React Native Android | 1920×1080 landscape | HTML demo + RN project delivered |
-| **Manager App** | Floor manager | React Native Android | 1200×800 landscape | HTML demo + RN project delivered |
-| **Admin Portal** | Head office | React web | 1920×1080 desktop | HTML demo only — RN/web NOT YET BUILT |
 
-## 3. Tech Stack (as designed in handover)
-- React Native 0.74.5, TypeScript strict
-- `useReducer` in `App.tsx` per app, no Redux/Zustand
-- Single-screen `state.view` routing — no react-navigation
-- `lucide-react-native`, `react-native-svg`, `react-native-keep-awake`, `react-native-safe-area-context`
-- Backend: PostgreSQL + Redis + Stripe Terminal (or Supabase fast path)
+| App | Audience | Platform | Resolution | Status (June 2026) |
+|---|---|---|---|---|
+| **Admin Portal** | Head office | React web (Next.js 15) | 1920×1080 desktop | ✅ Live in production at `https://location.hyperglow.co.uk/SoftPOS/Test` |
+| **Order App** | Guest tablet | React Native Android | 800×1200 portrait | Partial RN scaffold in `tabletop-app/`. Diverges from spec (uses Zustand + react-navigation + NativeWind). Not connected to admin DB. |
+| **Kitchen App** | Chefs (KDS) | React Native Android | 1920×1080 landscape | Not in this repo. Designed in HTML demo only. |
+| **Manager App** | Floor manager tablet | React Native Android | 1200×800 landscape | Not in this repo. Designed in HTML demo only. |
 
-## 4. Design System
+---
 
-### Light theme (Order, Manager, Admin)
-```ts
-colors = {
-  bg: '#FBF7EE', surface: '#FFFFFF', surface2: '#F5F1E8', surface3: '#EFEADF',
-  border: '#E8E2D3', ink: '#1A1715', text: '#42392F', muted: '#7A7064', mutedSoft: '#9C9384',
-  terra: '#B8543D', terraSoft: '#FAEDE5', terraStrong: '#F3E4D0', terraFg: '#7A4419',
-  olive: '#4A7C3F', amber: '#B8843D', red: '#C13F35', rose: '#8A322A',
-  blue: '#3D6FB8', purple: '#7B5DBA',
-};
+## 3. Repository Layout
+
+```
+D:\HyperGlow\DigitalWaiter\
+├── HANDOVER.md                  (this file — read first)
+├── .gitignore
+├── .git/                        (private GitHub repo)
+│
+├── admin/                       (the active build — pnpm monorepo)
+│   ├── apps/
+│   │   ├── web/                 Next.js 15 admin portal
+│   │   └── realtime/            Socket.io bridge for Postgres LISTEN/NOTIFY (not deployed to VPS yet)
+│   ├── packages/
+│   │   └── db/                  Drizzle schema + migrations + seed + triggers
+│   ├── docs/
+│   │   ├── SRS.md               Full Software Requirements Spec
+│   │   ├── SRS-STATUS.md        FR-by-FR build status (Done / Partial / Not started)
+│   │   └── AUTH-SETUP.md        Gmail / IONOS SMTP + Google OAuth walkthrough
+│   ├── docker-compose.yml       Postgres 16 for local dev
+│   ├── ecosystem.config.cjs     pm2 production process config
+│   ├── pnpm-workspace.yaml
+│   ├── package.json             Workspace root with convenience scripts
+│   └── README.md                Local setup + daily commands
+│
+├── tabletop-app/                (Order App RN project — diverged from spec)
+│
+├── designs/                     (design references)
+└── reference/                   (HTML demos, etc.)
 ```
 
-### Kitchen dark theme
-```ts
-{ env: '#08070C', bg: '#0E0D0C', surface: '#1A1715', surface2: '#211D1A', surface3: '#2B2622',
-  text: '#E8E2D3', textBright: '#FBF7EE', muted: '#95887A',
-  stationColors: {
-    grill:   { fg: '#E08838', bg: 'rgba(224,136,56,0.15)' },
-    pasta:   { fg: '#5A95E0', bg: 'rgba(90,149,224,0.15)' },
-    pizza:   { fg: '#D85040', bg: 'rgba(216,80,64,0.15)' },
-    cold:    { fg: '#6FB35A', bg: 'rgba(111,179,90,0.15)' },
-    dessert: { fg: '#B280D4', bg: 'rgba(178,128,212,0.15)' },
-    bar:     { fg: '#C76B52', bg: 'rgba(199,107,82,0.15)' },
-  }
-}
+The **admin/** monorepo is what's actively built. **tabletop-app/** is a partial scaffold from before this work; it's not wired to the admin's database yet.
+
+---
+
+## 4. Admin Portal — Tech Stack (as built)
+
+| Layer | Choice |
+|---|---|
+| Frontend | Next.js 15 (App Router), React 19, TypeScript strict, Tailwind v3 |
+| Database | self-hosted Postgres 16 (Docker locally, native install on VPS) |
+| ORM | Drizzle (`drizzle-orm` + `drizzle-kit`) |
+| Auth | Auth.js v5 (next-auth@5 beta) + Drizzle adapter + bcrypt credentials + Google OAuth |
+| Email | nodemailer (IONOS SMTP in prod, console-log in dev when not configured) |
+| Images | custom Sharp-based optimizer at `/api/img/[...path]` (Next's built-in optimizer breaks with basePath) |
+| Charts | Recharts |
+| Icons | lucide-react |
+| Validation | Zod |
+| Package manager | pnpm 9 workspaces |
+| Process manager (prod) | pm2 + `ecosystem.config.cjs` |
+| Reverse proxy (prod) | nginx — sub-path under `/SoftPOS/Test/` |
+
+### Why these and not the SRS's defaults
+
+The SRS §2.4 lists Auth0/Supabase Auth and ClickHouse/Redis as options. We went self-hosted because Anton already has a VPS and didn't want monthly bills for managed services. Specifically:
+
+- Auth.js v5 instead of Auth0 → self-hosted, no monthly cost
+- Postgres only (no Redis, no ClickHouse) → single-server simplicity
+- pm2 + nginx instead of AWS ECS → matches the VPS he already pays for
+
+Trade-off: NFR-REL-001 (99.9% uptime) and NFR-REL-006 (multi-AZ) are not achievable on a single VPS. Reconcile when scaling.
+
+---
+
+## 5. Admin Portal — Routes Built
+
+All routes live under `apps/web/src/app/`. Route groups in parentheses are organisational only — they don't affect URLs.
+
+### Public auth routes — `(auth)/` group
+
+| URL | What it does |
+|---|---|
+| `/login` | Email + password, optional Google button, forgot link, register link |
+| `/register` | Name + email + password + confirm. Auto-creates user, signs in, redirects to dashboard. Public registration — new users get `role='admin'` and venue = first venue. |
+| `/forgot` | Email-only form. Sends reset link with 30-min SHA-256-hashed token in `verification_tokens`. Always returns same response (anti-enumeration). |
+| `/reset/[token]?email=…` | Set new password. Burns token on use. Auto-signs in. |
+
+All four password fields have a **show/hide eye toggle** (`components/password-input.tsx`).
+
+### Dashboard routes — `(dashboard)/` group (auth required)
+
+| URL | What it does | Built? |
+|---|---|---|
+| `/overview` | 4-section dashboard: KPI strip (5 cards) → Revenue trend + HG Impact card → Games (split/plays/top) → Deep dives (top upsells, server leaderboard, activity feed) | ✅ |
+| `/revenue` | 30d stacked area + per-category totals | 🟡 basic |
+| `/games` | Catalogue + 30d revenue + per-game stats + 80/20 split | 🟡 basic |
+| `/menu` | List with thumbnails + stock chips + edit/delete; archived view via `?view=archived`; add/edit dialog with build-sequence editor + image upload + category-create inline | ✅ full CRUD |
+| `/menu/new` | Unified create form (basic info + build sequence) | ✅ |
+| `/menu/[id]/edit` | Same form pre-populated; standalone stock toggle in header (fires its own action) | ✅ |
+| `/servers` | Week leaderboard from `server_shifts` | 🟡 read-only |
+| `/alerts` | Open alerts from `alerts` table | 🟡 read-only |
+| `/compliance` | Status cards + allergen chains + filterable audit log + GDPR stub + regulatory export stub | 🟡 reads real, mutations stubbed |
+| `/settings?tab=…` | Vertical tab nav; Venue tab fully wired with Server Action update; 8 other tabs are informative stubs | 🟡 Venue done |
+| `/upsell` | Stub | ❌ |
+| `/403` | Forbidden page (shows current role) | ✅ |
+
+### API routes — `app/api/`
+
+| URL | What it does |
+|---|---|
+| `/api/auth/[...nextauth]` | Auth.js handlers (login, logout, OAuth callbacks) |
+| `/api/img/[...path]?w=&q=` | Sharp-based image optimizer. Reads from `public/uploads/`, resizes to allowed widths, reencodes to WebP/AVIF/JPEG based on Accept header. Path-traversal safe. Long-cache. |
+
+### Middleware (`src/middleware.ts`)
+
+basePath-aware. Bypasses `/api/`, `/uploads/`, `/_next/`, `/favicon.ico`. Otherwise:
+- Logged-in users on `/login` → redirect to `/overview`
+- Anon users on `/login` `/register` `/forgot` `/reset/*` → allow
+- Anon users on any other → redirect to `/login?callbackUrl=…`
+
+---
+
+## 6. Authentication + Authorization
+
+### Authentication (built)
+
+- **Credentials provider** — bcrypt password hashes in `users.password_hash`
+- **Google OAuth** — conditional based on `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` env presence; button hidden if not configured
+- **Session** — JWT strategy (not DB sessions)
+- **JWT callback** hydrates `role` + `venueId` from DB on first sign-in
+- **`createUser` event** — sets new OAuth users to `role='admin'` + first venue + email auto-verified
+
+### Authorization (built) — 2 roles
+
+| Role | Granted permissions |
+|---|---|
+| `admin` | All — full menu CRUD including delete, settings edit, compliance export, user management |
+| `manager` | Reads everything except user management. Writes: menu (create/edit), stock toggle. **No**: delete menu items, edit settings, export compliance, manage users |
+| `staff` | None (kept as enum value, no permissions assigned) |
+
+### Files
+
+- **`lib/permissions.ts`** — public surface, client-safe. `PERMISSIONS` constants, `Role` type, `ROLE_PERMISSIONS` map, `hasPermission()`, `roleLabel()`.
+- **`lib/rbac.ts`** — `'server-only'`. Re-exports the public surface. Adds `getCurrentUser()`, `requirePermission()`, `requireVenueAccess()`.
+- **`lib/http-errors.ts`** — `unauthorized()` (redirect to `/login`), `forbidden()` (redirect to `/403`). Both basePath-aware.
+
+### Multi-venue (multi-branch)
+
+Every user has `users.venue_id` pointing at one venue. `getVenue()` in `lib/queries.ts` returns the venue from `session.user.venueId`. All downstream queries filter by `venue.id`. Cross-venue access prevented by `requireVenueAccess(venueId)` (used in `updateVenue` action).
+
+**Limitation:** No UI yet to manage roles / venue assignment. Use psql or Drizzle Studio:
+
+```sql
+UPDATE users SET role = 'manager' WHERE email = 'someone@example.com';
+UPDATE users SET venue_id = (SELECT id FROM venues WHERE slug = 'tavola-soho') WHERE email = '...';
 ```
 
-### TERRACOTTA DISCIPLINE — critical product rule
-**`colors.terra` (#B8543D) is reserved exclusively for HyperGlow-monetised surfaces.** Wherever a user sees terracotta, that's where HyperGlow makes money.
+---
 
-- **Terracotta:** build-sequence upsells, cross-sell quick-adds, drink recommendations during wait, games pricing/leaderboard, active-games indicator on KDS, AOV uplift KPIs, recovery budget, server upsell attribution, "Powered by HyperGlow" tags.
-- **Black (`ink`):** primary commit actions — Send order, Place order, Send tip.
-- **Olive:** success — payment received, allergen verified.
-- **Red:** critical — allergen, sentiment alert, refusal of service.
+## 7. Database Schema
+
+Full Drizzle schema at `admin/packages/db/src/schema.ts`. Tables (all venue-scoped except auth):
+
+```
+venues                  — single venue per row; slug, name, timezone, currency, recoveryBudgetPence
+users                   — Auth.js compatible; passwordHash, role, venueId, emailVerified
+accounts                — Auth.js OAuth account links
+sessions                — Auth.js (unused; JWT strategy)
+verification_tokens     — password reset tokens (SHA-256 hashed) + email verification
+
+tables                  — physical tables per venue; current_phase enum
+servers                 — staff per venue
+server_shifts           — per-shift aggregates: covers, upsell_attempts, upsell_accepted, revenue
+
+menu_categories         — per-venue categories with sort_order
+menu_items              — sku, name, description, base_price_pence, station, tint, available,
+                          cross_sell, allergens (jsonb), image_url, sort_order, deleted_at
+build_steps             — per-item upsell sequence; question + subtitle + options (jsonb)
+                          options shape: [{ id, label, description?, deltaPence, featured?, badge? }]
+
+orders                  — venue/table/server, status, cover_count, subtotal, total, placed_at, closed_at
+order_lines             — orderId, menuItemId, quantity, base_price, upsell_delta, line_price,
+                          selections (jsonb), bumped_at
+payments                — order/venue, amount, tip, method, status, stripePaymentIntentId, paid_at
+
+games                   — slug, name, duration_seconds, price_pence, hyperglow_revenue_share_bps
+game_plays              — venue/table/game, price_pence, hyperglow_share_bps, score, completed,
+                          stripePaymentIntentId, played_at
+
+alerts                  — venue/table, severity (enum), title, body, resolved_at
+audit_log               — venue/actor/table, action (enum), amount_pence, details (jsonb), occurred_at
+```
+
+### Postgres triggers (`packages/db/src/triggers.ts`)
+
+Watched tables (`orders`, `order_lines`, `payments`, `game_plays`, `alerts`, `menu_items`, `audit_log`) emit `NOTIFY hyperglow_events` on every INSERT/UPDATE/DELETE. The `apps/realtime` Socket.io service LISTENs and broadcasts to connected browsers. Currently **only used locally** — realtime not deployed to VPS.
+
+### Migrations
+
+Generated by drizzle-kit and committed under `packages/db/drizzle/`. Apply with `pnpm db:migrate`. The `deleted_at` column on `menu_items` was added in a later migration (soft-delete pattern).
+
+---
+
+## 8. Design System — TERRACOTTA DISCIPLINE
+
+**Critical product rule** carried forward from the SRS:
+
+> The terracotta accent `colors.terra` / `#B8543D` is reserved **exclusively** for HyperGlow-monetised surfaces.
+
+Used in:
+- Build-sequence upsell options (featured tiles)
+- Cross-sell quick-add buttons
+- Drink recommendations during wait
+- Games pricing + leaderboard
+- AOV uplift KPIs (Overview, Revenue)
+- Top upsells card progress bars
+- Server leaderboard #1 highlight
+- "Powered by HyperGlow" tag in sidebar
+
+Not used elsewhere. Black (`ink`) for commit actions, olive for success, red for critical, amber for warning.
+
+### Tailwind tokens (configured in `apps/web/tailwind.config.ts`)
+
+```
+bg / surface / surface2 / surface3 / border / borderSoft
+ink / text / muted / mutedSoft
+terra / terraSoft / terraStrong / terraFg
+olive / oliveSoft / amber / amberSoft / red / rose / blue / purple
+sb.bg / sb.bg2 / sb.border / sb.text / sb.textMuted / sb.textSoft  (dark sidebar)
+```
 
 ### Typography
+
 - Display/serif: Fraunces (fallback Iowan Old Style / Georgia / Charter)
 - Body/sans: DM Sans (fallback system)
 - Mono: Menlo / ui-monospace
-- Fonts at `android/app/src/main/assets/fonts/`
 
-## 5. Key Product Decisions
+---
+
+## 9. Key Product Decisions (carried from SRS)
 
 ### Dining phase state machine
-`pre-order → waiting → eating → paying`
-- **pre-order:** Browse menu + games LOCKED ("Available once you've ordered")
-- **waiting:** Countdown + drinks during wait + games ACTIVE + leaderboard
-- **eating:** "Enjoy your meal" + order more (desserts/coffee/digestifs) + bill access. Games HIDDEN.
-- **paying:** Split evenly / Go Dutch / pay all
+
+Order App tablet cycles through: `pre_order → waiting → eating → paying`. Stored on `tables.current_phase`.
 
 ### Games window rule
-Games available **only during waiting phase** — between `order placed` and `last item bumped`. KDS publishes `ALL_DELIVERED` when last item is bumped, which closes the games tab on the guest tablet. Tighter window = urgency = higher conversion on the second £2 replay.
+
+Games available **only during waiting** (between order placed and last item bumped). Tighter window = more urgency to play = higher second-£2 conversion. Enforced on the Order App side (when device-api ships).
 
 ### Conservative countdown
-Tablet shows **KDS estimate + 2 min buffer**. Sub-text: "First course in ~X minutes" where X = `countdownMins - 4`. Domino's principle — exceed expectations.
 
-### Build sequence principles
-- One question per screen, max 3 steps
-- Show delta pricing (`+£2`) not totals
-- Featured option visually heavier: warm amber/terra bg, 1px border, badge with icon
-- Skip option reframed positively: "Keep it a single" not "No thanks"
+Guest tablet shows KDS estimate + 2 min buffer. Sub-text: "First course in ~X minutes" where X = countdown − 4. Domino's principle.
 
 ### Three upsell vectors
-1. **Build sequence at order time** (burger: double → meal → truffle aioli, £12 → £18)
-2. **Cart cross-sells** at review screen (2×2 grid)
-3. **Drinks during wait** (bar-station only, stage-rotated)
 
-### Games catalogue
-| Game | Duration | Price | Notes |
-|------|----------|-------|-------|
-| Italian trivia | 90s · 10Q | £2 | **Featured**, 5Q playable in demo |
-| Couple's quiz | 5 min · 8 prompts | £2 | Catalogue only |
-| Italian word puzzles | 3 min | £2 | Catalogue only |
-| Spot the difference | 2 min | £2 | Catalogue only |
+1. Build sequence at order time (e.g. burger: double → meal → truffle aioli)
+2. Cart cross-sells at review screen (2×2 grid)
+3. Drinks during wait (bar-station only, stage-rotated)
 
-**Revenue split: 80% HyperGlow / 20% venue.** Charged via Stripe Terminal at game start, separate from food bill.
+### 80/20 games revenue split
 
-### Manager app differentiators (vs Toast/Square/Lightspeed)
-1. Table sentiment alerts (headline)
-2. Service recovery playbook + budget (£200/night cap)
-3. Guest intelligence at table
-4. Server coaching from upsell data
-5. Compliance & audit (Natasha's Law)
-6. Predictive operations
-7. Shift handover auto-brief
-8. Booking-driven occasion prompts
+Hard-coded business rule. HyperGlow takes 80%, venue takes 20%. Stored per-play as `game_plays.hyperglow_share_bps = 8000`. Surfaced transparently on `/games` and the Overview "Games revenue" card.
 
-## 6. Delivered Artifacts (in Claude.ai session `/mnt/user-data/outputs/`)
+---
 
-### HTML demos
-- `tavola-order-app-demo.html` (800×1200)
-- `tavola-kitchen-app-demo.html` (1920×1080)
-- `tavola-manager-app-demo.html` (1200×800)
-- `tavola-admin-portal-demo.html` (1920×1080)
+## 10. Production Deployment
 
-### React Native projects (single `useReducer` in App.tsx, presentational screens)
-- **TavolaOrderApp/** — 24 files, 9 screens (Menu/Build/Review/Placed/Waiting/Eating/Paying/GamePlay/GameResults). Uses `react-native-svg` for countdown circle.
-- **TavolaKitchenApp/** — 19 files. TopBar/FilterBar/TicketCard (memoized)/Footer/Toast. `DEMO_MODE` flag for 1min/sec time advance.
-- **TavolaManagerApp/** — 23 files, 4 screens (Overview/Floor/Team/Compliance). TopBar/AlertCard/MiniTable/TableModal/Toast.
+### URLs
 
-User's local working folder: `D:\HyperGlow\DigitalWaiter\tabletop-app\` — likely the Order App.
+```
+Domain:         hyperglow.co.uk (registered with IONOS, also email host)
+Subdomain:      location.hyperglow.co.uk (other projects also live here)
+Sub-path:       /SoftPOS/Test/  (HyperGlow admin)
+Full:           https://location.hyperglow.co.uk/SoftPOS/Test
+```
 
-## 7. Sample Data
+### VPS layout
 
-### Menu (Order App `data.ts`)
-- **Tavola burger** £12 — build: size → meal → sauce ("Double" +£2, "Meal" +£3.50, "Truffle aioli" +£0.50)
-- **Pizza Margherita** £14 — build: size → topping ("14-inch" +£4, "Burrata" +£3.50)
-- **Truffle risotto** £18 (no build)
-- **Ribeye 250g** £28 (no build)
-- Starters: burrata £12.50, bruschetta £7, calamari £10
-- Desserts: tiramisu £8, fondant £9
-- Drinks: sangiovese £8.50, IPA £6, espresso £3
-- Cross-sells: bruschetta, tiramisu, house-red, ipa
+```
+/var/www/location/hg_digi_waiter/       <- repo clone
+├── admin/                              <- monorepo
+│   ├── apps/web/                       <- deployed app
+│   ├── apps/realtime/                  <- NOT deployed (skipped for v1)
+│   ├── packages/db/
+│   └── ecosystem.config.cjs            <- pm2 reads this
+└── (other folders not deployed)
+```
 
-### Trivia (5 implemented)
-1. Chianti region → Tuscany
-2. Carbonara → guanciale/egg/pecorino
-3. Al dente → "to the tooth"
-4. Pizza birthplace → Naples
-5. Tiramisù → "pick me up"
+Other projects share the VPS on different ports:
+- `studio-plt` on port 3000
+- `bru_cafe` on port 3002
+- `wc-poller` background
+- `hyperglow-admin` on port **3010**
 
-### Tonight's leaderboard
-Table 9 (84), Table 4 (79), Table 7 (76), Table 10 (71)
+### nginx config
 
-### Manager alerts (6 in demo)
-1. Sentiment · Table 7 (critical) — silent 18min after starters
-2. Birthday · Table 8 — Eleanor's 30th, party 4
-3. Marcus upsell drop (warning) — 15% drop, £42/hr lost
-4. Service recovery · Table 4 — 24min wait, VIP, £14 spritz suggestion
-5. Allergen · Table 12 (critical) — nut allergy chain complete
-6. Kitchen pacing — grill heavy, slow 15min
+Lives at `/etc/nginx/sites-available/location.hyperglow.co.uk`. The HyperGlow block (added inside the existing `server { listen 443 ssl }` block):
 
-### Server week leaderboard
+```nginx
+location /SoftPOS/Test/ {
+    proxy_pass http://127.0.0.1:3010;          # NO trailing slash — preserves path
+    proxy_http_version 1.1;
+    proxy_set_header Host              $host;
+    proxy_set_header X-Real-IP         $remote_addr;
+    proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Host  $host;
+    proxy_set_header X-Forwarded-Prefix /SoftPOS/Test;
+    proxy_set_header Upgrade           $http_upgrade;
+    proxy_set_header Connection        "upgrade";
+    client_max_body_size 5m;
+    proxy_read_timeout 300s;
+    proxy_send_timeout 300s;
+}
+```
+
+**Don't use `handle_path` / `proxy_pass http://.../`** (trailing slash) — those strip the prefix. Next.js with basePath needs the full URL preserved.
+
+### Postgres on VPS
+
+Installed via PGDG repo (`postgresql-16` + `postgresql-contrib-16`). Bound to `127.0.0.1` only — never exposed publicly. Connection from app:
+
+```
+DATABASE_URL=postgres://hyperglow:<STRONG_PASS>@127.0.0.1:5432/hyperglow
+```
+
+Nightly backups via cron:
+
+```
+0 3 * * * pg_dump hyperglow | gzip > /var/backups/postgres/hyperglow-$(date +\%Y\%m\%d).sql.gz && find /var/backups/postgres -mtime +30 -delete
+```
+
+### Env vars in production (`apps/web/.env.local` on VPS)
+
+```env
+DATABASE_URL=postgres://hyperglow:<STRONG_PASS>@127.0.0.1:5432/hyperglow
+
+AUTH_SECRET=<openssl rand -base64 32>
+AUTH_URL=https://location.hyperglow.co.uk/SoftPOS/Test
+AUTH_TRUST_HOST=true                     # required behind nginx
+
+GOOGLE_CLIENT_ID=<from Google Cloud Console>
+GOOGLE_CLIENT_SECRET=<from Google Cloud Console>
+
+# IONOS SMTP for password-reset / welcome emails
+SMTP_HOST=smtp.ionos.co.uk
+SMTP_PORT=465
+SMTP_USER=hello@hyperglow.co.uk
+SMTP_PASS=<mailbox password from IONOS control panel>
+SMTP_FROM=hello@hyperglow.co.uk
+APP_NAME=HyperGlow Admin
+
+PORT=3010
+NEXT_PUBLIC_BASE_PATH=/SoftPOS/Test
+NEXT_PUBLIC_REALTIME_URL=               # empty — realtime not deployed
+```
+
+`AUTH_TRUST_HOST=true` is required behind nginx — without it, Auth.js v5 may construct OAuth redirect URIs from the internal upstream host (`127.0.0.1:3010`) instead of the public domain, causing Google `redirect_uri_mismatch`.
+
+### Google Cloud OAuth client
+
+**Authorized JavaScript origins:**
+- `http://localhost:3000`
+- `https://location.hyperglow.co.uk`
+
+**Authorized redirect URIs:**
+- `http://localhost:3000/api/auth/callback/google`
+- `https://location.hyperglow.co.uk/SoftPOS/Test/api/auth/callback/google`
+
+The redirect URI MUST include the basePath. Forgetting this is the #1 cause of `redirect_uri_mismatch`.
+
+### pm2
+
+Started via `ecosystem.config.cjs`:
+
+```js
+module.exports = {
+  apps: [{
+    name: 'hyperglow-admin',
+    script: 'pnpm',
+    args: '--filter @hyperglow/web start',
+    cwd: __dirname,
+    env: {
+      NODE_ENV: 'production',
+      PORT: 3010,
+      NEXT_PUBLIC_BASE_PATH: '/SoftPOS/Test',
+    },
+    max_memory_restart: '512M',
+    autorestart: true,
+  }],
+};
+```
+
+Auto-start on reboot via `pm2 startup` + `pm2 save`.
+
+### Deploy loop
+
+From local:
+
+```powershell
+cd D:\HyperGlow\DigitalWaiter
+git add admin/
+git commit -m "..."
+git push
+```
+
+On VPS:
+
+```bash
+cd /var/www/location/hg_digi_waiter
+git pull
+cd admin
+pnpm install                                       # only if package.json changed
+NEXT_PUBLIC_BASE_PATH=/SoftPOS/Test pnpm build     # only if app code changed
+pm2 reload hyperglow-admin
+```
+
+For env-only changes:
+
+```bash
+nano apps/web/.env.local
+pm2 restart hyperglow-admin --update-env           # --update-env is the gotcha
+```
+
+---
+
+## 11. Local Development
+
+Prerequisites: Node 20+, pnpm 9+, Docker Desktop (for Postgres).
+
+```powershell
+cd D:\HyperGlow\DigitalWaiter\admin
+pnpm install
+pnpm db:up                                  # starts Postgres in Docker
+pnpm db:generate
+pnpm db:migrate
+pnpm db:triggers                            # one-time
+pnpm db:seed                                # populates Tavola demo data
+pnpm dev                                    # web on :3000 + realtime on :3001
+```
+
+Open `http://localhost:3000`. Sign in with `anton@tavola.test` / `tavola`.
+
+### Daily commands
+
+| | |
+|---|---|
+| `pnpm dev` | both web + realtime |
+| `pnpm dev:web` / `pnpm dev:realtime` | one or the other |
+| `pnpm db:up` / `db:down` / `db:logs` | Docker Postgres lifecycle |
+| `pnpm db:studio` | Drizzle Studio at https://local.drizzle.studio |
+| `pnpm db:generate` | new migration after schema edit |
+| `pnpm db:migrate` | apply pending migrations |
+| `pnpm db:seed` | wipe + reseed Tavola data |
+| `pnpm build` / `pnpm start` | production bundle (rare locally) |
+
+### Local env (`apps/web/.env.local`)
+
+```env
+DATABASE_URL=postgres://hyperglow:hyperglow_dev@localhost:5432/hyperglow
+AUTH_SECRET=<openssl rand -base64 32>
+AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_REALTIME_URL=http://localhost:3001
+# Leave NEXT_PUBLIC_BASE_PATH UNSET locally — app serves at /
+# Leave GOOGLE_* unset to hide the Google button locally
+# Leave SMTP_* unset to log emails to console (dev convenience)
+```
+
+---
+
+## 12. What's Outstanding
+
+Roughly tracked at `admin/docs/SRS-STATUS.md`. High-impact items:
+
+### Wiring the device apps
+
+- Order App (`tabletop-app/`) is a partial RN scaffold but **doesn't talk to the admin DB**. It needs:
+  - The `apps/device-api/` Express service (not yet built)
+  - The realtime layer enabled on VPS
+  - DATABASE_URL pointing at the same Postgres
+  - `upsell_events` table for per-step conversion tracking
+- Kitchen App + Manager App — designed in HTML demos only, not in this repo.
+
+### Auth / Security
+
+- **MFA (FR-AUTH-003)** — not implemented
+- **Account lockout** after failed attempts (FR-AUTH-008) — not implemented
+- **HIBP password breach check** (FR-AUTH-005) — not implemented
+- **Audit log entries for auth events** (FR-AUTH-007) — auth events not yet written to `audit_log`
+- **Email verification at signup** — currently auto-verified; flow exists in schema but no UI
+- **Postgres RLS (NFR-SEC-005)** — app-layer filtering only; no DB-level policies
+
+### Admin UI
+
+- **User management UI** (FR-SET-008) — must use psql/Drizzle Studio to change roles
+- **Venue switching for multi-branch admins** — each user is tied to one venue; no UI to switch
+- **Revenue page deep dives** (heatmap, day-of-week, forecast, period compare) — basic version only
+- **Games page deep dives** (replay analysis, per-game tabs, payout PDF) — basic version only
+- **Compliance**: GDPR request flow stub (no real `gdpr_requests` table), regulatory export stub (no HMAC signing)
+- **Settings tabs 2–9** (hours, recovery budget detail, tax, payments, integrations, users, billing, notifications) — all read-only stubs
+- **Build-sequence per-step conversion** — needs `upsell_events` instrumentation from Order App
+- **Activity feed → SSE** — currently revalidate-on-event; not true streaming
+
+### Production
+
+- **Realtime layer** (`apps/realtime`) — not deployed to VPS. Browser sees "Offline" pill. Manual page refresh required to see new data.
+- **CI/CD** — manual deploy loop. No GitHub Actions.
+- **Off-server backups** — nightly `pg_dump` runs locally on VPS. Nothing rclones to S3/B2 yet. If VPS dies, backups die with it.
+- **Multi-AZ / 99.9% uptime** (NFR-REL-001/006) — single VPS, can't satisfy.
+
+---
+
+## 13. Common Gotchas (and how we worked around them)
+
+### basePath + Next.js Image optimizer
+
+Default `/_next/image` returns 400 for local files when basePath is set. **Fix:** custom Sharp-based optimizer at `/api/img/[...path]` plus a custom loader at `src/lib/image-loader.ts`. Configured in `next.config.ts` with `images.loader = 'custom'`.
+
+### basePath + middleware
+
+`req.nextUrl.pathname` *includes* the basePath. `NextResponse.redirect()` does *not* auto-prepend it. Middleware uses `stripBase(p)` for matching and `withBase(p)` for constructing redirect URLs.
+
+### basePath + bypass paths
+
+Matcher regex doesn't see basePath-prefixed paths the way you'd expect. Bypass list (`/_next/`, `/api/`, `/uploads/`, `/favicon.ico`) is applied in middleware code (after stripping basePath), not in the matcher.
+
+### `pm2` env not reloading
+
+Editing `.env.local` then `pm2 restart` keeps the OLD env. Must use `pm2 restart hyperglow-admin --update-env`.
+
+### `next start` hardcoded port
+
+We previously had `"start": "next start -p 3000"` in `apps/web/package.json` — that hard-codes port 3000 (already used by studio-plt on VPS) and ignores `PORT` env. **Fixed:** changed to `"start": "next start"`. Now reads PORT from env.
+
+### `server-only` import + client component
+
+`lib/rbac.ts` had `import 'server-only'` but the sidebar (client) imported `PERMISSIONS` from it. Build failed. **Fixed:** split into `lib/permissions.ts` (client-safe constants/types) + `lib/rbac.ts` (server-only helpers).
+
+### FK constraint on menu delete
+
+`order_lines.menu_item_id` has `ON DELETE RESTRICT`. Direct delete fails when historical orders reference the item. **Fixed:** smart delete — hard-delete if no historical orders, else soft-delete (set `deleted_at`). Restore via `/menu?view=archived`.
+
+### Auth.js `createUser` event picked wrong table
+
+Was `db.select({ id: users.venueId }).from(users).limit(1)` — got the first user's venueId, not the first venue. Worked by accident. **Fixed:** queries `venues` table directly.
+
+### `AUTH_TRUST_HOST=true` behind reverse proxy
+
+Without this, Auth.js v5 may build OAuth redirect URIs from the internal upstream (`127.0.0.1:3010`). Causes `redirect_uri_mismatch` from Google. Always set on prod.
+
+### Google OAuth redirect URI must include basePath
+
+`https://location.hyperglow.co.uk/api/auth/callback/google` (without `/SoftPOS/Test`) is wrong. Must be `https://location.hyperglow.co.uk/SoftPOS/Test/api/auth/callback/google`. Same for any future provider.
+
+### Trailing slash on `proxy_pass`
+
+`proxy_pass http://127.0.0.1:3010/` (with trailing slash) strips the URL prefix before forwarding — fine for some apps but breaks basePath setups. **Use no trailing slash** to preserve the full URL.
+
+---
+
+## 14. Sample Data Reference
+
+Generated by `packages/db/src/seed.ts`. 14 days of synthesised orders + payments + game plays. Highlights:
+
+### Menu items with build sequences
+
+- **Tavola burger** (£12, amber tint) — 3-step build (double / meal / aioli)
+- **Pizza Margherita** (£14, rose tint) — 2-step build (size / burrata)
+- **Truffle risotto** (£18) — no build
+- **Ribeye 250g** (£28) — no build
+- Plus starters, desserts, drinks
+
+### Games
+
+| Game | Duration | Price | Featured? |
+|---|---|---|---|
+| Italian trivia | 90s · 10Q | £2 | ✓ |
+| Couple's quiz | 5 min · 8 prompts | £2 | |
+| Italian word puzzles | 3 min | £2 | |
+| Spot the difference | 2 min | £2 | |
+
+All 80% HG / 20% venue. £2 per play. Charged separately via Stripe Terminal at game start (not yet wired).
+
+### Servers (week leaderboard)
+
 | Rank | Name | Upsell rate | Covers | Revenue |
-|------|------|-------------|--------|---------|
+|---|---|---|---|---|
 | 1 | Sofia Ricci | 41% | 124 | £4,820 |
 | 2 | Aisha Patel | 38% | 108 | £4,142 |
 | 3 | Diego Romano | 34% | 96 | £3,664 |
 | 4 | Mia Chen | 31% | 78 | £2,964 |
 | 5 | Marcus Holloway | 22% | (coaching) | £2,484 |
 
-## 8. Infrastructure
+Marcus gets a coaching alert (>15pp below team average).
 
-### What goes where
-**PostgreSQL** (system of record): restaurants/venues/tables/staff, menus + builds + prices + allergens, bookings, orders + lines + modifiers, payments + payouts, game plays, service recovery spend, audit log (refusals/comps/voids/allergen sign-offs), aggregated sentiment.
+---
 
-**Redis** (hot state): active cart per table (TTL), live KDS ticket state, dining phase per table, in-progress game state, tonight's leaderboard (sorted set), server presence, rate limits, hot menu cache.
+## 15. Investor Demo Narrative
 
-**Pub/sub for WS fan-out:** Redis Streams OR Supabase Realtime.
+When showing this product, the four key beats:
 
-**External:** Stripe Vault (PCI), Stripe Terminal (at-table card + £2 games), S3/Supabase Storage/R2 (images), AI inference (sentiment), Supabase Auth or Auth0.
+1. **Upsell engine in action.** £12 burger → £18-22 via 3 build screens. The menu/edit page shows live conversion stats per item.
+2. **Wait-time monetisation.** Drinks during wait + £2 pay-per-play games. 80/20 split surfaced on `/games`.
+3. **AI sentiment alerts.** Table 7 silent 18min → manager → recovered. Demoed via the seeded alerts on `/alerts` and `/overview`.
+4. **At-table payment + bill split.** Future Order App will handle. Foundations are in `payments` schema.
 
-### Multi-tenancy
-Postgres RLS with `tenant_id` = `venue_id` on every row. Don't use per-schema or per-DB.
+The **terracotta colour discipline** is the visual proof of the business model — every terracotta surface is a revenue surface.
 
-### Fast path: Supabase Pro ($25/mo)
-Managed Postgres + Realtime + Auth + RLS + Storage. Migration path: `pg_dump` to RDS/Aurora when outgrown.
+---
 
-### Self-host on VPS
-$20–40/mo (Hetzner/DO/Linode), 4GB/2vCPU/80GB. Bind Postgres to localhost/private network. `pgBackRest` to S3/B2 (~$5–10/mo).
+## 16. Bootstrapping a Fresh Claude Session
 
-### NOT to use
-MongoDB (wrong shape), Firebase/Firestore (per-doc pricing punishes analytics), DynamoDB (premature access-pattern lock-in), Cassandra/Kafka/Spark stack (over-engineered until 1000+ venues).
+Paste this as the first message to any new Claude session that picks up this project:
 
-## 9. Integration TODOs (search `// TODO:` in code)
+> I'm continuing work on the HyperGlow Tavola admin portal. Read these files in order before doing anything:
+>
+> 1. `HANDOVER.md` (this is the canonical project doc)
+> 2. `admin/docs/SRS.md` (Software Requirements Spec)
+> 3. `admin/docs/SRS-STATUS.md` (per-FR build status — what's done vs pending)
+> 4. `admin/docs/AUTH-SETUP.md` (Google OAuth + IONOS SMTP walkthrough)
+> 5. `admin/README.md` (local setup, daily commands)
+>
+> Stack: pnpm monorepo (Next.js 15 App Router + Drizzle ORM + self-hosted Postgres 16 + Auth.js v5 + Tailwind v3 + Sharp + Recharts + lucide-react). Deployed to a single VPS at `https://location.hyperglow.co.uk/SoftPOS/Test/` via nginx → pm2 → :3010, with `NEXT_PUBLIC_BASE_PATH=/SoftPOS/Test`. SMTP via IONOS, Google OAuth client configured. RBAC has two roles (admin + manager); each user belongs to one venue.
+>
+> The four-app vision (Order / Kitchen / Manager + Admin) is in HANDOVER §2. Only the Admin is built. The Order App scaffold in `tabletop-app/` is not wired up to the admin's database yet — it'll come together via a future `apps/device-api/` service when the device apps go live.
+>
+> **Critical product rule:** terracotta `#B8543D` is reserved for HyperGlow-monetised surfaces only (see HANDOVER §8).
+>
+> Tell me where things stand and ask what to work on next.
 
-### Order App
-- `placeOrder()` — POST cart to KDS
-- `payForGame()` — Stripe Terminal £2
-- `addDrinkToOrder()` — POST drink line to KDS bar pipe
-- `callServer()` — service-bell endpoint
-- `processSplitPayment()` — Stripe split flow
-- `subscribeToKitchenEvents()` — WS from KDS
+That single paste gives the new Claude full context within a minute.
 
-### Kitchen App
-- `subscribeToKDSEvents()` — WS from order app
-- `publishItemBumped()` — event bus
-- `publishAllDelivered()` — closes games window
-- `publishPacingChange()` — 90s delay notification
-- `pushAllergenAlert()` — to manager app
+---
 
-### Manager App
-- `subscribeToAlertStream()` — WS from AI inference
-- `dispatchAlertAction(alertId, label)`
-- `fetchTableState()` — floor plan polling
-- `serverCoachingComm(serverId, msg)` — earpiece
-- `pushAllergenSignoff(tableId)`
-- `compileHandoverBrief()`
+## 17. Where the Original SRS Lives
 
-## 10. Common Gradle / Android issues
+The full Software Requirements Spec (12 functional modules, ~110 FRs) is at `admin/docs/SRS.md`. The matching build-status doc is at `admin/docs/SRS-STATUS.md` — it tracks every FR with one of `✅ Done / 🟡 Partial / ⬜ Not started / ❌ Conflicts with current decisions`.
 
-### Orientation lock
-`android/app/src/main/AndroidManifest.xml`:
-```xml
-<activity
-  android:name=".MainActivity"
-  android:screenOrientation="portrait"   <!-- or "landscape" -->
-  android:configChanges="orientation|screenSize|keyboard|keyboardHidden">
-```
-Kitchen also: `android:keepScreenOn="true" android:launchMode="singleTask"`.
+When adding work, update both files:
+1. Build the thing
+2. Bump the corresponding row in SRS-STATUS.md to ✅ or 🟡
 
-### react-native-svg autolinking (RN 0.74 should "just work")
-```bash
-cd android && ./gradlew clean && cd .. && npx react-native run-android
-```
+---
 
-### Peer deps
-```json
-"lucide-react-native": "^0.379.0",
-"react-native-svg": "^15.3.0"
-```
+## 18. Change Log (of this handover doc)
 
-### Min SDK
-`react-native-svg@15` requires `minSdkVersion 23`. `android/build.gradle`:
-```gradle
-ext { minSdkVersion = 23; compileSdkVersion = 34; targetSdkVersion = 34 }
-```
+| Version | Date | Author | Changes |
+|---|---|---|---|
+| 1.0 | 2026-05-19 | Anton + Claude (session draft) | Initial 4-app vision + tech stack decisions |
+| 2.0 | 2026-06-04 | Anton + Claude | Major rewrite reflecting actual build: admin portal live, production deployment, auth + RBAC, IONOS SMTP, Google OAuth, deploy gotchas, fresh-Claude bootstrap |
 
-### Hermes
-RN 0.74 default. If failing: `hermesEnabled=false` in `android/gradle.properties` (but Hermes recommended for prod).
+---
 
-### Nuke when in doubt
-```bash
-rm -rf node_modules android/.gradle android/app/build android/build $TMPDIR/metro-*
-npm install && cd android && ./gradlew clean && cd ..
-npx react-native start --reset-cache
-npx react-native run-android   # other terminal
-```
-
-### Duplicate class on lucide/svg
-`android/app/build.gradle`:
-```gradle
-android { packagingOptions {
-  pickFirst '**/libreactnativejni.so'
-  pickFirst '**/libjsc.so'
-} }
-```
-
-## 11. Pending Work
-1. **Admin Portal as React web project** (Next.js or Vite) — only HTML demo exists
-2. **Connect apps to real backend** — replace hard-coded `data.ts` with API calls
-3. **Auth flow** — order app kioskless, kitchen device-auth, manager+admin user login
-4. **Stripe Terminal integration** — RN SDK + hardware
-5. **AI sentiment inference service** — rules first, ML later
-6. **WebSocket fan-out** — Supabase Realtime or Socket.io + Redis
-7. **Image assets** — menu photos to S3/Storage
-
-## 12. TavolaOrderApp file tree (handover spec)
-```
-TavolaOrderApp/
-├── App.tsx                       # useReducer state machine + screen router
-├── index.js, package.json, app.json, tsconfig.json, babel.config.js, metro.config.js, .eslintrc.js
-└── src/
-    ├── theme.ts                  # design tokens
-    ├── types.ts                  # types + Action union
-    ├── data.ts                   # MENU/GAMES/TRIVIA/WAIT_DRINKS/CATEGORIES/CROSS_SELL_IDS/LEADERBOARD
-    ├── utils.ts                  # fmt, uid, byId, lineTotal, cartSubtotal, cartGrandTotal, selectionLabels, cyclePerson
-    ├── components/Header.tsx
-    └── screens/{Menu,Build,Review,Placed,Waiting,Eating,Paying,GamePlay,GameResults}Screen.tsx
-```
-
-## 13. Where to look
-| Question | File |
-|---|---|
-| Guest sit-down view | `src/screens/MenuScreen.tsx` |
-| Upsell flow | `src/screens/BuildScreen.tsx` + `src/data.ts` `build` arrays |
-| Countdown | `src/screens/WaitingScreen.tsx` (uses `react-native-svg`) |
-| Bill split | `src/screens/PayingScreen.tsx` |
-| State transitions | `App.tsx` reducer |
-| Colours/fonts | `src/theme.ts` |
-| Data shape | `src/types.ts` |
-| Sample data | `src/data.ts` |
-| Pending backend | grep `// TODO:` in `App.tsx` |
-
-## 14. Investor demo narrative
-1. **Upsell engine in action** — £12 burger → £22 via 4 taps, 3 build screens
-2. **Wait-time monetisation** — drinks during wait + £2 games (80/20 split)
-3. **AI sentiment alerts** — Table 7 silent 18min → manager → Marcus → recovered
-4. **At-table payment + bill split** — eliminates waiter, <60s split
-
-Terracotta = visual proof of business model.
-
-## 15. ⚠ Divergence from on-disk `tabletop-app/` (as of 2026-05-19)
-The handover describes an intended architecture. The actual `D:\HyperGlow\DigitalWaiter\tabletop-app\` has diverged:
-
-| Aspect | Handover spec | On-disk reality |
-|---|---|---|
-| RN version | 0.74.5 | 0.76.5 |
-| Entry file | `App.tsx` (TS strict) | `App.jsx` (no TypeScript) |
-| Styling | `theme.ts` + StyleSheet | NativeWind + Tailwind (`tailwind.config.js`, `global.css`) |
-| State | `useReducer` only | **Zustand** (`src/store/`) — handover explicitly forbids this |
-| Navigation | single-screen `state.view` | **@react-navigation/native** + native-stack (`src/navigation/`) |
-| Extra deps | — | `axios`, `@react-native-async-storage/async-storage`, `react-native-reanimated`, `react-native-gesture-handler`, `react-native-orientation-locker`, `react-native-screens` |
-
-`src/` subfolders on disk: `components/`, `constants/`, `data/`, `hooks/`, `navigation/`, `screens/`, `store/`, `utils/`.
-
-Either the on-disk app is a re-implementation by another agent/dev that abandoned the handover's stack choices, or the handover is aspirational. **Confirm with the user which is canonical before making structural changes.**
+**End of handover.** Anything missing? Edit and commit.
