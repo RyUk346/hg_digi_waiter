@@ -32,6 +32,7 @@ export const auditAction = pgEnum('audit_action', [
   'shift_handover',
 ]);
 export const alertSeverity = pgEnum('alert_severity', ['info', 'warning', 'critical', 'celebration']);
+export const deviceKind = pgEnum('device_kind', ['order', 'kitchen', 'manager']);
 
 // ─── Timestamps helper ────────────────────────────────────────────────────
 
@@ -131,6 +132,29 @@ export const tables = pgTable(
   },
   (t) => ({
     venueLabelIdx: uniqueIndex('tables_venue_label_idx').on(t.venueId, t.label),
+  }),
+);
+
+// ─── Devices (tablets) ────────────────────────────────────────────────────
+// Each physical tablet authenticates to the device-api with a bearer token.
+// Order tablets are bound to a table; kitchen/manager devices are venue-wide.
+
+export const devices = pgTable(
+  'devices',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    venueId: uuid('venue_id')
+      .notNull()
+      .references(() => venues.id, { onDelete: 'cascade' }),
+    tableId: uuid('table_id').references(() => tables.id, { onDelete: 'set null' }),
+    kind: deviceKind('kind').notNull(),
+    name: text('name').notNull(),
+    token: text('token').notNull().unique(),
+    lastSeenAt: timestamp('last_seen_at', { withTimezone: true }),
+    ...timestamps,
+  },
+  (t) => ({
+    tokenIdx: uniqueIndex('devices_token_idx').on(t.token),
   }),
 );
 

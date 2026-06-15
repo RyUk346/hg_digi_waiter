@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ChevronLeft, Heart, Share2 } from 'lucide-react-native';
 import AddOnRow from '../components/AddOnRow';
 import QuantityStepper from '../components/QuantityStepper';
-import { findItem } from '../data/menu';
+import { useMenuStore, getItem } from '../store/menuStore';
 import { useCartStore } from '../store/cartStore';
 import { money } from '../utils/format';
 import { colors } from '../constants/colors';
@@ -27,7 +27,8 @@ import { colors } from '../constants/colors';
 
 const ItemDetailScreen = ({ route, navigation }) => {
   const { itemId } = route.params;
-  const item = findItem(itemId);
+  const items = useMenuStore((s) => s.items);
+  const item = getItem(items, itemId);
   const addLine = useCartStore((s) => s.addLine);
 
   const [variantId, setVariantId] = useState(item?.variants?.[0]?.id);

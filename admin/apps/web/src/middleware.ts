@@ -13,8 +13,10 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const PUBLIC_PREFIXES = ['/login', '/register', '/forgot', '/reset'];
 
 // Anything under these prefixes bypasses auth entirely — static files,
-// uploaded images, Next.js internals, Auth.js API routes.
-const BYPASS_PREFIXES = ['/_next/', '/api/', '/uploads/', '/favicon.ico', '/robots.txt'];
+// uploaded images, Next.js internals, Auth.js API routes, and the standalone
+// KDS (which authenticates with a device token against the device-api, not
+// an admin session).
+const BYPASS_PREFIXES = ['/_next/', '/api/', '/uploads/', '/favicon.ico', '/robots.txt', '/kds'];
 
 function stripBase(p: string): string {
   if (BASE_PATH && p.startsWith(BASE_PATH)) {

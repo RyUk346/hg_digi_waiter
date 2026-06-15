@@ -56,10 +56,11 @@ const PaymentScreen = ({ navigation }) => {
   const [tapping, setTapping] = useState(false);
 
   const onTapToPay = () => {
-    // Simulate NFC interaction → settle → place order.
+    // Simulate NFC interaction → settle → place order on the server.
+    // (Stripe Terminal SDK replaces the timeout when hardware lands.)
     setTapping(true);
-    setTimeout(() => {
-      const order = placeOrder({
+    setTimeout(async () => {
+      const order = await placeOrder({
         lines,
         totals: { subtotal, tax, tip, total },
         table: tableNumber,

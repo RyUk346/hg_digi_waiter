@@ -6,8 +6,7 @@ import Header from '../components/Header';
 import CategoryCard from '../components/CategoryCard';
 import MenuItemCard from '../components/MenuItemCard';
 import CartBar from '../components/CartBar';
-import { categories } from '../data/categories';
-import { featured } from '../data/menu';
+import { useMenuStore, getFeatured } from '../store/menuStore';
 import { useResponsive } from '../hooks/useResponsive';
 import { colors } from '../constants/colors';
 
@@ -22,6 +21,9 @@ import { colors } from '../constants/colors';
 
 const HomeScreen = ({ navigation }) => {
   const { categoryCols, featuredCols } = useResponsive();
+  const items = useMenuStore((s) => s.items);
+  const categories = useMenuStore((s) => s.categories);
+  const featured = getFeatured(items);
 
   // Chunk array into rows of `n` for grid layout
   const chunk = (arr, n) => {

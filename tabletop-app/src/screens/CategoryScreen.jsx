@@ -4,8 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import MenuItemCard from '../components/MenuItemCard';
 import CartBar from '../components/CartBar';
-import { categories } from '../data/categories';
-import { menuByCategory } from '../data/menu';
+import { useMenuStore, filterByCategory } from '../store/menuStore';
 import { colors } from '../constants/colors';
 
 /**
@@ -25,8 +24,10 @@ const FILTER_TAGS_BY_CATEGORY = {
 
 const CategoryScreen = ({ route, navigation }) => {
   const { categoryId } = route.params;
+  const allItems = useMenuStore((s) => s.items);
+  const categories = useMenuStore((s) => s.categories);
   const category = categories.find((c) => c.id === categoryId);
-  const items = menuByCategory(categoryId);
+  const items = filterByCategory(allItems, categoryId);
 
   const filters = FILTER_TAGS_BY_CATEGORY[categoryId] || ['All'];
   const [activeFilter, setActiveFilter] = useState(filters[0]);

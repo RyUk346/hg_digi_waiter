@@ -19,13 +19,19 @@ import Orientation from 'react-native-orientation-locker';
 
 import RootNavigator from './src/navigation/RootNavigator';
 import { colors } from './src/constants/colors';
+import { useMenuStore } from './src/store/menuStore';
+import { connectDeviceSocket, disconnectDeviceSocket } from './src/api/socket';
 
 const App = () => {
   useEffect(() => {
     // Lock to portrait — the tabletop is fixed-orientation.
-    // Comment this out (or call unlockAllOrientations) if you want to
-    // experiment with landscape on the 1024×600 hardware.
     Orientation.lockToPortrait();
+
+    // Hydrate menu from the device-api and open the live socket.
+    // Both fail soft: menu falls back to bundled mock data, socket retries.
+    useMenuStore.getState().hydrate();
+    connectDeviceSocket();
+    return () => disconnectDeviceSocket();
   }, []);
 
   return (

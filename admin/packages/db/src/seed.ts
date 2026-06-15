@@ -25,7 +25,7 @@ async function main() {
   // 1. Wipe (idempotent reseed)
   await sql.unsafe(`TRUNCATE
     game_plays, payments, order_lines, orders,
-    server_shifts, servers,
+    server_shifts, servers, devices,
     build_steps, menu_items, menu_categories,
     alerts, audit_log,
     tables, games,
@@ -397,7 +397,26 @@ async function main() {
     },
   ]);
 
+  // 12. Dev devices — predictable tokens for local development.
+  //     In production, generate random tokens per physical tablet.
+  await db.insert(schema.devices).values([
+    {
+      venueId: venue.id,
+      tableId: insertedTables[6]!.id, // table 7
+      kind: 'order',
+      name: 'Order tablet · Table 7',
+      token: 'dev-order-table7',
+    },
+    {
+      venueId: venue.id,
+      kind: 'kitchen',
+      name: 'Kitchen display · Pass',
+      token: 'dev-kitchen-pass',
+    },
+  ]);
+
   console.log('✓ seeded venue:', venue.name);
+  console.log('✓ device tokens: dev-order-table7 (order), dev-kitchen-pass (kitchen)');
   console.log('✓ admin user:', adminEmail, '/ password:', adminPassword);
   await sql.end();
 }

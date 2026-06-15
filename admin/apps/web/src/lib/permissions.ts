@@ -24,6 +24,8 @@ export const PERMISSIONS = {
   ALERTS_RESOLVE: 'alerts.resolve',
   SERVERS_READ: 'servers.read',
   SERVERS_WRITE: 'servers.write',
+  KITCHEN_READ: 'kitchen.read',
+  KITCHEN_BUMP: 'kitchen.bump',
   // Compliance
   COMPLIANCE_READ: 'compliance.read',
   COMPLIANCE_EXPORT: 'compliance.export',
@@ -51,6 +53,8 @@ const MANAGER_PERMISSIONS: Permission[] = [
   PERMISSIONS.ALERTS_READ,
   PERMISSIONS.ALERTS_RESOLVE,
   PERMISSIONS.SERVERS_READ,
+  PERMISSIONS.KITCHEN_READ,
+  PERMISSIONS.KITCHEN_BUMP,
   PERMISSIONS.COMPLIANCE_READ,
   PERMISSIONS.SETTINGS_READ,
 ];

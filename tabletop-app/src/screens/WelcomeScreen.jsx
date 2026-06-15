@@ -90,7 +90,10 @@ const WelcomeScreen = ({ navigation }) => {
         <View className="px-6 mt-3">
           <Pressable
             onPress={() => {
-              /* TODO: call-server hook (websocket -> kitchen "call_server") */
+              // Raises an alert in the admin + manager views; fail-soft offline.
+              import('../api/client').then(({ postCallServer }) =>
+                postCallServer().catch((e) => console.log('[call-server]', e.message)),
+              );
             }}
             className="bg-card border-2 border-line h-16 rounded-3xl flex-row items-center px-6"
           >

@@ -1,0 +1,29 @@
+{
+  "name": "@hyperglow/device-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "REST + Socket.io API for the Order / Kitchen / Manager tablets. Imports @hyperglow/db for schema parity with the admin.",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hyperglow/db": "workspace:*",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.4",
+    "express": "^4.21.2",
+    "postgres": "^3.4.5",
+    "socket.io": "^4.8.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

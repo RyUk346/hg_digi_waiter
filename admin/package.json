@@ -7,6 +7,7 @@
     "dev": "pnpm --parallel --filter @hyperglow/web --filter @hyperglow/realtime dev",
     "dev:web": "pnpm --filter @hyperglow/web dev",
     "dev:realtime": "pnpm --filter @hyperglow/realtime dev",
+    "dev:device": "pnpm --filter @hyperglow/device-api dev",
     "build": "pnpm --filter @hyperglow/web build",
     "start": "pnpm --filter @hyperglow/web start",
     "lint": "pnpm -r lint",
